@@ -87,6 +87,16 @@
 		6568498310D73EB20031C348 /* DCSoapWebServiceConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC480A10BE2C790094492E /* DCSoapWebServiceConnection.m */; };
 		6568498410D73EB30031C348 /* DCXmlDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 65160993109B0C8A002BE0D0 /* DCXmlDocument.m */; };
 		6568498510D73EB40031C348 /* DCXmlSubtreeParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DAB53510B179CE00207E87 /* DCXmlSubtreeParserDelegate.m */; };
+		657B48B01107329B00747B38 /* DCXmlNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */; };
+		657B48B31107D26500747B38 /* DCXmlNode+XpathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B21107D26500747B38 /* DCXmlNode+XpathTests.m */; };
+		657B48B61107D2F600747B38 /* DCXmlNode+AsString.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */; };
+		657B48B71107D2F600747B38 /* DCXmlNode+AsString.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B48B41107D2F600747B38 /* DCXmlNode+AsString.h */; };
+		657B48B81107D2F600747B38 /* DCXmlNode+AsString.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */; };
+		657B48B91107D2F600747B38 /* DCXmlNode+AsString.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */; };
+		657B48BA1107D30300747B38 /* DCXmlNode+XPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B48AE1107329B00747B38 /* DCXmlNode+XPath.h */; };
+		657B48BB1107D30300747B38 /* DCXmlNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */; };
+		657B48BC1107D31500747B38 /* DCXmlNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */; };
+		657B48BF1107D51B00747B38 /* DCXmlNode+AsStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */; };
 		65894D1E10D515F500AF89C0 /* DCTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D1C10D515F500AF89C0 /* DCTextNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65894D1F10D515F500AF89C0 /* DCTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D1D10D515F500AF89C0 /* DCTextNode.m */; };
 		65894D3210D51A8D00AF89C0 /* DCXmlNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D3010D51A8D00AF89C0 /* DCXmlNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -240,6 +250,13 @@
 		656049F211047D0400BE761F /* NSError+SoapFault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SoapFault.m"; sourceTree = "<group>"; };
 		6568477910D669080031C348 /* DCTextNodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTextNodeTests.m; sourceTree = "<group>"; };
 		6568478B10D66A6D0031C348 /* DCXmlNamespaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlNamespaceTests.m; sourceTree = "<group>"; };
+		657B48AE1107329B00747B38 /* DCXmlNode+XPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCXmlNode+XPath.h"; sourceTree = "<group>"; };
+		657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+XPath.m"; sourceTree = "<group>"; };
+		657B48B21107D26500747B38 /* DCXmlNode+XpathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+XpathTests.m"; sourceTree = "<group>"; };
+		657B48B41107D2F600747B38 /* DCXmlNode+AsString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCXmlNode+AsString.h"; sourceTree = "<group>"; };
+		657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsString.m"; sourceTree = "<group>"; };
+		657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsStringTests.m"; sourceTree = "<group>"; };
+		657B48F21107D76200747B38 /* TestHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHeaders.h; sourceTree = "<group>"; };
 		65894D1C10D515F500AF89C0 /* DCTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTextNode.h; sourceTree = "<group>"; };
 		65894D1D10D515F500AF89C0 /* DCTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTextNode.m; sourceTree = "<group>"; };
 		65894D3010D51A8D00AF89C0 /* DCXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlNode.h; sourceTree = "<group>"; };
@@ -283,7 +300,7 @@
 		65FC482010BE30850094492E /* DCWebServiceResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCWebServiceResponseTests.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dXml_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dXml_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* lib_dXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = lib_dXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC07E0554694100DB518D /* libdXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,7 +342,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* lib_dXml.a */,
+				D2AAC07E0554694100DB518D /* libdXml.a */,
 				65E646EA10955DD70055AA46 /* dXml Tests.app */,
 				654EE4B810FB638B0023F57D /* dXml Integration Tests.app */,
 			);
@@ -389,10 +406,12 @@
 		65320BB310BCF0FD0056BDDF /* Document Model */ = {
 			isa = PBXGroup;
 			children = (
-				65160817109AA0FF002BE0D0 /* DCXmlAttributeTests.m */,
-				65F461501094190D008AF68E /* DCXmlNodeTests.m */,
 				6568477910D669080031C348 /* DCTextNodeTests.m */,
+				65160817109AA0FF002BE0D0 /* DCXmlAttributeTests.m */,
 				6568478B10D66A6D0031C348 /* DCXmlNamespaceTests.m */,
+				657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */,
+				657B48B21107D26500747B38 /* DCXmlNode+XpathTests.m */,
+				65F461501094190D008AF68E /* DCXmlNodeTests.m */,
 			);
 			name = "Document Model";
 			sourceTree = "<group>";
@@ -496,6 +515,7 @@
 				65D0922D10B92B2E0061CC61 /* DCXmlDocumentParserDelegateTests.m */,
 				65FC46D610BDF68E0094492E /* DCXmlSubtreeParserDelegateTests.m */,
 				65CA5BC01105872D00BAB73A /* NSError+SoapFaultTests.m */,
+				657B48F21107D76200747B38 /* TestHeaders.h */,
 			);
 			name = impl;
 			sourceTree = "<group>";
@@ -515,6 +535,10 @@
 				65F7480F10BB9B330030ABA4 /* DCXmlNamespace.m */,
 				65894D3010D51A8D00AF89C0 /* DCXmlNode.h */,
 				65894D3110D51A8D00AF89C0 /* DCXmlNode.m */,
+				657B48AE1107329B00747B38 /* DCXmlNode+XPath.h */,
+				657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */,
+				657B48B41107D2F600747B38 /* DCXmlNode+AsString.h */,
+				657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */,
 			);
 			name = "Document Model";
 			sourceTree = "<group>";
@@ -557,6 +581,8 @@
 				65894D3210D51A8D00AF89C0 /* DCXmlNode.h in Headers */,
 				65F07E2C10D5E6E30057AD6C /* DCUrlConnection+NSURLConnectionDelegate.h in Headers */,
 				656049F411047D0400BE761F /* NSError+SoapFault.h in Headers */,
+				657B48B71107D2F600747B38 /* DCXmlNode+AsString.h in Headers */,
+				657B48BA1107D30300747B38 /* DCXmlNode+XPath.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +658,7 @@
 			);
 			name = dXml;
 			productName = dXml;
-			productReference = D2AAC07E0554694100DB518D /* lib_dXml.a */;
+			productReference = D2AAC07E0554694100DB518D /* libdXml.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -699,6 +725,8 @@
 				654EE51110FB678E0023F57D /* DCXmlParser.m in Sources */,
 				65BCF50710FC2D7400540193 /* GHUnitIPhoneTestMain.m in Sources */,
 				656049F611047D0400BE761F /* NSError+SoapFault.m in Sources */,
+				657B48B91107D2F600747B38 /* DCXmlNode+AsString.m in Sources */,
+				657B48BC1107D31500747B38 /* DCXmlNode+XPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +767,10 @@
 				6568498510D73EB40031C348 /* DCXmlSubtreeParserDelegate.m in Sources */,
 				656049F311047D0400BE761F /* NSError+SoapFault.m in Sources */,
 				65CA5BC11105872D00BAB73A /* NSError+SoapFaultTests.m in Sources */,
+				657B48B01107329B00747B38 /* DCXmlNode+XPath.m in Sources */,
+				657B48B31107D26500747B38 /* DCXmlNode+XpathTests.m in Sources */,
+				657B48B61107D2F600747B38 /* DCXmlNode+AsString.m in Sources */,
+				657B48BF1107D51B00747B38 /* DCXmlNode+AsStringTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +796,8 @@
 				65F07E2D10D5E6E30057AD6C /* DCUrlConnection+NSURLConnectionDelegate.m in Sources */,
 				65F07E5010D5E7AE0057AD6C /* DCDMNode.m in Sources */,
 				656049F511047D0400BE761F /* NSError+SoapFault.m in Sources */,
+				657B48B81107D2F600747B38 /* DCXmlNode+AsString.m in Sources */,
+				657B48BB1107D30300747B38 /* DCXmlNode+XPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,7 +879,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 0.1.1;
 				DEPLOYMENT_LOCATION = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -875,7 +909,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 0.1.1;
 				DEPLOYMENT_LOCATION = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;

@@ -18,8 +18,8 @@
 - (void) allocSubElementDictionary;
 - (void) allocNamespaceDictionary;
 - (void) allocAttributeDictionary;
-- (void) appendNodeDetails:(NSMutableString *)xml;
 - (BOOL) hasSingleTextNode;
+- (void) appendNodeDetails:(NSMutableString *)xml;
 @end
 
 @implementation DCXmlNode
@@ -44,15 +44,11 @@
 }
 
 + (DCXmlNode *) createWithName:(NSString *)aName {
-	DCXmlNode * node = [[[DCXmlNode alloc] initWithName:aName] autorelease];
-
-	return node;
+	return [[[DCXmlNode alloc] initWithName:aName] autorelease];
 }
 
 + (DCXmlNode *) createWithName:(NSString *)aName prefix:(NSString *)aPrefix {
-	DCXmlNode * node = [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
-
-	return node;
+	return [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
 }
 
 + (DCXmlNode *) createWithName:(NSString *)aName value:(NSString *)aValue {
@@ -235,6 +231,16 @@
 	[self addTextNodeWithValue:value];
 }
 
+
+- (BOOL) hasSingleTextNode {
+	return [nodesInOrder count] == 1
+	       && [[nodesInOrder objectAtIndex:0] isKindOfClass:[DCTextNode class]];
+}
+
+
+- (int) countNodes {
+	return [nodesInOrder count];
+}
 - (void) appendToXmlString:(NSMutableString *)xml prettyPrint:(bool)prettyPrint indentDepth:(int)indentDepth {
 
 	// New line and tab the element across if pretty printing.
@@ -279,17 +285,6 @@
 
 }
 
-/**
- * Indicates if the child nodes of the current node can be condensed into a single line during pretty printing.
- */
-- (BOOL) hasSingleTextNode {
-	return [nodesInOrder count] == 1
-	       && [[nodesInOrder objectAtIndex:0] isKindOfClass:[DCTextNode class]];
-}
-
-/**
- * When printing, concatinates the nodes details to the initial declaration.
- */
 - (void) appendNodeDetails:(NSMutableString *)xml {
 	// add in declared namespaces.
 	for (DCXmlNamespace * namespace in[self namespaces]) {
@@ -307,34 +302,6 @@
 	}
 
 }
-
-
-- (NSString *) asXmlString {
-	NSMutableString * xml = [[[NSMutableString alloc] init] autorelease];
-
-	[self appendToXmlString:xml prettyPrint:NO indentDepth:0];
-	return xml;
-}
-
-- (NSString *) asPrettyXmlString {
-	NSMutableString * xml = [[[NSMutableString alloc] init] autorelease];
-
-	[self appendToXmlString:xml prettyPrint:YES indentDepth:0];
-	return xml;
-}
-
-- (int) countNodes {
-	return [nodesInOrder count];
-}
-
--(DCXmlNode *) xmlNodeFromXPath:(NSString *) aXpath{
-	return nil;
-}
-
--(NSString *) valueFromXPath:(NSString *) aXpath{
-	return nil;
-}
-
 
 - (void) dealloc {
 	self.prefix = nil;

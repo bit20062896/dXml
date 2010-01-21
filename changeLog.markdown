@@ -1,3 +1,8 @@
+# DXml v0.1.1 ( 2010)
+
+* Added a basic xpath interpreter to the DCXmlNode.
+* Broke XPath and AsString methods out of DCXmlNode and into seperate categories to aid development and testing.
+
 # DXml v0.1.0 (20 Jan 2010)
 
 * Added more defines to SoapWebServiceConnection.h to help with extracting data from responses.

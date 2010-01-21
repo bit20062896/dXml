@@ -11,6 +11,7 @@
 #import "DCXmlDocument.h"
 #import "GHUnit.h"
 #import "NSObject+SoapTemplates.h"
+#import "DCXmlNode+AsString.h"
 #import "dXml.h"
 
 @interface DCWebServiceResponseTests : GHTestCase {

@@ -12,6 +12,7 @@
 #import "DCUseridPasswordSecurity.h"
 #import "NSObject+SoapTemplates.h"
 #import "dXml.h"
+#import "DCXmlNode+AsString.h"
 
 @interface DCUseridPasswordSecurityTests : GHTestCase
 {}

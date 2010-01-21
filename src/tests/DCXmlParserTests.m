@@ -11,6 +11,7 @@
 #import "GHUnit.h"
 #import "DCXmlDocument.h"
 #import "dXml.h"
+#import "DCXmlNode+AsString.h"
 
 @interface DCXmlParserTests:GHTestCase {
 }

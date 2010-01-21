@@ -292,31 +292,5 @@
 
 /* @}*/
 
-/** \name Xml output */
-/* @{ */
-
-/**
- * Generates the DCXmlNode as a NSString. This is called when the client program needs to serialise the DM for sending to servers.
- */
-- (NSString *) asXmlString;
-
-/**
- * Effectively the same as asXmlString: however this "pretty prints" it which is useful for logging purposes where readibility of the
- * xml is the primary factor.
- */
-- (NSString *) asPrettyXmlString;
-/* @}*/
-
-/** \name XPath */
-
-/**
- * Returns the DCXmlNode specified by the supplied Xpath. If there is no node at any point in the xpath a nil is returned.
- */
-- (DCXmlNode *) xmlNodeFromXPath:(NSString *)aXpath;
-
-/**
- * Returns NSString specified by the supplied Xpath. If there is no node at any point in the xpath, or the end of the xpath is not a DCTextNode, then a nil is returned.
- */
-- (NSString *) valueFromXPath:(NSString *)aXpath;
 
 @end
