@@ -344,16 +344,3 @@ So here's some code showing how to use these features:
 		}
 	}
 	
-## Xpath
-
-You can use a basic form of xpaths to easily access DCXmlNodes and their values. For example, here's the code to access the value of a node within a soap message body:
-
-	#import "DCXmlNode+XPath.h"
-	
-	...
-	DCXmlDocument *doc = // ... get the document.
-	NSString * value = [doc valueFromXpath:@"/Body/abc"];
-	
-How simple is that. See the documentation on the DCXmlNode(XPath) category.
-
-

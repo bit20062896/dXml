@@ -11,14 +11,14 @@
 @implementation DCXmlNode (AsString)
 
 - (NSString *) asXmlString {
-	NSMutableString * xml = [[[NSMutableString alloc] init] autorelease];
+	NSMutableString *xml = [[[NSMutableString alloc] init] autorelease];
 
 	[self appendToXmlString:xml prettyPrint:NO indentDepth:0];
 	return xml;
 }
 
 - (NSString *) asPrettyXmlString {
-	NSMutableString * xml = [[[NSMutableString alloc] init] autorelease];
+	NSMutableString *xml = [[[NSMutableString alloc] init] autorelease];
 
 	[self appendToXmlString:xml prettyPrint:YES indentDepth:0];
 	return xml;

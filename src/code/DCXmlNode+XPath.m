@@ -27,75 +27,49 @@ typedef enum {
 // The token types enum defines the tokens. Therefore XPATH_TOKEN_RULES[TokenTypes from][TokenTypes to] returns if
 // the particular combination of tokens is allowed.
 BOOL const XPATH_TOKEN_RULES [10][10] = {
-	{ NO, YES, YES,  YES,	NO,	  NO,	  YES,			YES,	  YES, NO			 },
-	{ NO, NO,  YES,  NO,		NO,	  NO,	  NO,				NO,	  NO,	 NO			 },
-	{ NO, NO,  NO,	  YES,	NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
-	{ NO, NO,  NO,	  NO,		NO,	  YES,  NO,				NO,	  NO,	 NO			 },
-	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
-	{ NO, NO,  NO,	  NO,		YES,	  NO,	  NO,				NO,	  NO,	 NO			 },
-	{ NO, NO,  YES,  YES,	NO,	  NO,	  NO,				YES,	  NO,	 YES			 },
-	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
-	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 NO			 },
-	{ NO, NO,  NO,	  NO,		NO,	  NO,	  NO,				NO,	  NO,	 NO			 }
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
+	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO }
 };
 
 
 @interface DCXmlNode ()
-- (DCDMNode *) nodeFromXPath:(NSString *)aXpath;
 @end
 
 
 @implementation DCXmlNode (XPath)
 
-- (DCXmlNode *) xmlNodeFromXPath:(NSString *)aXpath {
-	return (DCXmlNode *)[self nodeFromXPath:aXpath];
-}
-
-- (NSString *) valueFromXPath:(NSString *)aXpath {
-	DCDMNode * node = [self nodeFromXPath:aXpath];
-
-	if (node == nil) {
-		return nil;
-	}
-	if ([node isKindOfClass:[DCXmlNode class]]) {
-		return ((DCXmlNode *)node).value;
-	}
-	return ((DCTextNode *)node).value;
-}
-
-- (DCDMNode *) nodeFromXPath:(NSString *)aXpath {
+- (id) xpath:(NSString *)aXpath {
 
 	DHC_LOG(@"Processing xpath: %@", aXpath);
-	NSScanner * scanner = [NSScanner scannerWithString:aXpath];
+	NSScanner *scanner = [NSScanner scannerWithString:aXpath];
 
 	// scanable strings.
-	NSMutableCharacterSet * validElementnameCharacters = [[[NSCharacterSet alphanumericCharacterSet] mutableCopy] autorelease];
+	NSMutableCharacterSet *validElementnameCharacters = [[[NSCharacterSet alphanumericCharacterSet] mutableCopy] autorelease];
 	[validElementnameCharacters addCharactersInString:@"_"];
 
+	// First locate the root of the tree. Usually the current node but may not be.
+	DCXmlNode *root = self;
+	while (root.parentNode != nil) {
+		root = root.parentNode;
+	}
+
 	// Now parse, validate and process the xpath.
-	DCDMNode * currentNode = self;
 	int arrayIndex;
-	NSString * nextElementName;
+	NSString *nextElementName;
 	TokenTypes fromToken = START;
 	TokenTypes toToken;
 	int scanStartIndex;
-	BOOL validateName = NO;
+	id result = nil;
 
 	while ([scanner isAtEnd] == NO) {
-
-		// check for nil current node.
-		if (currentNode == nil) {
-			DHC_LOG(@"Current node is nil, therefore result is nil, returning");
-			return nil;
-		}
-
-		// We should not arrive here with a text node as the current node.
-		if ([currentNode isKindOfClass:[DCTextNode class]]) {
-			if (![scanner isAtEnd]) {
-				DHC_LOG(@"Arrived at a text node with more xpath to process.");
-				@throw [NSException exceptionWithName : @"TextNodeInPathException" reason :[NSString stringWithFormat:@"Found a text node in the xPath when there is still remaining path at index %i", [scanner scanLocation]] userInfo : nil];
-			}
-		}
 
 		scanStartIndex = [scanner scanLocation];
 
@@ -142,24 +116,9 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 		// All is good so lets process.
 		switch (toToken) {
 			case ROOT:
-				DHC_LOG(@"Climbing tree to top and validating name.");
-				while (currentNode.parentNode != nil)
-					currentNode = currentNode.parentNode;
-				validateName = YES;
 				continue;
 
 			case ELEMENT:
-				if (validateName) {
-					validateName = NO;
-					DHC_LOG(@"Validating current element name.");
-					if (![[(DCXmlNode *)currentNode name] isEqualToString:nextElementName]) {
-						DHC_LOG(@"Invalid root node name, throwing exception.");
-						@throw [NSException exceptionWithName : @"InvalidRootElementNameException" reason :[NSString stringWithFormat:@"Root element name does not match."] userInfo : nil];
-					}
-				} else {
-					DHC_LOG(@"Changing current node to element %@", nextElementName);
-					currentNode = [(DCXmlNode *)currentNode xmlNodeWithName:nextElementName];
-				}
 				continue;
 
 			case OPEN_BRACKET:
@@ -169,13 +128,9 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 				continue;
 
 			case NUMBER:
-				DHC_LOG(@"Getting %i", arrayIndex);
-				currentNode = [(DCXmlNode *)currentNode nodeAtIndex:arrayIndex];
 				continue;
 
 			case PARENT:
-				DHC_LOG(@"Switching to parent node.");
-				currentNode = currentNode.parentNode;
 				continue;
 
 			case ANYWHERE:
@@ -195,7 +150,7 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 		@throw [NSException exceptionWithName : @"IncompleteXpathException" reason :[NSString stringWithFormat:@"Found end of xpath when expression not complete."] userInfo : nil];
 	}
 
-	return currentNode;
+	return result;
 
 }
 

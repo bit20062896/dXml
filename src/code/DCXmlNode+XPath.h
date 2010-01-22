@@ -10,21 +10,16 @@
 #import "DCXmlNode.h"
 
 /**
- * This category adds xpath capability to the DCXmlNode. The Xpath capability is not a complete implementation. However it proves the basic set of instructions needed to be able to locate DCXmlNodes and the text values from DCTextNodes. Xpaths are always executed starting from the DCXmlNode they are passed to. The only exception to this being if the expression starts with a root node reference. So if you pass the xpath "/abc" to the Body node of a standard soap message, it will look for an abc element under the Body element. The equivalent using a full path expressions is "//Envelope/Body/abc" .
+ * This category adds xpath capability to the DCXmlNode. The Xpath capability is not a complete implementation. However it proves the basic set of instructions needed to be able to locate DCDMNodes. 
  * 
- * Here is a list of the elements you can use in the xpaths:
- * - <b>//<i>element-name</i></b> - refers to the root node of the document mode. element-name must match the root element name. If used, this must be the first element in the xpath.
- * - <b>/</b> - delimits the elements of an xpath. ie. Envelope/Body/Request/
+ * Here is a list of the elements you can use in the xpaths and how they are processed.
+ * - <b>//<i>element-name</i></b> - returns all occurances of <i>element-name</i>, no matter where they occur in the document model below the current part in the path.
+ * - <b>/</b> - delimiter between nodes of the xpath. If this occurs at the start of the xpath then it causes the path to be regarded as an absolute path which starts from the root of the document.
  * - <b>..</b> - refers back up to the parent of the current element. ie. When given to the Body element, the xpath "../Header" will return the header node.
  * - <b>.</b> - refers to the current node so doesn't really do anything as such, but is here for completeness. Allows xpaths like "./abc"
  * - <b>element-name</b> - looks in the list of sub elements of the current element, and returns the first which has the specified element-name.
  * - <b>[nn]</b> - Finds a sub node of the current node base on a zero based index. ie. [2] returns the second element under the current element. This is most useful when dealing with a list of items being returned.
  * 
- * And some examples of xpaths:
- * 
- * <b>//Envelope/Body/abc</b> - locates the 1st abc element in the Body of a soap message.
- * 
- * <b>../abc/def</b> - from the current node, locate the abc sub element, then it's def sub element.
  */
 
 @interface DCXmlNode (XPath)
@@ -32,13 +27,12 @@
 /** \name XPath */
 
 /**
- * Returns the DCXmlNode specified by the supplied Xpath. If there is no node at any point in the xpath a nil is returned.
+ * Executes the xpath and returns the results. 
+ * The results can be any of the following:
+ * \li nil indicating that there was no matching xml.
+ * \li A single DCTextNode or DCXmlNode.
+ * \li A NSArray containing any combination of DCTextNodes and DCXmlNodes. 
  */
-- (DCXmlNode *) xmlNodeFromXPath:(NSString *)aXpath;
-
-/**
- * Returns NSString specified by the supplied Xpath. If there is no node at any point in the xpath, or the end of the xpath is not a DCTextNode, then a nil is returned. Once the target node of the path is located, the DCXmlNode:value method is called to return the nodes text value.
- */
-- (NSString *) valueFromXPath:(NSString *)aXpath;
+- (id) xpath:(NSString *)aXpath;
 
 @end
