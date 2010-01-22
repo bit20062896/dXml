@@ -128,7 +128,7 @@
 	return [nodesByName valueForKey:aName];
 }
 
-- (DCXmlNode *) nodeAtIndex:(int)aIndex {
+- (DCDMNode *) nodeAtIndex:(int)aIndex {
 	return [nodesInOrder objectAtIndex:aIndex];
 }
 

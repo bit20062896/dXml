@@ -128,14 +128,15 @@
 - (int) countNodes;
 
 /**
- * Locates and returns a DCXmlNode based on it's name only. Again this will only find DCXmlNodes.
+ * Locates and returns a DCXmlNode based on it's name only. This will only find DCXmlNodes and only the first DCXmlNode with that name. To locate multiple nodes use xmlNodesWithName:
+ * \see xmlNodesWithName:
  */
 - (DCXmlNode *) xmlNodeWithName:(NSString *)aName;
 
 /**
- * Returns the DMObject at the specific index. This can return any type of DMObject.
+ * Returns the DCDMNode at the specific index. This can return any type of DCDMNodei.e. A DCXmlNode or a DCTextNode.
  */
-- (DCXmlNode *) nodeAtIndex:(int)aIndex;
+- (DCDMNode *) nodeAtIndex:(int)aIndex;
 
 /**
  * Adds a new child DCDMNode to the end of the list of sub elements. This is the main method for adding child nodes.

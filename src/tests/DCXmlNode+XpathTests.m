@@ -11,6 +11,8 @@
 #import "NSObject+SoapTemplates.h"
 #import "DCXmlNode+XPath.h"
 
+const NSString * testXml = @"";
+
 @interface DCXmlNode_XpathTests : GHTestCase
 
 @end
@@ -83,6 +85,7 @@
 - (void) testXPathElementAndChildIndex {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	DCXmlNode * body = [doc xmlNodeWithName:@"Body"];
+
 	[body addXmlNodeWithName:@"abc"];
 	NSString * xpath = @"Body[0]";
 	DCXmlNode * node = [doc xmlNodeFromXPath:xpath];
@@ -101,6 +104,7 @@
 - (void) testXPathPath {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	DCXmlNode * body = [doc xmlNodeWithName:@"Body"];
+
 	[body addXmlNodeWithName:@"abc"];
 	NSString * xpath = @"/Body/abc";
 	DCXmlNode * node = [doc xmlNodeFromXPath:xpath];
@@ -173,44 +177,45 @@
 - (void) testXPathAfterTextNodeException {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	DCXmlNode * body = [doc xmlNodeWithName:@"Body"];
+
 	[body addTextNodeWithValue:@"abc"];
 	NSString * xpath = @"Body[0]/invalidNode";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"TextNodeInPathException", @"Exception not thrown");
 }
 
 - (void) testXPathIncompleteException {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	NSString * xpath = @"//";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"IncompleteXpathException", @"Exception not thrown");
 }
 
 - (void) testXPathRootNodeNameNotSpecifiedException {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	NSString * xpath = @"///";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"InvalidXpathException", @"Exception not thrown");
 }
 
 - (void) testXPathNoArrayIndexException {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	NSString * xpath = @"[/";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"InvalidXpathException", @"Exception not thrown");
 }
 
 - (void) testXPathNoArrayIndex2Exception {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	NSString * xpath = @"[]";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"InvalidXpathException", @"Exception not thrown");
 }
 
 - (void) testXPathNoEndBracketException {
 	DCXmlDocument * doc = [NSObject createBasicSoapDM];
 	NSString * xpath = @"[1/abc";
-	
+
 	GHAssertThrowsSpecificNamed([doc xmlNodeFromXPath:xpath], NSException, @"InvalidXpathException", @"Exception not thrown");
 }
 

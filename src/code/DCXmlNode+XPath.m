@@ -17,7 +17,7 @@ typedef enum {
 	OPEN_BRACKET=3,
 	CLOSE_BRACKET=4,
 	NUMBER=5,
-	SLASH=6,
+	ANYWHERE=6,
 	PARENT = 7,
 	DOT = 8,
 	END = 9
@@ -27,16 +27,16 @@ typedef enum {
 // The token types enum defines the tokens. Therefore XPATH_TOKEN_RULES[TokenTypes from][TokenTypes to] returns if
 // the particular combination of tokens is allowed.
 BOOL const XPATH_TOKEN_RULES [10][10] = {
-	{ NO, YES, YES, YES, NO,  NO,	 YES, YES, YES, NO  },
-	{ NO, NO,  YES, NO,	NO,  NO,	 NO,	NO,  NO,	 NO  },
-	{ NO, NO,  NO,	 YES, NO,  NO,	 YES, NO,  NO,	 YES },
-	{ NO, NO,  NO,	 NO,	NO,  YES, NO,	NO,  NO,	 NO  },
-	{ NO, NO,  NO,	 NO,	NO,  NO,	 YES, NO,  NO,	 YES },
-	{ NO, NO,  NO,	 NO,	YES, NO,	 NO,	NO,  NO,	 NO  },
-	{ NO, NO,  YES, YES, NO,  NO,	 NO,	YES, NO,	 YES },
-	{ NO, NO,  NO,	 NO,	NO,  NO,	 YES, NO,  NO,	 YES },
-	{ NO, NO,  NO,	 NO,	NO,  NO,	 YES, NO,  NO,	 NO  },
-	{ NO, NO,  NO,	 NO,	NO,  NO,	 NO,	NO,  NO,	 NO  }
+	{ NO, YES, YES,  YES,	NO,	  NO,	  YES,			YES,	  YES, NO			 },
+	{ NO, NO,  YES,  NO,		NO,	  NO,	  NO,				NO,	  NO,	 NO			 },
+	{ NO, NO,  NO,	  YES,	NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
+	{ NO, NO,  NO,	  NO,		NO,	  YES,  NO,				NO,	  NO,	 NO			 },
+	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
+	{ NO, NO,  NO,	  NO,		YES,	  NO,	  NO,				NO,	  NO,	 NO			 },
+	{ NO, NO,  YES,  YES,	NO,	  NO,	  NO,				YES,	  NO,	 YES			 },
+	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 YES			 },
+	{ NO, NO,  NO,	  NO,		NO,	  NO,	  YES,			NO,	  NO,	 NO			 },
+	{ NO, NO,  NO,	  NO,		NO,	  NO,	  NO,				NO,	  NO,	 NO			 }
 };
 
 
@@ -100,8 +100,8 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 		scanStartIndex = [scanner scanLocation];
 
 		// Read and identify the next token.
-		if ([scanner scanString:@"//" intoString:NULL]) {
-			DHC_LOG(@"Found root (//)");
+		if ([scanner scanString:@"/" intoString:NULL]) {
+			DHC_LOG(@"Found root (/)");
 			toToken = ROOT;
 		} else if ([scanner scanString:@"[" intoString:NULL]) {
 			DHC_LOG(@"Found start bracket ([)");
@@ -109,9 +109,9 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 		} else if ([scanner scanString:@"]" intoString:NULL]) {
 			DHC_LOG(@"Found closing bracket (])");
 			toToken = CLOSE_BRACKET;
-		} else if ([scanner scanString:@"/" intoString:NULL]) {
-			DHC_LOG(@"Found slash (/)");
-			toToken = SLASH;
+		} else if ([scanner scanString:@"//" intoString:NULL]) {
+			DHC_LOG(@"Found anywhere indicator (//)");
+			toToken = ANYWHERE;
 		} else if ([scanner scanString:@".." intoString:NULL]) {
 			DHC_LOG(@"Found parent reference (..)");
 			toToken = PARENT;
@@ -147,6 +147,7 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 					currentNode = currentNode.parentNode;
 				validateName = YES;
 				continue;
+
 			case ELEMENT:
 				if (validateName) {
 					validateName = NO;
@@ -160,22 +161,29 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 					currentNode = [(DCXmlNode *)currentNode xmlNodeWithName:nextElementName];
 				}
 				continue;
+
 			case OPEN_BRACKET:
 				continue;
+
 			case CLOSE_BRACKET:
 				continue;
+
 			case NUMBER:
 				DHC_LOG(@"Getting %i", arrayIndex);
 				currentNode = [(DCXmlNode *)currentNode nodeAtIndex:arrayIndex];
 				continue;
+
 			case PARENT:
 				DHC_LOG(@"Switching to parent node.");
 				currentNode = currentNode.parentNode;
 				continue;
-			case SLASH:
+
+			case ANYWHERE:
 				continue;
+
 			case DOT:
 				continue;
+
 			default:
 				break;
 		}

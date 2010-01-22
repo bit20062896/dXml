@@ -16,7 +16,7 @@
  * Once the data has been parsed, it can be returned on one of two ways, either as a DCXmlDocument or as a DCXmlNode. The
  * parserSubTree: method is exposed but ideally designed for parsing sections of a xml tree rather than a whole document.
  * Use parse: for that.
- * \p
+ *
  * Here's an example of using this class.
  * \code
  * NSString *xml = @"lt;?xml version=\"1.0\" encoding=\"UTF-8\"&gt;"

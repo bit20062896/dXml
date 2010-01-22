@@ -25,7 +25,7 @@
 }
 
 - (DCXmlNode *) bodyContent {
-	return [[document xmlNodeWithName:@"Body"] nodeAtIndex:0];
+	return (DCXmlNode *)[[document xmlNodeWithName:@"Body"] nodeAtIndex:0];
 }
 
 - (NSEnumerator *) bodyContents {

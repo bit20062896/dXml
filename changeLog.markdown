@@ -2,6 +2,8 @@
 
 * Added a basic xpath interpreter to the DCXmlNode.
 * Broke XPath and AsString methods out of DCXmlNode and into seperate categories to aid development and testing.
+* Fixed DCXmlNode:nodeAtIndex: to return a DCDMNode type rather than a DCXmlNode.
+* Updated readme to use a live online soap server for testing. Thanks to dukeatcoding for pointing out the server and suggesting some sample code.
 
 # DXml v0.1.0 (20 Jan 2010)
 

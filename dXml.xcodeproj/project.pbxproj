@@ -97,6 +97,7 @@
 		657B48BB1107D30300747B38 /* DCXmlNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */; };
 		657B48BC1107D31500747B38 /* DCXmlNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48AF1107329B00747B38 /* DCXmlNode+XPath.m */; };
 		657B48BF1107D51B00747B38 /* DCXmlNode+AsStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */; };
+		657B4AA61109627100747B38 /* InternetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B4A971109616500747B38 /* InternetTests.m */; };
 		65894D1E10D515F500AF89C0 /* DCTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D1C10D515F500AF89C0 /* DCTextNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65894D1F10D515F500AF89C0 /* DCTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D1D10D515F500AF89C0 /* DCTextNode.m */; };
 		65894D3210D51A8D00AF89C0 /* DCXmlNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D3010D51A8D00AF89C0 /* DCXmlNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -257,6 +258,7 @@
 		657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsString.m"; sourceTree = "<group>"; };
 		657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsStringTests.m"; sourceTree = "<group>"; };
 		657B48F21107D76200747B38 /* TestHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHeaders.h; sourceTree = "<group>"; };
+		657B4A971109616500747B38 /* InternetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTests.m; sourceTree = "<group>"; };
 		65894D1C10D515F500AF89C0 /* DCTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTextNode.h; sourceTree = "<group>"; };
 		65894D1D10D515F500AF89C0 /* DCTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTextNode.m; sourceTree = "<group>"; };
 		65894D3010D51A8D00AF89C0 /* DCXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlNode.h; sourceTree = "<group>"; };
@@ -300,7 +302,7 @@
 		65FC482010BE30850094492E /* DCWebServiceResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCWebServiceResponseTests.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dXml_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dXml_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* libdXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC07E0554694100DB518D /* lib_dXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = lib_dXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,7 +344,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libdXml.a */,
+				D2AAC07E0554694100DB518D /* lib_dXml.a */,
 				65E646EA10955DD70055AA46 /* dXml Tests.app */,
 				654EE4B810FB638B0023F57D /* dXml Integration Tests.app */,
 			);
@@ -422,6 +424,7 @@
 				654EE4FA10FB66F00023F57D /* impl */,
 				655E111710CCC1E500D8E6D1 /* DCSoapWebserviceIntegrationTests.m */,
 				655E114B10CCC51900D8E6D1 /* IntegrationTestDefaults.h */,
+				657B4A971109616500747B38 /* InternetTests.m */,
 			);
 			name = "Integration Tests";
 			sourceTree = "<group>";
@@ -658,7 +661,7 @@
 			);
 			name = dXml;
 			productName = dXml;
-			productReference = D2AAC07E0554694100DB518D /* libdXml.a */;
+			productReference = D2AAC07E0554694100DB518D /* lib_dXml.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -727,6 +730,7 @@
 				656049F611047D0400BE761F /* NSError+SoapFault.m in Sources */,
 				657B48B91107D2F600747B38 /* DCXmlNode+AsString.m in Sources */,
 				657B48BC1107D31500747B38 /* DCXmlNode+XPath.m in Sources */,
+				657B4AA61109627100747B38 /* InternetTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

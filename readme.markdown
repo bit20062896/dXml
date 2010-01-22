@@ -5,6 +5,63 @@ dXml was conceived when I was starting with ObjC and iPhone development. Seeing 
 * A parser to convert a stream of xml into an object model.
 * The ability to interact with web sites and handle the basic setup and communication.
 * The ability to talk to soap based web services, constructing and deconstructing messages as necessary.
+
+# A quick working example
+
+Thanks to dukeatcoding for this code. Note that it directly uses the DCUrlConnection class. An alternative is to use the DCSoapWebServiceConnection class which will do the response parsing and soap fault handling for you.
+
+	#import "GHUnit.h"
+	#import "DCUrlConnection.h"
+	#import "dXml.h"
+	#import "DCXmlParser.h"
+	#import "DCXmlDocument.h"
+	#import "DCXmlNode+AsString.h"
+
+	@interface InternetTests : GHTestCase
+	{}
+
+	@end
+
+	@implementation InternetTests
+
+	- (void) testViiumCom {
+		NSString * request = @"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+			@"<SOAP-ENV:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
+			@" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+			@" xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\""
+			@" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\""
+			@" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+			@"<SOAP-ENV:Body>"
+			@"<Hello xmlns=\"http://viium.com/\">"
+			@"<name xsi:type=\"xsd:string\">Test</name>"
+			@"</Hello>"
+			@"</SOAP-ENV:Body>"
+			@"</SOAP-ENV:Envelope>";
+
+		DCUrlConnection * connection = [DCUrlConnection createWithUrl:@"http://viium.com/WebService/HelloWorld.asmx"];
+
+		[connection setHeaderValue:@"http://viium.com/Hello" forKey:@"SOAPAction"];
+		NSError * error = nil;
+		NSData * data = [connection post:request errorVar:&error];
+	
+		if (error != nil){
+			NSLog(@"Error %@", error);
+			return;
+		}
+
+		DCXmlDocument * resultDoc = [[DCXmlParser parserWithData:data] parse:&error];
+
+		if (error != nil){
+			NSLog(@"Error %@", error);
+			return;
+		}
+	
+	NSLog(@"Results: %@", [resultDoc asPrettyXmlString]);
+	
+}
+
+@end
+
  
 # Documentation
 
@@ -233,7 +290,7 @@ First lets assume you ave a header somewhere with:
 
 	//Get a connection object and call the service.
 	DCSoapWebServiceConnection *service = [DCSoapWebServiceConnection createWithUrl: BANKING soapAction: BALANCE_ACTION];
-	[service setUsername:@"username" password"@"password"];
+	[service setUsername:@"username" password:@"password"];
 	NSError *error = nil;
 	DCWebServiceResponse *response = [service postXmlStringPayload: xml errorVar:&error];
 
@@ -243,7 +300,7 @@ First lets assume you ave a header somewhere with:
 		return;
 	}
 
-	NSLog(@"Balance = &@", [[response bodyContent] xmlNodeWithName: @"balance"].value];
+	NSLog(@"Balance = &@", [[response bodyContent] xmlNodeWithName: @"balance"].value);
 
 #### And now using the api:
 
@@ -253,7 +310,7 @@ First lets assume you ave a header somewhere with:
 
 	//Get a connection object and call the service.
 	DCSoapWebServiceConnection *service = [DCSoapWebServiceConnection createWithUrl: BANKING soapAction: BALANCE_ACTION];
-	[service setUsername:@"username" password"@"password"];
+	[service setUsername:@"username" password:@"password"];
 	NSError *error = nil;
 	DCWebServiceResponse *response = [service postXmlNodePayload: xml errorVar:&error];
 
@@ -263,7 +320,7 @@ First lets assume you ave a header somewhere with:
 		return;
 	}
 
-	NSLog(@"Balance = &@", [[response bodyContent] xmlNodeWithName: @"balance"].value];
+	NSLog(@"Balance = &@", [[response bodyContent] xmlNodeWithName: @"balance"].value);
 
 ### Faults
 
@@ -289,12 +346,12 @@ So here's some code showing how to use these features:
 	
 ## Xpath
 
-Just added. You can use a basic form of xpaths to easily access DCXmlNodes and their values. For example, here's the code to access the value of a node within a soap message body:
+You can use a basic form of xpaths to easily access DCXmlNodes and their values. For example, here's the code to access the value of a node within a soap message body:
 
 	#import "DCXmlNode+XPath.h"
 	
 	...
-	
+	DCXmlDocument *doc = // ... get the document.
 	NSString * value = [doc valueFromXpath:@"/Body/abc"];
 	
 How simple is that. See the documentation on the DCXmlNode(XPath) category.
