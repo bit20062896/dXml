@@ -258,7 +258,7 @@
 		657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsString.m"; sourceTree = "<group>"; };
 		657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCXmlNode+AsStringTests.m"; sourceTree = "<group>"; };
 		657B48F21107D76200747B38 /* TestHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHeaders.h; sourceTree = "<group>"; };
-		657B4A971109616500747B38 /* InternetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTests.m; sourceTree = "<group>"; };
+		657B4A971109616500747B38 /* InternetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternetTests.m; path = src/tests/InternetTests.m; sourceTree = "<group>"; };
 		65894D1C10D515F500AF89C0 /* DCTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTextNode.h; sourceTree = "<group>"; };
 		65894D1D10D515F500AF89C0 /* DCTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTextNode.m; sourceTree = "<group>"; };
 		65894D3010D51A8D00AF89C0 /* DCXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlNode.h; sourceTree = "<group>"; };
