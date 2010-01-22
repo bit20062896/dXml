@@ -63,11 +63,11 @@ Thanks to dukeatcoding for this code. Note that it directly uses the DCUrlConnec
 			return;
 		}
 	
-	NSLog(@"Results: %@", [resultDoc asPrettyXmlString]);
+		NSLog(@"Results: %@", [resultDoc asPrettyXmlString]);
 	
-}
+	}
 
-@end
+	@end
 
  
 # Documentation
