@@ -6,9 +6,16 @@ dXml was conceived when I was starting with ObjC and iPhone development. Seeing 
 * The ability to interact with web sites and handle the basic setup and communication.
 * The ability to talk to soap based web services, constructing and deconstructing messages as necessary.
 
+# Some thank yous
+
+These products have been really helpful in doing this:
+
+* To Tomaz for [appledoc](http://github.com/tomaz/appledoc)
+* To Gabriel for [GH-unit](http://github.com/gabriel/gh-unit) 
+
 # A quick working example
 
-Thanks to dukeatcoding for this code. Note that it directly uses the DCUrlConnection class. An alternative is to use the DCSoapWebServiceConnection class which will do the response parsing and soap fault handling for you.
+Thanks to dukeatcoding for this code. Note that it directly uses the DCUrlConnection class. An alternative is to use the DCSoapWebServiceConnection class which will do the response parsing and soap fault handling for you. You will need to have GH-unit if you cut and paste this as is. Otherwise adapt it to suite.
 
 	#import "GHUnit.h"
 	#import "DCUrlConnection.h"
@@ -344,3 +351,16 @@ So here's some code showing how to use these features:
 		}
 	}
 	
+# Development
+
+Here's my current directory setup, if you want to compile or run the unit tests you will need this setup. Hopefully in the future I can make this more flexible.
+
+\verbatim
+\<home\>
+&nbsp;&nbsp;&nbsp;+-- projects
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;+-- dXml
+&nbsp;&nbsp;&nbsp;+-- tools
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- appledoc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- Doxygen
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- libGHUnitIPhone3_0-0
+\endverbatim

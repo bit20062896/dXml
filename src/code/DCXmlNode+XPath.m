@@ -12,7 +12,7 @@
 
 typedef enum {
 	START =0,
-	ROOT=1,
+	SLASH=1,
 	ELEMENT=2,
 	OPEN_BRACKET=3,
 	CLOSE_BRACKET=4,
@@ -27,16 +27,17 @@ typedef enum {
 // The token types enum defines the tokens. Therefore XPATH_TOKEN_RULES[TokenTypes from][TokenTypes to] returns if
 // the particular combination of tokens is allowed.
 BOOL const XPATH_TOKEN_RULES [10][10] = {
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO },
-	{ NO, NO, NO, NO, NO, NO, NO, NO, NO, NO }
+	/*               St  Slsh Ele  Open Cls  Nbr  Any  Prnt Dot  End */
+	/* Start    */ { NO, YES, YES, YES, NO,  NO,	 YES, YES, YES, NO  },
+	/* Slash    */ { NO, NO,  YES, YES, NO,  NO,	 NO,	NO,  NO,	 YES },
+	/* Element  */ { NO, YES, NO,	 YES, NO,  NO,	 YES, NO,  NO,	 YES },
+	/* Open     */ { NO, NO,  NO,	 NO,	NO,  YES, NO,	NO,  NO,	 NO  },
+	/* Close    */ { NO, YES, NO,	 NO,	NO,  NO,	 NO,	NO,  NO,	 YES },
+	/* Number   */ { NO, NO,  NO,	 NO,	YES, NO,	 NO,	NO,  NO,	 NO  },
+	/* Anywhere */ { NO, NO,  YES, NO,	NO,  NO,	 NO,	NO,  NO,	 NO  },
+	/* Parent   */ { NO, YES, NO,	 NO,	NO,  NO,	 NO,	NO,  NO,	 NO  },
+	/* Dot      */ { NO, YES, NO,	 NO,	NO,  NO,	 NO,	NO,  NO,	 NO  },
+	/* End      */ { NO, NO,  NO,	 NO,	NO,  NO,	 NO,	NO,  NO,	 NO  }
 };
 
 
@@ -75,8 +76,8 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 
 		// Read and identify the next token.
 		if ([scanner scanString:@"/" intoString:NULL]) {
-			DHC_LOG(@"Found root (/)");
-			toToken = ROOT;
+			DHC_LOG(@"Found slash (/)");
+			toToken = SLASH;
 		} else if ([scanner scanString:@"[" intoString:NULL]) {
 			DHC_LOG(@"Found start bracket ([)");
 			toToken = OPEN_BRACKET;
@@ -115,7 +116,7 @@ BOOL const XPATH_TOKEN_RULES [10][10] = {
 
 		// All is good so lets process.
 		switch (toToken) {
-			case ROOT:
+			case SLASH:
 				continue;
 
 			case ELEMENT:
