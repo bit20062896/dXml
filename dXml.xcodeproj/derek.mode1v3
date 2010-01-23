@@ -347,7 +347,7 @@
 							<real>48</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>254 84 1526 1038 0 0 1920 1178 </string>
+						<string>302 112 1526 1038 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -377,7 +377,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>657B4B771109EC1600747B38</string>
+										<string>657B4B78110AAA7100747B38</string>
 										<key>history</key>
 										<array>
 											<string>65AFA7291095482400355353</string>
@@ -499,7 +499,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1083, 992}}</string>
 								<key>RubberWindowFrame</key>
-								<string>254 84 1526 1038 0 0 1920 1178 </string>
+								<string>302 112 1526 1038 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -519,7 +519,7 @@
 								<key>Frame</key>
 								<string>{{0, 997}, {1083, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>254 84 1526 1038 0 0 1920 1178 </string>
+								<string>302 112 1526 1038 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -696,7 +696,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>285862934.65877801</real>
+	<real>285911665.03849101</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -725,7 +725,7 @@
 		<string>/Users/derek/projects/dXml/dXml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>254 84 1526 1038 0 0 1920 1178 </string>
+	<string>302 112 1526 1038 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

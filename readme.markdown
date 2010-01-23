@@ -356,7 +356,7 @@ So here's some code showing how to use these features:
 Here's my current directory setup, if you want to compile or run the unit tests you will need this setup. Hopefully in the future I can make this more flexible.
 
 \verbatim
-\<home\>
+&lt;home&gt;
 &nbsp;&nbsp;&nbsp;+-- projects
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;+-- dXml
 &nbsp;&nbsp;&nbsp;+-- tools
