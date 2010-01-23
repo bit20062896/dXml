@@ -358,7 +358,7 @@ Here's my current directory setup, if you want to compile or run the unit tests 
 	<home>
 	   +-- projects
 	   |   +-- dXml
-		|
+	   |
 	   +-- tools
 	       +-- appledoc	
 	       +-- Doxygen
