@@ -3881,7 +3881,7 @@
 		fRef = 659F700610F7024600822900 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 292";
 		rLen = 0;
-		rLoc = 15967;
+		rLoc = 15806;
 		rType = 0;
 		vrLen = 2741;
 		vrLoc = 11187;
@@ -5160,7 +5160,7 @@
 		fRef = 659F700610F7024600822900 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 347";
 		rLen = 0;
-		rLoc = 15967;
+		rLoc = 15806;
 		rType = 0;
 		vrLen = 2671;
 		vrLoc = 0;
@@ -5190,7 +5190,7 @@
 		fRef = 659F700610F7024600822900 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 347";
 		rLen = 0;
-		rLoc = 15967;
+		rLoc = 15806;
 		rType = 0;
 		vrLen = 2671;
 		vrLoc = 0;
@@ -5260,7 +5260,7 @@
 		fRef = 659F700610F7024600822900 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 364";
 		rLen = 0;
-		rLoc = 15898;
+		rLoc = 15772;
 		rType = 0;
 		vrLen = 2716;
 		vrLoc = 13072;
@@ -5300,7 +5300,7 @@
 		fRef = 659F700610F7024600822900 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 365";
 		rLen = 0;
-		rLoc = 15967;
+		rLoc = 15806;
 		rType = 0;
 		vrLen = 2892;
 		vrLoc = 13075;
