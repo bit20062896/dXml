@@ -34,7 +34,7 @@
 	NSString *xml = @"";
 	
 	DCSoapWebServiceConnection *service = [DCSoapWebServiceConnection createWithUrl: nil soapAction: nil];
-	NSError	* error;
+	NSError	* error = nil;
 	DCWebServiceResponse *response = [service postXmlStringPayload: xml errorVar:&error];
 	
 	GHAssertNotNil(error, @"Expected error to be present");

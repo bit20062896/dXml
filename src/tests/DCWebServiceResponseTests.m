@@ -23,46 +23,46 @@
 @implementation DCWebServiceResponseTests
 
 - (void) testResponseIsStoredAndReturned {
-	DCXmlDocument * doc = [[[DCXmlDocument alloc] initWithName:@"Envelope"] autorelease];
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
+	DCXmlDocument *doc = [[[DCXmlDocument alloc] initWithName:@"Envelope"] autorelease];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
 
 	GHAssertEqualObjects(response.document, doc, @"Expected object not returned.");
 }
 
 - (void) testBodyElement {
-	DCXmlDocument * doc = [self soapResponseGraph];
-	DCXmlNode * body = [doc xmlNodeWithName:@"Body"];
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
+	DCXmlDocument *doc = [self soapResponseGraph];
+	DCXmlNode *body = [doc xmlNodeWithName:@"Body"];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
 
 	GHAssertEqualObjects([response bodyElement], body, @"Expected body object not returned.");
 }
 
 - (void) testBodyContent {
-	DCXmlDocument * doc = [self soapResponseGraph];
-	DCXmlNode * tradePriceResponse = [[doc xmlNodeWithName:@"Body"] xmlNodeWithName:@"GetLastTradePriceResponse"];
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
+	DCXmlDocument *doc = [self soapResponseGraph];
+	DCXmlNode *tradePriceResponse = [[doc xmlNodeWithName:@"Body"] xmlNodeWithName:@"GetLastTradePriceResponse"];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
 
 	GHAssertEqualObjects([response bodyContent], tradePriceResponse, @"Expected body object not returned.");
 }
 
 - (void) testBodyContents {
-	DCXmlDocument * doc = [self soapResponseGraph];
-	DCXmlNode * tradePriceResponse = [[doc xmlNodeWithName:@"Body"] xmlNodeWithName:@"GetLastTradePriceResponse"];
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
-	NSEnumerator * enumerator = [response bodyContents];
+	DCXmlDocument *doc = [self soapResponseGraph];
+	DCXmlNode *tradePriceResponse = [[doc xmlNodeWithName:@"Body"] xmlNodeWithName:@"GetLastTradePriceResponse"];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:doc] autorelease];
+	NSArray *results = [response bodyContents];
 
-	GHAssertEqualObjects([enumerator nextObject], tradePriceResponse, @"Expected body object not returned.");
-	GHAssertNil([enumerator nextObject], @"Expected just the one object.");
+	GHAssertEqualObjects([results objectAtIndex:0], tradePriceResponse, @"Expected body object not returned.");
+	GHAssertEquals((int)[results count], 1, @"Expected just the one object.");
 }
 
 - (DCXmlDocument *) soapResponseGraph {
 
-	DCXmlDocument * document = [[[DCXmlNode alloc] initWithName:@"Envelope" prefix:@"soap"] autorelease];
+	DCXmlDocument *document = [[[DCXmlNode alloc] initWithName:@"Envelope" prefix:@"soap"] autorelease];
 
 	[document addNamespace:@"http://schemas.xmlsoap.org/soap/envelope/" prefix:@"soap"];
 	[document setAttribute:@"soap:encodingStyle" value:@"http://schemas.xmlsoap.org/soap/encoding/"];
-	DCXmlNode * bodyElement = [document addXmlNodeWithName:@"Body" prefix:@"soap"];
-	DCXmlNode * getLastTradePriceElement = [bodyElement addXmlNodeWithName:@"GetLastTradePriceResponse" prefix:@"m"];
+	DCXmlNode *bodyElement = [document addXmlNodeWithName:@"Body" prefix:@"soap"];
+	DCXmlNode *getLastTradePriceElement = [bodyElement addXmlNodeWithName:@"GetLastTradePriceResponse" prefix:@"m"];
 	[getLastTradePriceElement addNamespace:@"http://trading-site.com.au" prefix:@"m"];
 	[getLastTradePriceElement addXmlNodeWithName:@"Price" value:@"14.5"];
 
@@ -71,16 +71,16 @@
 
 - (void) testIsSoapFaultTrue {
 
-	DCXmlDocument * document = [[[DCXmlNode alloc] initWithName:@"Envelope" prefix:@"soap"] autorelease];
+	DCXmlDocument *document = [[[DCXmlNode alloc] initWithName:@"Envelope" prefix:@"soap"] autorelease];
 
 	[document addNamespace:@"http://schemas.xmlsoap.org/soap/envelope/" prefix:@"soap"];
 	[document setAttribute:@"soap:encodingStyle" value:@"http://schemas.xmlsoap.org/soap/encoding/"];
-	DCXmlNode * bodyElement = [document addXmlNodeWithName:@"Body" prefix:@"soap"];
+	DCXmlNode *bodyElement = [document addXmlNodeWithName:@"Body" prefix:@"soap"];
 	[bodyElement addXmlNodeWithName:@"Fault"];
 
 	DHC_LOG(@"Soap fault xml\n%@", [document asPrettyXmlString]);
 
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:document] autorelease];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:document] autorelease];
 
 	BOOL isFault = [response isSoapFault];
 	DHC_LOG(@"Fault = %@", DHC_PRETTY_BOOL(isFault));
@@ -89,7 +89,7 @@
 }
 
 - (void) testIsSoapFaultFalse {
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:[self soapResponseGraph]] autorelease];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:[self soapResponseGraph]] autorelease];
 
 	GHAssertFalse([response isSoapFault], @"Expected isSoapFault to be NO");
 }

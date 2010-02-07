@@ -138,7 +138,7 @@
 	[testElement setAttribute:@"def" value:@"ghi"];
 	[testElement setAttribute:@"ijk" value:@"lmn"];
 	int count = 0;
-	for (DCXmlAttribute * attribute in[testElement attributes]) {
+	for (DCXmlAttribute * attribute in[[testElement attributes]allValues]) {
 		DHC_LOG(@"Found attribute %@, value %@", attribute.name, attribute.value);
 		if ( ([@"def" isEqualToString:attribute.name] && [@"ghi" isEqualToString:attribute.value])
 		     || ([@"ijk" isEqualToString:attribute.name] && [@"lmn" isEqualToString:attribute.value])
@@ -174,7 +174,7 @@
 	DCXmlNode * testElement = [[[DCXmlNode alloc] initWithName:@"abc"] autorelease];
 
 	[testElement addNamespace:@"namespace" prefix:@"prefix"];
-	for (DCXmlNamespace * namespace in[testElement namespaces]) {
+	for (DCXmlNamespace * namespace in[[testElement namespaces] allValues]) {
 		if ([@"prefix" isEqualToString:namespace.prefix] && [@"namespace" isEqualToString:namespace.url]) {
 			// Found namespace;
 			return;

@@ -18,7 +18,7 @@
 - (void) allocSubElementDictionary;
 - (void) allocNamespaceDictionary;
 - (void) allocAttributeDictionary;
-- (BOOL) hasSingleTextNode;
+- (BOOL) hasSingleValue;
 - (void) appendNodeDetails:(NSMutableString *)xml;
 @end
 
@@ -52,14 +52,14 @@
 }
 
 + (DCXmlNode *) createWithName:(NSString *)aName value:(NSString *)aValue {
-	DCXmlNode * node = [[[DCXmlNode alloc] initWithName:aName] autorelease];
+	DCXmlNode *node = [[[DCXmlNode alloc] initWithName:aName] autorelease];
 
 	[node setValue:aValue];
 	return node;
 }
 
 + (DCXmlNode *) createWithName:(NSString *)aName prefix:(NSString *)aPrefix value:(NSString *)aValue {
-	DCXmlNode * node = [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
+	DCXmlNode *node = [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
 
 	[node setValue:aValue];
 	return node;
@@ -86,7 +86,7 @@
 
 	// First create the node.
 	DHC_LOG(@"Creating autorelease DCXmlNode for %@", aName);
-	DCXmlNode * node = [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
+	DCXmlNode *node = [[[DCXmlNode alloc] initWithName:aName prefix:aPrefix] autorelease];
 	[self addNode:node];
 
 	// Create a text child node if it needs one.
@@ -104,19 +104,17 @@
 
 	if ([node isKindOfClass:[DCTextNode class]]) {
 #ifdef DHC_DEBUG
-		DCTextNode * textNode = (DCTextNode *)node;
+		DCTextNode *textNode = (DCTextNode *)node;
 		DHC_LOG(@"Adding text node for %@ to parent %@", textNode.value, self.name);
 #endif
 		// Nothing to do at this stage.
 	} else {
-
-		DCXmlNode * xmlNode = (DCXmlNode *)node;
+		DCXmlNode *xmlNode = (DCXmlNode *)node;
 		DHC_LOG(@"Adding xml node %@ to parent %@", xmlNode.name, self.name);
-		// Only add to the dictionary if there
-		// is not already an entry. That way the dictionary always points to the first.
 		if (![self hasXmlNodeWithName:xmlNode.name]) {
-			[nodesByName setValue:node forKey:xmlNode.name];
+			[nodesByName setValue:[NSMutableArray array] forKey:xmlNode.name];
 		}
+		[(NSMutableArray *)[nodesByName valueForKey:xmlNode.name] addObject:xmlNode];
 	}
 
 	// Add the node to the ordered list and set it's parent.
@@ -125,32 +123,23 @@
 }
 
 - (DCXmlNode *) xmlNodeWithName:(NSString *)aName {
-	return [nodesByName valueForKey:aName];
+	return [[nodesByName valueForKey:aName] objectAtIndex:0];
 }
 
 - (DCDMNode *) nodeAtIndex:(int)aIndex {
 	return [nodesInOrder objectAtIndex:aIndex];
 }
 
-- (NSEnumerator *) nodes {
-	return [nodesInOrder objectEnumerator];
+- (NSArray *) nodes {
+	return nodesInOrder;
 }
 
-- (NSEnumerator *) xmlNodesWithName:(NSString *)aName {
-	NSMutableArray * results = [[[NSMutableArray alloc] init] autorelease];
-	NSString * findname = aName;
-
-	for (DCXmlNode * element in nodesInOrder) {
-		if ([element.name isEqualToString:findname]) {
-			DHC_LOG(@"Adding %@ to found elements array.", element.name);
-			[results addObject:element];
-		}
-	}
-	return [results objectEnumerator];
+- (NSArray *) xmlNodesWithName:(NSString *)aName {
+	return (NSArray *)[nodesByName valueForKey:aName];
 }
 
 - (BOOL) hasXmlNodeWithName:(NSString *)aName {
-	return [self xmlNodeWithName:aName] != nil;
+	return [nodesByName valueForKey:aName] != nil;
 }
 
 /*
@@ -177,13 +166,13 @@
 
 - (void) addNamespace:(NSString *)aUrl prefix:(NSString *)aPrefix {
 	[self allocNamespaceDictionary];
-	DCXmlNamespace * namespace = [[DCXmlNamespace alloc] initWithUrl:aUrl prefix:aPrefix];
+	DCXmlNamespace *namespace = [[DCXmlNamespace alloc] initWithUrl:aUrl prefix:aPrefix];
 	[namespaces setValue:namespace forKey:aPrefix];
 	[namespace release];
 }
 
-- (NSEnumerator *) namespaces {
-	return [namespaces objectEnumerator];
+- (NSDictionary *) namespaces {
+	return namespaces;
 }
 
 - (void) setAttribute:(NSString *)aName value:(NSString *)aValue {
@@ -191,7 +180,7 @@
 	[self allocAttributeDictionary];
 
 	// Now set the value.
-	DCXmlAttribute * attr = [attributes valueForKey:aName];
+	DCXmlAttribute *attr = [attributes valueForKey:aName];
 	if (attr == nil) {
 		attr = [[DCXmlAttribute alloc] initWithName:aName value:aValue];
 		[attributes setValue:attr forKey:aName];
@@ -205,12 +194,12 @@
 	return [[attributes valueForKey:aName] value];
 }
 
-- (NSEnumerator *) attributes {
-	return [attributes objectEnumerator];
+- (NSDictionary *) attributes {
+	return attributes;
 }
 
 - (NSString *) value {
-	for (DCDMNode * node in nodesInOrder) {
+	for (DCDMNode *node in nodesInOrder) {
 		if ([node isKindOfClass:[DCTextNode class]]) {
 			return ((DCTextNode *)node).value;
 		}
@@ -219,7 +208,7 @@
 }
 
 - (DCTextNode *) addTextNodeWithValue:(NSString *)aValue {
-	DCTextNode * node = [[[DCTextNode alloc] initWithText:aValue] autorelease];
+	DCTextNode *node = [[[DCTextNode alloc] initWithText:aValue] autorelease];
 
 	[self addNode:node];
 	return node;
@@ -232,7 +221,7 @@
 }
 
 
-- (BOOL) hasSingleTextNode {
+- (BOOL) hasSingleValue {
 	return [nodesInOrder count] == 1
 	       && [[nodesInOrder objectAtIndex:0] isKindOfClass:[DCTextNode class]];
 }
@@ -247,7 +236,7 @@
 	[self newLineAndIndent:xml prettyPrint:prettyPrint indentDepth:indentDepth];
 
 	// Start the element.
-	NSString * nodeName = prefix == nil ? name : [NSString stringWithFormat:@"%@:%@", prefix, name];
+	NSString *nodeName = prefix == nil ? name : [NSString stringWithFormat:@"%@:%@", prefix, name];
 	[xml appendFormat:@"<%@", nodeName];
 	[self appendNodeDetails:xml];
 
@@ -262,8 +251,8 @@
 
 	// If there is only one child node and it's a text node under 80 chars then do this as a single line.
 	// Otherwise tell all child nodes to append themselves.
-	if ([self hasSingleTextNode]) {
-		DCTextNode * textNode = (DCTextNode *)[nodesInOrder objectAtIndex:0];
+	if ([self hasSingleValue]) {
+		DCTextNode *textNode = (DCTextNode *)[self nodeAtIndex:0];
 		if ([textNode.value length] < 81) {
 			[textNode appendToXmlString:xml prettyPrint:prettyPrint indentDepth:indentDepth];
 			[xml appendFormat:@"</%@>", nodeName];
@@ -275,7 +264,7 @@
 	}
 
 	// Add the child nodes.
-	for (DCDMNode * node in[self nodes]) {
+	for (DCDMNode *node in[self nodes]) {
 		[node appendToXmlString:xml prettyPrint:prettyPrint indentDepth:indentDepth + 1];
 	}
 
@@ -287,7 +276,7 @@
 
 - (void) appendNodeDetails:(NSMutableString *)xml {
 	// add in declared namespaces.
-	for (DCXmlNamespace * namespace in[self namespaces]) {
+	for (DCXmlNamespace *namespace in [namespaces allValues]) {
 		[namespace appendToXmlString:xml];
 	}
 
@@ -297,7 +286,7 @@
 	}
 
 	// Append attributes to the element.
-	for (DCXmlAttribute * attribute in[self attributes]) {
+	for (DCXmlAttribute *attribute in[attributes allValues]) {
 		[attribute appendToXmlString:xml];
 	}
 

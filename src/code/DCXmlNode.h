@@ -28,13 +28,13 @@
  */
 @interface DCXmlNode : DCDMNode {
 	@private
-	NSString * name;
-	NSString * prefix;
-	NSMutableDictionary * nodesByName;
-	NSMutableDictionary * attributes;
-	NSMutableDictionary * namespaces;
-	NSMutableArray * nodesInOrder;
-	NSString * defaultSchema;
+	NSString *name;
+	NSString *prefix;
+	NSMutableDictionary *nodesByName;
+	NSMutableDictionary *attributes;
+	NSMutableDictionary *namespaces;
+	NSMutableArray *nodesInOrder;
+	NSString *defaultSchema;
 }
 
 /** \name Properties */
@@ -47,21 +47,21 @@
  * &lt;<b>abc</b> /&gt;
  * \endcode
  */
-@property (nonatomic, readonly) NSString * name;
+@property (nonatomic, readonly) NSString *name;
 
 /** Schema prefix. For example
  * \code
  * &lt;<b>soapenv</b>:Body /&gt;
  * \endcode
  */
-@property (nonatomic, retain) NSString * prefix;
+@property (nonatomic, retain) NSString *prefix;
 
 /** The defaultSchema is a schema specified without a prefix. There can be only one of these for a DCXmlNode.
  * For example
  * \code
  * &lt;abc <b>xmlns="http://defaultschema.com"</b> /&gt;
  * \endcode */
-@property (retain, nonatomic) NSString * defaultSchema;
+@property (retain, nonatomic) NSString *defaultSchema;
 
 /* @} */
 
@@ -184,19 +184,20 @@
 - (BOOL) hasXmlNodeWithName:(NSString *)aName;
 
 /**
- * Returns a NSEnumerator which can be used to iteration through all the DCDMNodes. For example
+ * Returns a NSContaining all the DCDMNodes. For example
  * \code
  * for (DCDMNode * node in [aXmlNode nodes] {
  *    ... do your stuff here ...
  * }
  * \endcode
+ * Note it is quite possible for this to contain both DCXmlNode and DCTextNode instances.
  */
-- (NSEnumerator *) nodes;
+- (NSArray *) nodes;
 
 /**
- * Searches the child nodes for DCXmlNodes with the specific name and returns a new NSArray containing just those nodes.
+ * Searches the child nodes for DCXmlNodes with the specific name and returns a NSArray containing just those nodes.
  */
-- (NSEnumerator *) xmlNodesWithName:(NSString *)aName;
+- (NSArray *) xmlNodesWithName:(NSString *)aName;
 /* @}*/
 
 /** \name Namespaces */
@@ -206,8 +207,8 @@
  * Adds a namespace and prefix to the current DCXmlNode. This will manifest as a namespace declaration
  * in any produced xml. For example:
  * \code
- * DCXmlNode * node = [[DCXmlNode alloc] initWithName: @"abc"];
- * [node addNamespace: @"http://url.com" prefix: @"xyz"];
+ * DCXmlNode * node = [[DCXmlNode alloc] initWithName:@"abc"];
+ * [node addNamespace:@"http://url.com" prefix:@"xyz"];
  * \endcode
  * Will result in:
  * \code
@@ -217,15 +218,10 @@
 - (void) addNamespace:(NSString *)aUrl prefix:(NSString *)aPrefix;
 
 /**
- * Returns an NSEnumerator which can be used to iterator through all the namespaces added to the current DCXmlNode.
- * For example
- * \code
- * for (DCXmlNamespace * namespace in [aNode namespaces] {
- *    ... do your stuff here ...
- * }
- * \endcode
+ * Returns an NSDictionary containing all the namespaces added to the current DCXmlNode.
+ * The key for each namespace is the prefix that represents it and the value is the namespace url.
  */
-- (NSEnumerator *) namespaces;
+- (NSDictionary *) namespaces;
 
 /* @}*/
 
@@ -252,14 +248,9 @@
 - (NSString *) attributeValue:(NSString *)aName;
 
 /**
- * Returns a NSEnumerator which can be used to iterate through all attributes. For example
- * \code
- * for (DCXmlNode * node in [aNode childNodes] {
- *    ... do your stuff here ...
- * }
- * \endcode
+ * Returns a NSDictionary containing all the attributes. The key for each attribute is it's name. The value is the text value associated with it.
  */
-- (NSEnumerator *) attributes;
+- (NSDictionary *) attributes;
 
 /* @}*/
 

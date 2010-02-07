@@ -58,8 +58,9 @@
 	if (connection == nil) {
 		DHC_LOG(@"Nil connection object returned");
 		if (aErrorVar != NULL) {
-			*aErrorVar = [NSError errorWithDomain:URL_CONNECTION_DOMAIN code:UrlConnectionErrorNilConnection userInfo:nil];
-			DHC_LOG(@"Returning error %@", aErrorVar);
+			NSError * error = [NSError errorWithDomain:DXML_DOMAIN code:NilConnection userInfo:nil];
+			DHC_LOG(@"Returning error %@", error);
+			*aErrorVar = error;
 		}
 		return nil;
 	}
@@ -70,6 +71,7 @@
 	DHC_LOG(@"Creating new response data object");
 	responseData = [[NSMutableData data] retain];
 	responseReceived = NO;
+	responseDataReceived = NO;
 
 	//Allow the run loop to process the url events.
 	[self executeEventsUntilAllDataReceived];
@@ -84,6 +86,16 @@
 		return nil;
 	}
 
+	// Generate an error if the response is empty.
+	if (!responseDataReceived) {
+		if (aErrorVar != NULL) {
+			NSError * error = [NSError errorWithDomain:DXML_DOMAIN code:EmptyResponse userInfo:nil];
+			DHC_LOG(@"Returning error %@", error);
+			*aErrorVar = error;
+		}	
+		return nil;
+	}
+	
 	DHC_LOG(@"Returning responseData");
 	return responseData;
 }

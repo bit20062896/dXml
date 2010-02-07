@@ -7,7 +7,7 @@
 	<key>DocSetPublisherIdentifier</key>
 	<string>au.com.dSoft</string>
 	<key>CFBundleIdentifier</key>
-	<string>au.com.dSoft.dXml</string>
+	<string>au.com.dSoft.dXml.docset</string>
 	<key>CFBundleName</key>
 	<string>dXml Documentation</string>
 	<key>DocSetFeedName</key>

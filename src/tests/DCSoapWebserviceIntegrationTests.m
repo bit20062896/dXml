@@ -65,11 +65,9 @@
 
 	GHAssertNotNil(error, @"Nil error returned");
 	GHAssertNil(response, @"Response returned when it should not be.");
-	GHAssertEquals(error.code, NSErrorSoapFault, @"Incorrect error code");
-	GHAssertEqualStrings(error.domain, NSERROR_SOAP_FAULT_DOMAIN, @"Incorrect domain returned");
-	NSDictionary *userInfo = error.userInfo;
-	GHAssertEqualStrings([userInfo valueForKey:@"faultCode"], @"ns2:Client", @"Incorrect fault code returned");
-	GHAssertEqualStrings([userInfo valueForKey:@"faultMessage"], @"Cannot find dispatch method for {http://www.dhcbank.com/banking/schema}AccountBalance", @"Incorrect fault message returned");
+	GHAssertEqualStrings(error.soapFaultCode, @"ns2:Client", @"Incorrect soap fault code returned"); 
+	GHAssertEqualStrings(error.soapFaultMessage, @"Cannot find dispatch method for {http://www.dhcbank.com/banking/schema}AccountBalance", @"Incorrect soap fault code returned"); 
+	
 }
 
 - (void) testSoapWithFaultCustomException {
@@ -81,11 +79,8 @@
 
 	GHAssertNotNil(error, @"Nil error returned");
 	GHAssertNil(response, @"Response returned when it should not be.");
-	GHAssertEquals(error.code, NSErrorSoapFault, @"Incorrect error code");
-	GHAssertEqualStrings(error.domain, NSERROR_SOAP_FAULT_DOMAIN, @"Incorrect domain returned");
-	NSDictionary *userInfo = error.userInfo;
-	GHAssertEqualStrings([userInfo valueForKey:@"faultCode"], @"ns2:Server", @"Incorrect fault code returned");
-	GHAssertEqualStrings([userInfo valueForKey:@"faultMessage"], @"No account number passed to service.", @"Incorrect fault message returned");
+	GHAssertEqualStrings(error.soapFaultCode, @"ns2:Server", @"Incorrect soap fault code returned"); 
+	GHAssertEqualStrings(error.soapFaultMessage, @"No account number passed to service.", @"Incorrect soap fault code returned"); 
 }
 
 - (void) assertBalanceResponse: (DCWebServiceResponse *) response {

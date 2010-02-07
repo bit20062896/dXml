@@ -16,14 +16,6 @@
 #import "DCUrlConnection.h"
 
 /**
- * Enum which specifies error codes.
- */
-typedef enum {
-	SoapWebServiceConnectionNilResponse=1
-}
-SoapWebServiceConnectionErrorCode;
-
-/**
  * Extension of the DCUrlConnection class which is specially designed to handle soap web service calls to servers.
  * This class is the main class of the dXml api.
  * Here's an example of using it

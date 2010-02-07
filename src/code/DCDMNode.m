@@ -7,7 +7,7 @@
 //
 #import "DCDMNode.h"
 
-@interface DCDMNode (x)
+@interface DCDMNode ()
 - (void) newLineAndIndent:(NSMutableString *)xml prettyPrint:(bool)prettyPrint indentDepth:(int)indentDepth;
 @end
 

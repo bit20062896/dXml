@@ -181,94 +181,6 @@ There are two other variations on the factory message `[DCXmlParser parserWithXm
 
 By the time you are reading this you should already have figured out the two methods for generating xml from the document model. `[model asXmlString]` and `[model asPrettyXmlString]`. Usually in code you wout use asXmlString to produce output for a server request. asPrettyXmlString is just present to help with debug logs.
 
-### More about DCXmlNode
-
-Seeing as DCXmlNode contains the major chunk of functionality, here is a list of some of the most common messages you may send to it and what they do:
-
-#### Constructors
-***
-
-##### - (DCXmlNode \*) initWithName: (NSString \*) *aName*</td>
-Produces in xml: `<aName />`
-
-##### - (DCXmlNode \*) initWithName: (NSString \*) *aName* prefix: (NSString \*) *aPrefix*;
-Produces in xml: `<aPrefix:aName />`
-
-#### Search messages
-***
-
-##### - (DCXmlNode \*) xmlNodeWithName: (NSString \*) *aName*;
-Returns the sub node with the specified name.
-
-##### - (DCXmlNode \*) nodeAtIndex: (int) *index*;
-Returns the sub node at the index. 
-
-#### Adding new sub nodes
-***
-
-##### - (void) addNode: (DCDMNode \*) element;
-Appends the passed node to the list of nodes.
-
-##### - (DCXmlNode \*) addXmlNodeWithName: (NSString \*) *aName*;
-Creates a new DCXmlNode and appends it to the list of nodes.
-
-##### - (DCXmlNode \*) addXmlNodeWithName: (NSString \*) *aName* prefix: (NSString \*) *aPrefix*;
-Creates a new DCXmlNode and appends it to the list of nodes.
-
-##### - (DCXmlNode \*) addXmlNodeWithName: (NSString \*) *aName* value: (NSString \*) *aValue*;
-Creates a new DCXmlNode and appends it to the list of nodes.
-
-##### - (DCXmlNode \*) addXmlNodeWithName: (NSString \*) *aName* prefix: (NSString \*) *aPrefix* value: (NSString \*) *aValue*;
-Creates a new DCXmlNode and appends it to the list of nodes.
-
-##### -(DCTextNode \*) addTextNodeWithValue: (NSString \*) *aValue*;
-Creates a new DCTextNode and appends it to the list of nodes.
-
-#### Querying
-***
-
-##### - (BOOL) hasXmlNodeWithName: (NSString \*) *aName*;
-Returns YES/TRUE if there is an DCXmlNode in the list of sub nodes with the passed name.
-
-##### - (NSString \*) attributeValue: (NSString \*) *aName*;
-Returns the value of the attribute.
-
-##### -(NSString \*) value;
-A shortcut message which assumes that there is only a single DCTextNode in the list of nodes and returns it's value.
-
-##### -(int) countNodes;
-Returns the total number of sub nodes.
-
-#### Accessing sub nodes
-***
-
-##### - (NSEnumerator \*) nodes;
-Provides access to all the sub nodes.
-
-##### - (NSEnumerator \*) xmlNodesWithName: (NSString \*) *aName*;
-Searches the sub nodes and only returns DCXmlNodes which have the passed name.
-
-#### Modifying nodes and values
-***
-
-##### - (void) addNamespace: (NSString \*) *aUrl* prefix: (NSString \*) *aPrefix*;
-Adds a namespace declaration to the node. ie. `xmlns:aPrefix="aUrl"`
-
-##### - (void) setAttribute: (NSString \*) *aName* value: (NSString \*) *aValue*;
-Adds or sets the value of an attribute.
-
-##### -(void) setValue: (NSString \*) *value*;
-Another shortcut methods. This one assumes you only want a single DCTextNode with a value. If there are any current sub nodes they are removed before the new DCTextNode is created.
-
-#### Producing xml
-***
-
-##### - (NSString \*) asXmlString;
-Compiles and returns the xml that this node and it's sub nodes represent as a single string.
-
-##### - (NSString \*) asPrettyXmlString;
-Compiles and returns the xml that this node and it's sub nodes represent as a single string, formatted for output into logs and files.
-
 ## Sending messages to servers
 
 ### Any old server
@@ -335,9 +247,14 @@ All soap errors are returned in standard NSError objects. As such some additiona
 
 Firstly, the DCWebServiceResponse class now has a `isFault` message which returns true if the response contains a soap fault. Although this is not used directly because DCSoapWebServiceConnection will automatically convert soap faults to NSErrors.
 
-Secondly, there is a nw category called NSError(SoapFault) which provies methods for creating NSError objects containg soap faults as well as methods for accessing their details. By adding this category to the NSError class it becomes trivial to deal with soap faults.
+Secondly, there is a new category called NSError(SoapFault) which provies methods for creating NSError objects containing soap faults as well as methods for accessing their details. By adding this category to the NSError class it becomes trivial to deal with soap faults.
 
 So here's some code showing how to use these features:
+
+	... // oher imports.
+	#import "NSError+SoapFault.h"
+
+	... // class code.
 
 	NSError *error = nil;
 	DCWebServiceResponse *response = [service postXmlNodePayload: xml errorVar:&error];

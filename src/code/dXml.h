@@ -43,16 +43,16 @@
 		} \
 		if ([dobj isKindOfClass: [DCXmlNode class]]) {	\
 			DCXmlNode *e = dobj; \
-			DHC_LOG(@"DHC_DEALLOC releasing element " # vName ": %@, rc: %i", e.name, [dobj retainCount]); \
+			DHC_LOG(@"DHC_DEALLOC releasing element " # vName ": %@", e.name); \
 			break; \
 		} \
 		if ([dobj isKindOfClass: [NSData class]]) { \
 			NSData *data = dobj;	\
-			DHC_LOG(@"DHC_DEALLOC releasing " # vName ": %@ rc: %i", DHC_DATA_TO_STRING(data), [vName retainCount]);	\
+			DHC_LOG(@"DHC_DEALLOC releasing " # vName ": %@", DHC_DATA_TO_STRING(data));	\
 			break; \
 		} \
 		if (![dobj isKindOfClass: [NSDictionary class]] && ![dobj isKindOfClass: [NSArray class]]) {	\
-			DHC_LOG(@"DHC_DEALLOC releasing " # vName ": %@ rc: %i", vName, [vName retainCount]); \
+			DHC_LOG(@"DHC_DEALLOC releasing " # vName ": %@", vName); \
 			break; \
 		} \
 	} while (FALSE); \
@@ -82,3 +82,18 @@
 
 // iPhone compatible mock arg define from OCMock. Need to post this to the author.
 #define DHC_MOCK_VALUE(variable) [NSValue value : &variable withObjCType : @encode(__typeof__(variable))]
+
+/**
+ * Enum containing error codes returned from dXml classes.
+ */
+typedef enum {
+	CannotSelectFromTextNode=1,
+	NilConnection=2,
+	EmptyResponse=3,
+	NilResponse=4,
+	SoapFault=5,
+	TextNodePassedToNameFitler=6
+}
+DXmlErrorCode;
+
+#define DXML_DOMAIN @"dXml:Errors"

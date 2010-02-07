@@ -48,7 +48,7 @@
 - (DCXmlNode *) bodyContent;
 
 /**
- * Returns a NSEnumerator of the nodes within the Body node. This is useful when for example you get this reply:
+ * Returns a NSArray of the nodes within the Body node. This is useful when for example you get this reply:
  * \code
  * ...
  * &lt;Body&gt;
@@ -57,9 +57,9 @@
  *    &lt;Data&gt; ... &lt;/Data&gt;
  * &lt;/Body&gt;
  * \endcode
- * This NSEnumator will loop through all the "Data" elements in turn.
+ * This NSArray can be used to loop through all the "Data" elements in turn.
  */
-- (NSEnumerator *) bodyContents;
+- (NSArray *) bodyContents;
 
 /**
  * Returns true if the response contains a soap fault. Generally speaking this is never used in client programs because soap faults are automatically converted into NSError instances. This method is used internally during response processing.

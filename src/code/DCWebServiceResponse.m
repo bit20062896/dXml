@@ -28,7 +28,7 @@
 	return (DCXmlNode *)[[document xmlNodeWithName:@"Body"] nodeAtIndex:0];
 }
 
-- (NSEnumerator *) bodyContents {
+- (NSArray *) bodyContents {
 	return [[document xmlNodeWithName:@"Body"] nodes];
 }
 

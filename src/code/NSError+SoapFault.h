@@ -10,15 +10,6 @@
 #import "DCXmlDocument.h"
 #import "DCWebServiceResponse.h"
 
-/**
- * Enum which specifies error codes.
- */
-typedef enum {
-	NSErrorSoapFault=1
-}
-   NSErrorSoapFaultErrorCode;
-
-#define NSERROR_SOAP_FAULT_DOMAIN @"dXml:NSError(SoapFault)"
 #define SOAP_FAULT_CODE_KEY		 @"faultCode"
 #define SOAP_FAULT_MESSAGE_KEY	 @"faultMessage"
 

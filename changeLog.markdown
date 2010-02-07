@@ -4,6 +4,9 @@
 * Broke XPath and AsString methods out of DCXmlNode and into seperate categories to aid development and testing.
 * Fixed DCXmlNode:nodeAtIndex: to return a DCDMNode type rather than a DCXmlNode.
 * Updated readme to use a live online soap server for testing. Thanks to dukeatcoding for pointing out the server and suggesting some sample code.
+* Added an error trap to pick up on blank responses from servers with no errors. A NSError is now raised by DCUrlConnection.
+* Improved error reporting when in debug mode. Previously was throwing exceptions.
+* Changed returns from DCXmlNode on all methods which returned NSEnumerator to now return the NSArray or NSDictionary as appropriate. Was trying to do the java thing of not exposing internals, but it ended up making things a little too difficult. 
 
 # DXml v0.1.0 (20 Jan 2010)
 

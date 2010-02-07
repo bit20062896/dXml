@@ -33,7 +33,7 @@
 
 + (DCSoapWebServiceConnection *) createWithUrl:(NSString *)aServerUrl soapAction:(NSString *)aSoapAction {
 	DHC_LOG(@"Initialising with Url %@ and Action %@", aServerUrl, aSoapAction);
-	DCSoapWebServiceConnection * service = [[(DCSoapWebServiceConnection *)[DCSoapWebServiceConnection alloc] initWithUrl:aServerUrl] autorelease];
+	DCSoapWebServiceConnection *service = [[(DCSoapWebServiceConnection *)[DCSoapWebServiceConnection alloc] initWithUrl:aServerUrl] autorelease];
 	service.soapAction = aSoapAction;
 	return service;
 }
@@ -42,16 +42,15 @@
 
 	// Setup a parser and attempt to parse the supplied xml.
 	DHC_LOG(@"Parsing xml into document model, error handing %@, xml = %@", DHC_PRETTY_BOOL(aErrorVar == NULL), aBody);
-	DCXmlParser * parser = [DCXmlParser parserWithXml:aBody];
-	DCXmlNode * subtree = [parser parseSubtree:aErrorVar];
+	DCXmlParser *parser = [DCXmlParser parserWithXml:aBody];
+	DCXmlNode *subtree = [parser parseSubtree:aErrorVar];
 
 	// If there is no subtree returned then look for errors.
 	if (subtree == nil) {
 		if (aErrorVar != NULL && aErrorVar == nil) {
-
-			// Cannot remember under what circumstances I saw a nil subtree with no error.
-			*aErrorVar = [NSError errorWithDomain:@"x" code:SoapWebServiceConnectionNilResponse userInfo:nil];
-			DHC_LOG(@"Generating error %@", aErrorVar);
+			NSError *error = [NSError errorWithDomain:DXML_DOMAIN code:NilResponse userInfo:nil];
+			DHC_LOG(@"Generating error %@", error);
+			*aErrorVar = error;
 		}
 		return nil;
 	}
@@ -64,13 +63,13 @@
 - (DCWebServiceResponse *) postXmlNodePayload:(DCXmlNode *)aBody errorVar:(NSError **)aErrorVar {
 
 	// First assemble the message
-	DCXmlDocument * soapMsg = [self createBasicSoapDM];
+	DCXmlDocument *soapMsg = [self createBasicSoapDM];
 
 	[[soapMsg xmlNodeWithName:@"Body"] addNode:aBody];
 
 	// Now hand it to the security code.
-	DCSecurity * security = [DCSecurity createSecurityWithUserid:userid password:password];
-	NSObject <DCSecurityModel> * securer = [security createSecurityModelOfType:securityType];
+	DCSecurity *security = [DCSecurity createSecurityWithUserid:userid password:password];
+	NSObject <DCSecurityModel> *securer = [security createSecurityModelOfType:securityType];
 	[securer secureSoapMessage:soapMsg];
 
 	DHC_LOG(@"Action: %@", self.soapAction);
@@ -79,7 +78,7 @@
 	[self setHeaderValue:self.soapAction forKey:@"SOAPAction"];
 
 	// Post the request to the server.
-	NSData * data = [self post:[soapMsg asXmlString] errorVar:aErrorVar];
+	NSData *data = [self post:[soapMsg asXmlString] errorVar:aErrorVar];
 
 	// And check for errors.
 	if (data == nil) {
@@ -93,8 +92,8 @@
 
 - (DCWebServiceResponse *) parseResponseWithData:(NSData *)data errorVar:(NSError **)aErrorVar {
 
-	DCXmlParser * parser = [DCXmlParser parserWithData:data];
-	DCXmlDocument * document = [parser parse:aErrorVar];
+	DCXmlParser *parser = [DCXmlParser parserWithData:data];
+	DCXmlDocument *document = [parser parse:aErrorVar];
 
 	if (document == nil) {
 		DHC_LOG(@"Error detected parsing response into document model, returning nil");
@@ -102,11 +101,12 @@
 	}
 
 	// Add code to find a fault and generate an error.
-	DCWebServiceResponse * response = [[[DCWebServiceResponse alloc] initWithDocument:document] autorelease];
+	DCWebServiceResponse *response = [[[DCWebServiceResponse alloc] initWithDocument:document] autorelease];
 
 	// Handle soap faults.
 	if ([response isSoapFault]) {
 		if (aErrorVar != NULL) {
+			DHC_LOG(@"Soap fault detected");
 			*aErrorVar = [NSError errorWithSoapResponse:response];
 		}
 		return nil;

@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 25/10/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #import "DCXmlParser.h"
 #import "dXml.h"
 #import "DCXmlNode.h"

@@ -32,13 +32,12 @@
 /**
  * The value of the attribute.
  */
-
 @property (nonatomic, retain) NSString *value;
 
 /** \name Constructors */
 
 /**
- * Default constructor. Based on the logic that all attributes must ave a name and value.
+ * Default constructor. Based on the logic that all attributes must have a name and value.
  */
 -(DCXmlAttribute *) initWithName: (NSString *) aName value: (NSString *) aValue;
 
@@ -48,7 +47,7 @@
  * Used during serialisation to a xml string. Will produce 
  * \code
  * &lt;abc def="ghi" /&gt;
- * \endode
+ * \endcode
  */
 - (void) appendToXmlString: (NSMutableString *) xml;
 

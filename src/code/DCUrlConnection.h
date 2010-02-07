@@ -9,16 +9,6 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Enum which specifies error codes.
- */
-typedef enum {
-	UrlConnectionErrorNilConnection=1
-}
-UrlConnectionErrorCode;
-
-#define URL_CONNECTION_DOMAIN @"dXml:UrlConnection"
-
-/**
  * This is the driver class for communicating with a url. It's basic job is to send and receive data from the server
  * and to manage security. Here is a basic example of using this class:
  * \code
@@ -46,6 +36,7 @@ UrlConnectionErrorCode;
 	NSString *serverUrl;
 	NSMutableDictionary *headers;
 	NSMutableData *responseData;
+	BOOL responseDataReceived;
 	BOOL responseReceived;
 	BOOL allowSelfSignedCertificates;
 	BOOL storeCredentials;

@@ -57,6 +57,7 @@
 - (void) connection: (NSURLConnection *) connection didReceiveData: (NSData *) data {
 	DHC_LOG(@"Event-didReceiveData: %@", DHC_DATA_TO_STRING(data));
 	[responseData appendData: data];
+	responseDataReceived = YES;
 }
 
 - (void) connection: (NSURLConnection *) connection didSendBodyData: (NSInteger) bytesWritten totalBytesWritten: (NSInteger) totalBytesWritten totalBytesExpectedToWrite: (NSInteger) totalBytesExpectedToWrite {

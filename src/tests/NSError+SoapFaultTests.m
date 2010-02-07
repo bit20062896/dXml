@@ -9,6 +9,7 @@
 #import "DCXmlNode.h"
 #import "DCXmlDocument.h"
 #import "GHUnit.h"
+#import "dXml.h"
 
 @interface NSError_SoapFaultTests : GHTestCase {
 	@private
@@ -25,8 +26,8 @@
 	[faultNode addXmlNodeWithName:@"faultstring" value:@"def"];
 	NSError * error = [NSError errorWithSoapFault:faultNode];
 
-	GHAssertEqualStrings(error.domain, NSERROR_SOAP_FAULT_DOMAIN, @"Domain incorrect");
-	GHAssertEquals(error.code, NSErrorSoapFault, @"code incorrect");
+	GHAssertEqualStrings(error.domain, DXML_DOMAIN, @"Domain incorrect");
+	GHAssertEquals(error.code, SoapFault, @"code incorrect");
 
 	NSDictionary * dic = error.userInfo;
 	GHAssertEqualStrings([dic valueForKey:SOAP_FAULT_CODE_KEY], @"abc", @"Code not returned");
