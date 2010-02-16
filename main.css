@@ -52,6 +52,7 @@ a {
 }
 
 #document-index {
+	clear:both;
 	float:right;
 	border:1px solid #cccccc;
 	padding:1em;
