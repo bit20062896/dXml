@@ -1,30 +1,33 @@
 ---
 layout: default
 ---
+	  
+# [dXml](http://github.com/drekka/dXml) 
+by [Derek Clarkson](http://github.com/drekka) (d4rkf1br3 \[at\] gmail.com)
 
-This is a markdown file.
+iPhone static library providing xml parsing into document models, XPath expressions, xml messaging to/from servers SOAP messaging to/from web service providers, SOAP fault handling.
 
-<div id="download">
-<a href="http://github.com/drekka/dXml/zipball/master">
-<img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-<a href="http://github.com/drekka/dXml/tarball/master">
-<img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-</div>
-	 
-      
-<h1><a href="http://github.com/drekka/dXml">dXml</a> 
-<span class="small">by <a href="http://github.com/drekka">drekka</a></span></h1>
+It was written because I wanted to be able to talk to some SOAP based web services and found no support within the Apple SDK apart from the NSXMLParser class. 
 
-<div class="description">
-iPhone static library providing xml parsing into document models, XPath expressions, xml messaging to/from servers
-SOAP messaging to/from web service providers, SOAP fault handling.
-</div>
+## Dependencies
 
-<h2>Dependencies</h2>
-<p>If you just want to use the static library then download a compiled dmg file from here.</p>
-<p>If you want to compile this library then you can download a source tar or zip or checkout from github.</p>
+If you just want to use the static library then there are now dependencies.
+
+If you wish to compile the code then you will need the following APIs:
+
+[appledoc](http://github.com/tomaz/appledoc)
+
+Appledoc runs and reads the output from doxygen, then reprocesses it to give it a more "Apple like" apperance before installing your api documentation as a docset in xcode.
+
+[GH-Unit](http://github.com/gabriel/gh-unit)
+
+GH-Unit is a JUnit style unit testing framework for iPhone applications. The advantages of it over the sen testing framework that comes with xcode is that it runs on the simulator, allows full debugging and is dead simple to use.
+
+[OCMock](http://www.mulle-kybernetik.com/software/OCMock)
+
+OCMock is a mocking framework very much like the java [EasyMock](http://easymock.org/) framework. It's a very useful tool for "simulating" instances of classes when testing.
     
-<h2>Install</h2>
+##  Installation
 
 Some sample code
 
@@ -42,23 +45,19 @@ Some sample xml:
 {% endhighlight %}
 
  
-<h2>License</h2>
+## License
     
-<h2>Author</h2>
-<p>Derek Clarkson (d4rkf1br3 [at] gmail.com)</p>
+## Download
 
-<h2>Download</h2>
-<p>
-You can download the project source in either
-<a href="http://github.com/drekka/dXml/zipball/master">zip</a> or
-<a href="http://github.com/drekka/dXml/tarball/master">tar</a> formats.
-</p>
-<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+You can downed the source as either
+
+[![zip](http://github.com/images/modules/download/zip.png)](http://github.com/drekka/dXml/zipball/master)
+or
+[![tar](http://github.com/images/modules/download/tar.png)](http://github.com/drekka/dXml/tarball/master)
+
+You can also clone the project with [git](http://git-scm.com)
 by running:
+
 <pre class="console">$ git clone git://github.com/drekka/dXml</pre>
-</p>
       
-<div class="footer">
-Get the source code on GitHub : <a href="http://github.com/drekka/dXml">drekka/dXml</a>
-</div>
     

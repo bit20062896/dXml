@@ -1,6 +1,6 @@
 body {
 	margin:0px;
-	background-color: #e6e6e6;
+	background-color: #e6e6ff;
 	font-family: "Helvetica,Arial,FreeSans"; 
 	color: black;
 }
@@ -9,7 +9,7 @@ body {
 	background-color:white;
 	border: 1px solid #cccccc;
 	padding:3em;
-	margin:50px 50px 100px 50px;
+	margin:30px 30px 60px 30px;
 }
 
 h1 {
@@ -54,28 +54,24 @@ img {
 	font-style: italic;
 }
 
-#download { 
-	float: right; 
-}
-
 #document-index {
-	margin-top:2em;
+	margin:2em 0px 1em 1em;
 	clear:both;
 	float:right;
 	border:1px solid #cccccc;
 	padding:1em;
 }
 
+#indexList {
+}
+
+.indexListItem {
+}
+
 pre.console { 
 	background: black; 
 	color: white; 
 	padding: 15px;
-}
-
-hr { 
-	border: 0; 
-	width: 80%; 
-	border-bottom: 1px solid #aaa;
 }
 
 .footer { 
