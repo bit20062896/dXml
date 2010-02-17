@@ -1,3 +1,7 @@
+---
+layout:default
+---
+
 This is a markdown file.
     <div id="download">
       <a href="http://github.com/drekka/dXml/zipball/master">
