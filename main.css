@@ -56,9 +56,9 @@ a {
 	padding:1em;
 }
 
-pre { 
-	background: #000; 
-	color: #fff; 
+pre.console { 
+	background: black; 
+	color: white; 
 	padding: 15px;
 }
 
