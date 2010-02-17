@@ -37,6 +37,12 @@ a {
 	color: #4e9af9; 
 }
 
+#forkMeLink {
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+
 .description { 
 	font-size: 1.2em; 
 	margin-bottom: 30px; 

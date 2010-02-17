@@ -1,13 +1,14 @@
 .highlight pre { 
 	background: #f8f8ff; 
 	border:1px solid #cccccc;
-	padding:10px;
 }
 
 .lineno {
 	display:inline-block;
 	width:2em;
 	color:#aaaaaa;
+	background-color:#eeeeee;
+	text-align:right;
 }
 
 code.objc {
