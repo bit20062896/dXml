@@ -1,5 +1,5 @@
 ---
-layout:default
+layout: default
 ---
 
 This is a markdown file.
