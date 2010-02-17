@@ -25,7 +25,12 @@ SOAP messaging to/from web service providers, SOAP fault handling.
 <p>If you want to compile this library then you can download a source tar or zip or checkout from github.</p>
     
 <h2>Install</h2>
-    
+
+{% highlight objective-c linenos %}
+DCXmlNode *node = [DCXmlNode createWithName:@"abc"];
+NSLog([node asPrettyXmlString]);
+{% endhighlight %}
+
 <h2>License</h2>
     
 <h2>Author</h2>
