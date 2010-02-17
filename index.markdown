@@ -37,7 +37,7 @@ Some sample xml:
 
 {% highlight xml linenos %}
 <abc>
-    <def />
+    <def>ghi</def>
 </abc>
 {% endhighlight %}
 

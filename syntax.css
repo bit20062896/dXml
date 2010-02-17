@@ -1,7 +1,12 @@
-.highlight { 
+.highlight pre { 
 	background: #ddeeff; 
 	border:1px solid #cccccc;
 	padding:10px;
+}
+
+.linenos {
+	position:relative;
+	width:5em;
 }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
