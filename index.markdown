@@ -32,6 +32,15 @@ Some sample code
 DCXmlNode *node = [DCXmlNode createWithName:@"abc"];
 NSLog([node asPrettyXmlString]);
 {% endhighlight %}
+
+Some sample xml:
+
+{% highlight xml linenos %}
+<abc>
+    <def />
+</abc>
+{% endhighlight %}
+
  
 <h2>License</h2>
     
@@ -46,7 +55,7 @@ You can download the project source in either
 </p>
 <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
 by running:
-<pre>$ git clone git://github.com/drekka/dXml</pre>
+<pre class="console">$ git clone git://github.com/drekka/dXml</pre>
 </p>
       
 <div class="footer">
