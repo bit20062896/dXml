@@ -1,5 +1,5 @@
 ---
-layout: default
+layout:default
 ---
 
 This is a markdown file.
@@ -11,10 +11,6 @@ This is a markdown file.
 <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
 </div>
 	 
-<div id="document-index">
-<h2>Index</h2>
-<a href="xpath.html">XPath</a>
-</div>
       
 <h1><a href="http://github.com/drekka/dXml">dXml</a> 
 <span class="small">by <a href="http://github.com/drekka">drekka</a></span></h1>
