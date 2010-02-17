@@ -1,13 +1,18 @@
 .highlight pre { 
-	background: #ddeeff; 
+	background: #f8f8ff; 
 	border:1px solid #cccccc;
 	padding:10px;
 }
 
 .lineno {
-	position:relative;
-	width:5em;
+	display:inline-block;
+	width:2em;
+	color:#aaaaaa;
 }
+
+code.objc {
+}
+
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
