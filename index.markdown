@@ -26,6 +26,8 @@ SOAP messaging to/from web service providers, SOAP fault handling.
     
 <h2>Install</h2>
 
+Some sample code
+
 {% highlight objective-c linenos %}
 DCXmlNode *node = [DCXmlNode createWithName:@"abc"];
 NSLog([node asPrettyXmlString]);
