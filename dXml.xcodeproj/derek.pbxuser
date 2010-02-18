@@ -128,8 +128,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 288185769;
-			PBXWorkspaceStateSaveDate = 288185769;
+			PBXPerProjectTemplateStateSaveDate = 288188458;
+			PBXWorkspaceStateSaveDate = 288188458;
 		};
 		perUserProjectItems = {
 			650F6B3110C72B0C00AAABE7 = 650F6B3110C72B0C00AAABE7 /* PBXTextBookmark */;
@@ -237,8 +237,8 @@
 			65EC67E911101271007B3B3E = 65EC67E911101271007B3B3E /* PBXTextBookmark */;
 			65EC67FD111016CC007B3B3E = 65EC67FD111016CC007B3B3E /* PBXTextBookmark */;
 			65EEBEB2112D1841006FF783 = 65EEBEB2112D1841006FF783 /* PBXTextBookmark */;
-			65EEBEB3112D1841006FF783 = 65EEBEB3112D1841006FF783 /* PBXTextBookmark */;
-			65EEBFA6112D5DA0006FF783 = 65EEBFA6112D5DA0006FF783 /* PBXTextBookmark */;
+			65EEBFC2112D63CB006FF783 = 65EEBFC2112D63CB006FF783 /* PBXTextBookmark */;
+			65EEBFC3112D63CB006FF783 = 65EEBFC3112D63CB006FF783 /* PBXTextBookmark */;
 			65F7665610FEDB8300EAFCBF = 65F7665610FEDB8300EAFCBF /* PBXTextBookmark */;
 			65FC2D3A11159A9200738879 = 65FC2D3A11159A9200738879 /* PBXTextBookmark */;
 			65FC2DF61116ACCB00738879 = 65FC2DF61116ACCB00738879 /* PBXTextBookmark */;
@@ -775,9 +775,9 @@
 	};
 	654EE4AD10FB5CF60023F57D /* ChangeLog.markdown */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1022, 975}}";
-			sepNavSelRange = "{15, 0}";
-			sepNavVisRange = "{0, 2121}";
+			sepNavIntBoundsRect = "{{0, 0}, {963, 521}}";
+			sepNavSelRange = "{21, 0}";
+			sepNavVisRange = "{0, 2127}";
 			sepNavWindowFrame = "{{15, 124}, {1157, 1049}}";
 		};
 	};
@@ -2254,7 +2254,7 @@
 		vrLen = 2048;
 		vrLoc = 332;
 	};
-	65EEBEB3112D1841006FF783 /* PBXTextBookmark */ = {
+	65EEBFC2112D63CB006FF783 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 65EC684011104C71007B3B3E /* DCXPathFilter.h */;
 		name = "DCXPathFilter.h: 18";
@@ -2264,14 +2264,14 @@
 		vrLen = 895;
 		vrLoc = 0;
 	};
-	65EEBFA6112D5DA0006FF783 /* PBXTextBookmark */ = {
+	65EEBFC3112D63CB006FF783 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 65EC684011104C71007B3B3E /* DCXPathFilter.h */;
-		name = "DCXPathFilter.h: 18";
+		fRef = 654EE4AD10FB5CF60023F57D /* ChangeLog.markdown */;
+		name = "ChangeLog.markdown: 1";
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 21;
 		rType = 0;
-		vrLen = 895;
+		vrLen = 2127;
 		vrLoc = 0;
 	};
 	65F07E4F10D5E7AE0057AD6C /* DCDMNode.m */ = {
