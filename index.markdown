@@ -12,7 +12,7 @@ dXml is an iPhone static library providing xml parsing into document models, XPa
 
 It was written because I wanted to be able to talk to some SOAP based web services and found no support within the Apple SDK apart from the NSXMLParser class. 
 
-Currently it provides the following feats:
+Currently it provides the following features:
 
 * A document model for creating and manipulating xml structures.
 * Document model to xml NSString generation including pretty printing for logging purposes.
@@ -110,6 +110,8 @@ As this is a static library, adding it to your xcode project is quite simple. Th
 Thats all that needs to be done.
  
 # License
+
+dXml is provided under a BSD License as follows:
 
 Copyright (c) 2010, Derek Clarkson, dSoft
 All rights reserved.
