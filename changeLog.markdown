@@ -1,4 +1,4 @@
-# DXml v0.1.1 ( 2010)
+# DXml v0.1.1 (18 Feb 2010)
 
 * Added a basic xpath interpreter to the DCXmlNode.
 * Broke XPath and AsString methods out of DCXmlNode and into seperate categories to aid development and testing.

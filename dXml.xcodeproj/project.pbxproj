@@ -861,7 +861,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\necho Building dmg of project ...\n\nFILE_DIR=\"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"\nFINAL_DMG=\"$PROJECT_DIR/$CONFIGURATION/$PROJECT-$CURRENT_PROJECT_VERSION.dmg\"\n\nhdiutil create \"$FINAL_DMG\" -ov -srcdir $FILE_DIR -volname \"$PROJECT_NAME v$CURRENT_PROJECT_VERSION\" -attach\n\necho done.";
+			shellScript = "#!/bin/sh\n\necho Fixing docset name ...\nmv -v \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/docset \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/au.com.dSoft.dXml.docset\n\necho Moving unused directories ...\nmv -v \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/cxml $PROJECT_DIR/build/docs\n\necho Building dmg of project ...\n\nFILE_DIR=\"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"\nFINAL_DMG=\"$PROJECT_DIR/$CONFIGURATION/$PROJECT-$CURRENT_PROJECT_VERSION.dmg\"\n\nhdiutil create \"$FINAL_DMG\" -ov -srcdir $FILE_DIR -volname \"$PROJECT_NAME v$CURRENT_PROJECT_VERSION\" -attach\n\necho done.";
 		};
 /* End PBXShellScriptBuildPhase section */
 
