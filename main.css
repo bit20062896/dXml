@@ -12,14 +12,14 @@ body {
 	margin:30px 30px 60px 30px;
 }
 
-h1 {
+.title {
 	font-size: 3.8em;
 	color: #4e9af9;
-	margin-bottom: 3px; 
 }
 
-h1 .small { 
-	font-size: 0.4em; 
+h1 {
+	font-size: 2em;
+	color: #4e9af9;
 }
 
 h2 { 
@@ -47,22 +47,18 @@ img {
 	right:0px;
 }
 
-.description { 
-	font-size: 1.2em; 
-	margin-bottom: 30px; 
-	margin-top: 30px; 
-	font-style: italic;
-}
-
 #document-index {
-	margin:2em 0px 1em 1em;
+	margin:0em 0px 1em 1em;
 	clear:both;
 	float:right;
 	border:1px solid #cccccc;
-	padding:1em;
+	padding:0em 1em 0em 1em;
 }
 
 #indexList {
+	list-style-position:outside;
+	list-style-type:none;
+	padding-left:0px;
 }
 
 .indexListItem {
@@ -72,6 +68,27 @@ pre.console {
 	background: black; 
 	color: white; 
 	padding: 15px;
+	border:1px solid #cccccc;
+}
+
+.table {
+}
+
+.header {
+}
+
+.headerCell {
+	font-weight:bold;
+	padding:0em 1em 0em 1em;
+	border-bottom:1px solid #cccccc;
+}
+
+.row {
+}
+
+.cell {
+	vertical-align:top;
+	padding:0em 1em 0.75em 1em;
 }
 
 .footer { 
@@ -79,4 +96,9 @@ pre.console {
 	padding-top:30px; 
 	font-style: italic; 
 }
+
+.nowrap {
+	white-space:nowrap;
+}
+
 	

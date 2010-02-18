@@ -1,6 +1,24 @@
+.highlight pre span {
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
 .highlight pre { 
 	background: #f0f0ff; 
 	border:1px solid #cccccc;
+}
+
+/* used when displaying code inside a table of examples.
+	Remove top and bottom spaces so it looks better. */
+
+table.examples .highlight pre { 
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+code {
+	background: #f0f0ff; 
+	padding-left:0.5em 2px 0.5em 2px;
 }
 
 .lineno {
