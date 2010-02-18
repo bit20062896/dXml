@@ -187,7 +187,7 @@ I have added a variety of methods for finding and querying nodes. Note we will l
 	</tr>
 	<tr class="row">
 		<td class="cell nowrap">- (DCXmlNode *) xmlNodeWithName:(NSString *)aName;</td>
-		<td class="cell">From the node you call this method on, locates the @DCXmlNode@ with the passed name and returns it.</td>
+		<td class="cell">From the node you call this method on, locates the DCXmlNode with the passed name and returns it.</td>
 	</tr>
 	<tr class="row">
 		<td class="cell nowrap">- (DCDMNode *) nodeAtIndex:(int)aIndex;</td>
@@ -224,7 +224,7 @@ So this presented some opportunities for creating some getters and setters. Alth
 	</tr>
 	<tr class="row">
 		<td class="cell nowrap">- (NSString *) value;</td>
-		<td class="cell">Returns the current text value of the @DCXmlNode@. This means it looks at the sub nodes and returns the text value of the first DCTextNode. This is based on the assumption that the most likely use of this is when dealing with xml data structures where any given xml node will only have a single text value. Any other DCTextNode nodes are ignored as are any DCXmlNode nodes.</td>
+		<td class="cell">Returns the current text value of the DCXmlNode. This means it looks at the sub nodes and returns the text value of the first DCTextNode. This is based on the assumption that the most likely use of this is when dealing with xml data structures where any given xml node will only have a single text value. Any other DCTextNode nodes are ignored as are any DCXmlNode nodes.</td>
 	</tr>
 	<tr class="row">
 		<td class="cell nowrap">- (void) setValue:(NSString *)value;</td>
@@ -258,7 +258,7 @@ Here we have two namespace declarations being added. The first on the root eleme
 </soap:envelope>
 {% endhighlight %}
 
-Further to this is also the @defaultSchema@ property which can be set like this.
+Further to this is also the **defaultSchema** property which can be set like this.
 
 {% highlight objc linenos %}
 pre. DCXmlNode *element = [DCXmlNode createWithName:@"abc"];
@@ -271,3 +271,6 @@ Which produces:
 <abc xmlns="http://schema.com" />
 {% endhighlight %}
 
+# Other methods
+
+dXml has a range of other methods and properties which are available on the DCXmlNode class. Those listed here are the ones you are most likely to regularly use. Refer to the API documentation for details on the others.
