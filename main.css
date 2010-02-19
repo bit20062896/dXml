@@ -41,6 +41,11 @@ img {
 	border:none;
 }
 
+hr {
+	border-top:1px solid #cccccc;
+	border-bottom:none;
+}
+
 #forkMeLink {
 	position:absolute;
 	top:0px;
@@ -55,13 +60,13 @@ img {
 	padding:0em 1em 0em 1em;
 }
 
-#indexList {
-	list-style-position:outside;
-	list-style-type:none;
-	padding-left:0px;
+#document-index a {
+	display:block;
+	margin: 2px 0px 2px 0px;
 }
 
-.indexListItem {
+#document-index .downloadLink {
+	text-align:center;
 }
 
 pre.console { 

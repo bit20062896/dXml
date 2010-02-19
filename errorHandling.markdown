@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+# Error handling
 	  
 Error handling in Cocoa and iPhone sdk is not that straight forward. You can throw exceptions (as most Java programmers would immediately think to do. I know I did!) but on further reading there is a considerable performance hit in doing so, especially for errors you are expected. In Java we have two types of exceptions, checked and runtime. Checked are defined on method signatures and the compiler will not compiled code that doesn't explicitly deal with them. Runtime are exceptions that are unexpected. Out of memory for example.
 

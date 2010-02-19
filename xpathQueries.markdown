@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+# XPath queries
 	  
 XPath queries are the latest addition to dXml. First off this is not a complete implementation of XPath. I've taken some of the core xpath functionality as defined at [WC3School](http://www.w3schools.com/XPath/xpath_syntax.asp) and implemented it so that you can use it to drill down through a document when you need access to a specific node and don't want to use the API get there. Of course, under the covers the XPath implementation is using the API so all thats really happening is that a parser converts your XPath into a set of API calls to do the work. This means that XPaths can be developer friendly, but in performance and memory constrained situations, may not be as efficient.
 

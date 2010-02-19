@@ -2,6 +2,8 @@
 layout: default
 ---
 	  
+# Messaging web services
+
 Sending messages to web services is simpler because we can use **DCSoapWebServiceConnection** instead of DCUrlConnection. DCSoapWebServiceConnection is actually an extension of DCUrlConnection and therefore gets all of it's functionality. It then adds to it with automatic SOAP envelope handling, SOAP fault handling, SOAP security (ws-security) etc.
 
 **Note: The SOAP security (was-security) is still in it's infancy in this class at this point. It only handles basic auto with userids and passwords. I'm planning to add encryption soon. **

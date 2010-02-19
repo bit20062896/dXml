@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+# Creating documents
 	  
 Creating documents using dXmls document model is quite simply. Note though, this is not a implementation of the [W3CSchool's DOM](:http://www.w3schools.com/dom/default.asp) although there are some similarities. It has originated by simply trying to think of how a developer might like to express himself in code. Hopefully you like the way it works :-) 
 

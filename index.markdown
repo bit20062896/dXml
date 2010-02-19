@@ -31,7 +31,7 @@ To give you an idea of how simple dXml makes working with SOAP, here is a quick 
 1. Check the reply for errors.
 1. Pretty print the response SOAP message to the log.
 
-You can cut and past this into a file and run it using GH-unit.
+You can cut and past this into a file and run it using [GH-Unit](http://github.com/gabriel/gh-unit).
 
 {% highlight objc linenos %}
 #import "GHUnit.h"
@@ -96,6 +96,8 @@ GH-Unit is a JUnit style unit testing framework for iPhone applications. The adv
 [OCMock](http://www.mulle-kybernetik.com/software/OCMock)
 
 OCMock is a mocking framework very much like the java [EasyMock](http://easymock.org/) framework. It's a very useful tool for "simulating" instances of classes when testing.
+
+Please refer to the [Building dXml](building.html) page for details on building dXml.
     
 #  Installation
 

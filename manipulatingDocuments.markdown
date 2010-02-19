@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+# Manipulating documents
 	  
 Lets go into some details about using the API to create and change document models. dXml's core document model class is **DCXmlNode**. 90% of the work you will do with dXml is done using DCXmlNode instances. 
 

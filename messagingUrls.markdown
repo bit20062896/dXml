@@ -2,6 +2,8 @@
 layout: default
 ---
 	  
+# Messaging URLs
+
 The most simple way to send a message to a Url and retrieve a responses is with the **DCUrlConnection** class. It provides the ability to handle self signed certificates from servers (which is great for developers), userids and passwords, headers and posting requests to servers and returning the response as a NSData object. For SOAP messaging refer to the section on [SOAP messaging](messagingWebServices.html) and the **DCSoapWebServiceConnection** class which provides more facilities.
 
 First here's some sample code which uses this class:
