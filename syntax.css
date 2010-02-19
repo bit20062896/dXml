@@ -6,7 +6,7 @@
 .highlight pre { 
 	background: #f0f0ff; 
 	border:1px solid #cccccc;
-	clear:both;
+	display:inline-block;
 }
 
 /* used when displaying code inside a table of examples.
