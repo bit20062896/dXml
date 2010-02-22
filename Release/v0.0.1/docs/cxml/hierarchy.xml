@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project generator="appledoc v1.0.5">
+    <object kind="class">
+        <name>NSObject</name>
+        <children>
+            <object kind="class" id="Classes/DMNode$EXTENSION">
+                <name>DMNode</name>
+                <children>
+                    <object kind="class" id="Classes/TextNode$EXTENSION">
+                        <name>TextNode</name>
+                    </object>
+                    <object kind="class" id="Classes/XmlNode$EXTENSION">
+                        <name>XmlNode</name>
+                        <children>
+                            <object kind="class" id="Classes/XmlDocument$EXTENSION">
+                                <name>XmlDocument</name>
+                            </object>
+                        </children>
+                    </object>
+                </children>
+            </object>
+            <object kind="class" id="Classes/UrlConnection$EXTENSION">
+                <name>UrlConnection</name>
+                <children>
+                    <object kind="class" id="Classes/SoapWebServiceConnection$EXTENSION">
+                        <name>SoapWebServiceConnection</name>
+                    </object>
+                </children>
+            </object>
+            <object kind="class" id="Classes/UrlConnectionException$EXTENSION">
+                <name>UrlConnectionException</name>
+            </object>
+            <object kind="class" id="Classes/WebServiceException$EXTENSION">
+                <name>WebServiceException</name>
+            </object>
+            <object kind="class" id="Classes/WebServiceResponse$EXTENSION">
+                <name>WebServiceResponse</name>
+                <children>
+                    <object kind="class" id="Classes/WebServiceFault$EXTENSION">
+                        <name>WebServiceFault</name>
+                    </object>
+                </children>
+            </object>
+            <object kind="class" id="Classes/XmlAttribute$EXTENSION">
+                <name>XmlAttribute</name>
+            </object>
+            <object kind="class" id="Classes/XmlException$EXTENSION">
+                <name>XmlException</name>
+            </object>
+            <object kind="class" id="Classes/XmlNamespace$EXTENSION">
+                <name>XmlNamespace</name>
+            </object>
+            <object kind="class" id="Classes/XmlParser$EXTENSION">
+                <name>XmlParser</name>
+            </object>
+            <object kind="class" id="Classes/XmlSubtreeParserDelegate$EXTENSION">
+                <name>XmlSubtreeParserDelegate</name>
+                <children>
+                    <object kind="class" id="Classes/XmlDocumentParserDelegate$EXTENSION">
+                        <name>XmlDocumentParserDelegate</name>
+                    </object>
+                </children>
+            </object>
+        </children>
+    </object>
+</project>

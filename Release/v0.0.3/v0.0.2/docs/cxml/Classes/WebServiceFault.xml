@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>WebServiceFault</name>
+    <file>WebServiceFault.h</file>
+    <base id="WebServiceResponse$EXTENSION">WebServiceResponse</base>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>Returned from a call to a web service when a soap fault occurs at the server end. </para>
+        </brief>
+        <details>
+            <para></para>
+        </details>
+    </description>
+    <seeAlso>
+        <item>
+            <ref id="SoapWebServiceConnection$EXTENSION">SoapWebServiceConnection</ref>
+        </item>
+    </seeAlso>
+    <sections>
+        <section>
+            <name>Other</name>
+            <member kind="class-method">
+                <name>createWithFaultCode::</name>
+                <type>WebServiceFault *</type>
+                <prototype>+ (WebServiceFault *)createWithFaultCode:(NSString *)<parameter>message</parameter>
+                     :(NSString *)<parameter>aMessage</parameter>
+                     </prototype>
+                <file>WebServiceFault.h</file>
+                <description>
+                    <brief>
+                        <para>Factory for internal use that creates a web service fault with a passed code and message. </para>
+                    </brief>
+                    <details>
+                        <para>generally this is used by internal classes which have caught an exception. We do this as returning faults is more efficient that throwing exceptions. </para>
+                    </details>
+                </description>
+                <selector>+ createWithFaultCode::</selector>
+            </member>
+        </section>
+        <section>
+            <name>Other</name>
+            <member kind="instance-method">
+                <name>faultCode</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)faultCode</prototype>
+                <file>WebServiceFault.h</file>
+                <description>
+                    <brief>
+                        <para>Gives direct access to the value of the soap fault code. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- faultCode</selector>
+            </member>
+            <member kind="instance-method">
+                <name>message</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)message</prototype>
+                <file>WebServiceFault.h</file>
+                <description>
+                    <brief>
+                        <para>Gives direct access to the value of the soap fault message. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- message</selector>
+            </member>
+            <member kind="instance-method">
+                <name>javaException</name>
+                <type>XmlNode *</type>
+                <prototype>- (XmlNode *)javaException</prototype>
+                <file>WebServiceFault.h</file>
+                <description>
+                    <brief>
+                        <para>If present, will return the <ref id="XmlNode$EXTENSION">XmlNode</ref>
+                             containing a server generated Java exception. </para>
+                    </brief>
+                    <details>
+                        <para>If this is not present this will return a nil value. </para>
+                    </details>
+                </description>
+                <selector>- javaException</selector>
+            </member>
+        </section>
+    </sections>
+</object>

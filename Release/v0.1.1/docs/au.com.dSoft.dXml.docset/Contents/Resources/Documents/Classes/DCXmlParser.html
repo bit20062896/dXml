@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DCXmlParser class reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>DCXmlParser class reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Inherits from</label></td>
+        <td>NSObject</td>
+      </tr>
+      <tr>
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>DCXmlParser.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p><a href="">DCXmlParser</a> is the raw parser for detailing with xml streams. </p>
+<p>In addition to the default NSURL and NSData that the apis support, this class can also deal with xml inside NSStrings which makes testing and other options easy. Once the data has been parsed, it can be returned on one of two ways, either as a <a href="DCXmlDocument.html">DCXmlDocument</a> or as a <a href="DCXmlNode.html">DCXmlNode</a>. The parserSubTree: method is exposed but ideally designed for parsing sections of a xml tree rather than a whole document. Use parse: for that.</p>
+<p>Here's an example of using this class. <div class="example"><code>&nbsp;NSString&nbsp;*xml&nbsp;=&nbsp;@"lt;?xml&nbsp;version=\"1.0\"&nbsp;encoding=\"UTF-8\"&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"&lt;soap:Envelope&nbsp;xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"&lt;soap:Body&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"&lt;dhc:balance&nbsp;xmlns:dhc=\""&nbsp;MODEL_SCHEMA&nbsp;"\"&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"&lt;forAccountNumber&gt;1234&lt;/forAccountNumber&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"&lt;/dhc:balance&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"\n\t&lt;/soap:Body&gt;"</code><code>&nbsp;&nbsp;&nbsp;@"\n&lt;/soap:Envelope&gt;";</code><code>&nbsp;&nbsp;</code><code>&nbsp;<a href="">DCXmlParser</a>&nbsp;*&nbsp;parser&nbsp;=&nbsp;[<a href="">DCXmlParser</a>&nbsp;<a href="#parserWithXml">parserWithXml</a>:&nbsp;xml];</code><code>&nbsp;<a href="#NSError">NSError</a>&nbsp;*error&nbsp;=&nbsp;nil;</code><code>&nbsp;<a href="DCXmlDocument.html">DCXmlDocument</a>&nbsp;*doc&nbsp;=&nbsp;[parser&nbsp;<a href="#parse">parse</a>:&error];</code><code>&nbsp;if&nbsp;(error&nbsp;!=&nbsp;nil)&nbsp;{</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deal&nbsp;with&nbsp;the&nbsp;error.</code><code>&nbsp;}</code><code>&nbsp;&nbsp;</code><code>&nbsp;//&nbsp;Otherwise&nbsp;process&nbsp;the&nbsp;results.</code></div>
+ This class requires you to instantiate it with the data and then call parse: or parseSubtree: as a seperate command so that in the future various settings can be added to the class. Then the sequence would become init - setup - parse. </p>
+      <h2>Tasks</h2>
+      <h3>Constructors and factory methods</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#parserWithXml:>+ parserWithXml:</a></code>
+            <span class="tooltip">Creates an autorelease instance of DCXmlParser ready to read the supplied data. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#parserWithData:>+ parserWithData:</a></code>
+            <span class="tooltip">Creates an autorelease instance of DCXmlParser ready to read the supplied data. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#parserWithUrl:>+ parserWithUrl:</a></code>
+            <span class="tooltip">Creates an autorelease instance of DCXmlParser ready to read the supplied data. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithXml:>- initWithXml:</a></code>
+            <span class="tooltip">Default constructor which takes xml stored in a string. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithData:>- initWithData:</a></code>
+            <span class="tooltip">Default constructor which takes xml stored in a NSData object. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithUrl:>- initWithUrl:</a></code>
+            <span class="tooltip">Default constructor which reads an xml stream from a NSURL. </span>          </span>
+        </li>
+      </ul>
+      <h3>Parsing</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#parse:>- parse:</a></code>
+            <span class="tooltip">Initiates the parsing of the supplied source and returns a DCXmlDocument containing the data graph of the results. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#parseSubtree:>- parseSubtree:</a></code>
+            <span class="tooltip">Initiates the parsing of the supplied source and returns a DCXmlNode containing the data graph of the results. </span>          </span>
+        </li>
+      </ul>
+      <h2>Class methods</h2>
+      <h3><a name="parserWithXml:"></a>parserWithXml:</h3>
+<p>Creates an autorelease instance of <a href="">DCXmlParser</a> ready to read the supplied data. </p>
+      <code class="methodDeclaration">+ (DCXmlParser *)parserWithXml:(NSString *)        <span class="parameter">xml</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>xml</dt>
+        <dd><p>the data to read. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="parserWithData:"></a>parserWithData:</h3>
+<p>Creates an autorelease instance of <a href="">DCXmlParser</a> ready to read the supplied data. </p>
+      <code class="methodDeclaration">+ (DCXmlParser *)parserWithData:(NSData *)        <span class="parameter">data</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>data</dt>
+        <dd><p>the data to read. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="parserWithUrl:"></a>parserWithUrl:</h3>
+<p>Creates an autorelease instance of <a href="">DCXmlParser</a> ready to read the supplied data. </p>
+      <code class="methodDeclaration">+ (DCXmlParser *)parserWithUrl:(NSURL *)        <span class="parameter">url</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>url</dt>
+        <dd><p>the url that will be called to access the data. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h2>Instance methods</h2>
+      <h3><a name="initWithXml:"></a>initWithXml:</h3>
+<p>Default constructor which takes xml stored in a string. </p>
+      <code class="methodDeclaration">- (DCXmlParser *)initWithXml:(NSString *)        <span class="parameter">xml</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="initWithData:"></a>initWithData:</h3>
+<p>Default constructor which takes xml stored in a NSData object. </p>
+      <code class="methodDeclaration">- (DCXmlParser *)initWithData:(NSData *)        <span class="parameter">data</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="initWithUrl:"></a>initWithUrl:</h3>
+<p>Default constructor which reads an xml stream from a NSURL. </p>
+      <code class="methodDeclaration">- (DCXmlParser *)initWithUrl:(NSURL *)        <span class="parameter">url</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="parse:"></a>parse:</h3>
+<p>Initiates the parsing of the supplied source and returns a <a href="DCXmlDocument.html">DCXmlDocument</a> containing the data graph of the results. </p>
+      <code class="methodDeclaration">- (DCXmlDocument *)parse:(NSError **)        <span class="parameter">aErrorVar</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>aErrorVar</dt>
+        <dd><p>Reference to an error variable where the parser can store an error that occurs. Must be passed as `&aErrorVar`. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+      <h3><a name="parseSubtree:"></a>parseSubtree:</h3>
+<p>Initiates the parsing of the supplied source and returns a <a href="DCXmlNode.html">DCXmlNode</a> containing the data graph of the results. </p>
+      <code class="methodDeclaration">- (DCXmlNode *)parseSubtree:(NSError **)        <span class="parameter">aErrorVar</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>aErrorVar</dt>
+        <dd><p>Reference to an error variable where the parser can store an error that occurs. Must be passed as `&aErrorVar`. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>DCXmlParser.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-02-18)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

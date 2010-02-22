@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>NoSecurity</name>
+    <file>NoSecurity.h</file>
+    <base>NSObject</base>
+    <protocol id="../Protocols/SecurityModel$EXTENSION">SecurityModel</protocol>
+    <description>
+        <brief>
+            <para>For the conveniance of calling code, this is a security handler that does nothing. </para>
+        </brief>
+        <details>
+            <para></para>
+        </details>
+    </description>
+    <seeAlso>
+        <item>
+            <ref id="Security$EXTENSION">Security</ref>
+        </item>
+    </seeAlso>
+    <sections></sections>
+</object>

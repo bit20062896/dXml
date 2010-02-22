@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>DCXmlSubtreeParserDelegate</name>
+    <file>DCXmlSubtreeParserDelegate.h</file>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>Main class for parsing xml streams. </para>
+        </brief>
+        <details>
+            <para>This class is capable of receiving and processing the incoming xml events and assembling from them a complete DM data graph. Internally it makes use of an instance of NSXMLParser to do the grunt work. Here is an example of using this class to process a string containing xml into the document model: <example>
+                    <code>&amp;nbsp;NSString&amp;nbsp;*xml&amp;nbsp;=&amp;nbsp;@"&amp;lt;xml&amp;nbsp;...&amp;gt;";</code>
+                    <code>&amp;nbsp;<ref id="DCXmlParser$EXTENSION">DCXmlParser</ref>
+                        &amp;nbsp;*parser&amp;nbsp;=&amp;nbsp;[<ref id="DCXmlParser$EXTENSION">DCXmlParser</ref>
+                        &amp;nbsp;<ref id="#parserWithXml">parserWithXml</ref>
+                        :&amp;nbsp;xml];</code>
+                    <code>&amp;nbsp;<ref id="DCXmlDocument$EXTENSION">DCXmlDocument</ref>
+                        &amp;nbsp;*xmlDoc&amp;nbsp;=&amp;nbsp;[parser&amp;nbsp;parse];</code>
+                </example>
+            </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Properties</name>
+            <member kind="property">
+                <name>rootNode</name>
+                <type>DCXmlNode *</type>
+                <prototype>@property DCXmlNode *rootNode</prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>Returns the root node of the result document mode. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>rootNode</selector>
+            </member>
+            <member kind="property">
+                <name>error</name>
+                <type>NSError *</type>
+                <prototype>@property NSError *error</prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>If an error is encountered processing the xml, it is stored in this variable until the parser can retreive it. </para>
+                    </brief>
+                    <details>
+                        <para>If an error is encountered, it will be stored in this variable and the xml processing will be stopped. </para>
+                    </details>
+                </description>
+                <selector>error</selector>
+            </member>
+        </section>
+        <section>
+            <name>Subnodes</name>
+            <member kind="instance-method">
+                <name>createNodeWithName:</name>
+                <type>void</type>
+                <prototype>- (void)createNodeWithName:(NSString *)<parameter>aName</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>Called during the construction of the DM each time a new node is needed. </para>
+                    </brief>
+                    <details>
+                        <para>The <ref id="DCXmlDocumentParserDelegate$EXTENSION">DCXmlDocumentParserDelegate</ref>
+                             class overrides this method to create a <ref id="DCXmlDocument$EXTENSION">DCXmlDocument</ref>
+                             for the root node. </para>
+                    </details>
+                </description>
+                <seeAlso>
+                    <item>
+                        <ref id="DCXmlDocumentParserDelegate$EXTENSION">DCXmlDocumentParserDelegate</ref>
+                    </item>
+                </seeAlso>
+                <selector>- createNodeWithName:</selector>
+            </member>
+        </section>
+        <section>
+            <name>NSXMLParser delegate methods</name>
+            <member kind="instance-method">
+                <name>parser:didStartElement:namespaceURI:qualifiedName:attributes:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didStartElement:(NSString *)<parameter>elementName</parameter>
+                     namespaceURI:(NSString *)<parameter>namespaceURI</parameter>
+                     qualifiedName:(NSString *)<parameter>qualifiedName</parameter>
+                     attributes:(NSDictionary *)<parameter>attributeDict</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didStartElement:namespaceURI:qualifiedName:attributes:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:didEndElement:namespaceURI:qualifiedName:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didEndElement:(NSString *)<parameter>elementName</parameter>
+                     namespaceURI:(NSString *)<parameter>namespaceURI</parameter>
+                     qualifiedName:(NSString *)<parameter>qName</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didEndElement:namespaceURI:qualifiedName:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:didStartMappingPrefix:toURI:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didStartMappingPrefix:(NSString *)<parameter>prefix</parameter>
+                     toURI:(NSString *)<parameter>namespaceURI</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didStartMappingPrefix:toURI:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:foundCharacters:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     foundCharacters:(NSString *)<parameter>string</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:foundCharacters:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:parseErrorOccurred:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     parseErrorOccurred:(NSError *)<parameter>parseError</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:parseErrorOccurred:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:validationErrorOccurred:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     validationErrorOccurred:(NSError *)<parameter>validationError</parameter>
+                     </prototype>
+                <file>DCXmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para></para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:validationErrorOccurred:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

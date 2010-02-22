@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DCXmlNamespace class reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>DCXmlNamespace class reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Inherits from</label></td>
+        <td>NSObject</td>
+      </tr>
+      <tr>
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>DCXmlNamespace.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>Represents the prefix and url of a namespace associated with an <a href="DCXmlNode.html">DCXmlNode</a>. </p>
+<p>For example in <div class="example"><pre><code>&nbsp;&lt;abc&nbsp;xmlns:<b>def</b>="<b>http://ghi</b>"&nbsp;/&gt;</code></pre></div>
+ "def" is the prefix, and "http://ghi" is the url of the namespace. Generally speak urls for namespaces always take the form of a http:// url. </p>
+      <h2>Tasks</h2>
+      <h3>Properties</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#prefix>prefix</a></code>
+            <span class="specialType">property</span>
+            <span class="tooltip">The prefix of the namespace. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#url>url</a></code>
+            <span class="specialType">property</span>
+            <span class="tooltip">The url of the namespace. </span>          </span>
+        </li>
+      </ul>
+      <h3>Constructors</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithUrl:prefix:>- initWithUrl:prefix:</a></code>
+            <span class="tooltip">Default constructor. </span>          </span>
+        </li>
+      </ul>
+      <h3>Serialisation</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#appendToXmlString:>- appendToXmlString:</a></code>
+            <span class="tooltip">Used during serialisation to a string. </span>          </span>
+        </li>
+      </ul>
+      <h2>Instance methods</h2>
+      <h3><a name="initWithUrl:prefix:"></a>initWithUrl:prefix:</h3>
+<p>Default constructor. </p>
+      <code class="methodDeclaration">- (DCXmlNamespace *)initWithUrl:(NSString *)        <span class="parameter">aUrl</span>
+ prefix:(NSString *)        <span class="parameter">aPrefix</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCXmlNamespace.h</code>
+      <h3><a name="appendToXmlString:"></a>appendToXmlString:</h3>
+<p>Used during serialisation to a string. </p>
+      <code class="methodDeclaration">- (void)appendToXmlString:(NSMutableString *)        <span class="parameter">xml</span>
+</code>
+      <h5>Discussion</h5>
+<p>This will append the string with the namespace as expected for a xml node. For example <div class="example"><pre><code>&nbsp;&lt;xyz:abc&nbsp;<b>xmlns:xyz="http://url.com/xyz"</b>&nbsp;/&gt;</code></pre></div>
+</p>
+      <h5>Declared in</h5>
+      <code>DCXmlNamespace.h</code>
+      <h2>Properties</h2>
+      <h3><a name="prefix"></a>prefix</h3>
+<p>The prefix of the namespace. </p>
+      <code class="methodDeclaration">@property NSString *prefix</code>
+      <h5>Declared in</h5>
+      <code>DCXmlNamespace.h</code>
+      <h3><a name="url"></a>url</h3>
+<p>The url of the namespace. </p>
+      <code class="methodDeclaration">@property NSString *url</code>
+      <h5>Declared in</h5>
+      <code>DCXmlNamespace.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-01-21)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

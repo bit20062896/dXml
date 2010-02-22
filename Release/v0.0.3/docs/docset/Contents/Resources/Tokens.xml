@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+    <File path="Classes/DMNode.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/DMNode</TokenIdentifier>
+            <DeclaredIn>DMNode.h</DeclaredIn>
+            <Abstract>The abstract parent of all DM node classes. This class should never be used directly because it merely provides some common code for the implementation classes. Instead make use of XmlNode and TextNode. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/DMNode/parentNode</TokenIdentifier>
+            <Anchor>parentNode</Anchor>
+            <DeclaredIn>DMNode.h</DeclaredIn>
+            <Declaration>@property XmlNode *parentNode</Declaration>
+            <Abstract>Used to locate the parent XmlNode in the DM tree. Note that this is a weak reference (not retained). This avoids memory leaks caused by circular references between parent and child nodes in the tree. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/DMNode/newLineAndIndent:prettyPrint:indentDepth:</TokenIdentifier>
+            <Anchor>newLineAndIndent:prettyPrint:indentDepth:</Anchor>
+            <DeclaredIn>DMNode.h</DeclaredIn>
+            <Declaration>- (void)newLineAndIndent:(NSMutableString *)xml prettyPrint:(bool)prettyPrint indentDepth:(int)indentDepth </Declaration>
+            <Abstract>Internal method used during pretty printing for adding tabs and new lines. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/DMNode/appendToXmlString:prettyPrint:indentDepth:</TokenIdentifier>
+            <Anchor>appendToXmlString:prettyPrint:indentDepth:</Anchor>
+            <DeclaredIn>DMNode.h</DeclaredIn>
+            <Declaration>- (void)appendToXmlString:(NSMutableString *)xml prettyPrint:(bool)prettyPrint indentDepth:(int)indentDepth </Declaration>
+            <Abstract>Internal method used to serialise the DM out to a string. THis method does nothing by default and should be overridden in derived classes to implement the necessary printing of values. </Abstract>
+        </Token>
+    </File>
+    <File path="Categories/UrlConnection(NSURLConnectionDelegate).html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cat/UrlConnection(NSURLConnectionDelegate)</TokenIdentifier>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Abstract>This category adds further functionality to a UrlConnection. The main purpose is to break the code base for UrlConnection up into managable units. In this case we have a collection of delegate methods from NSURLConnection which handle the responses from a url.There is not a lot of code here. Most of it is around two things: connection:didReceiveData: which is used to assemble the text contained within an xml tag. And connection:canAuthenticateAgainstProtectionSpace: which handles certificates and ssl security. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:willSendRequest:redirectResponse:</TokenIdentifier>
+            <Anchor>connection:willSendRequest:redirectResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:canAuthenticateAgainstProtectionSpace:</TokenIdentifier>
+            <Anchor>connection:canAuthenticateAgainstProtectionSpace:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:needNewBodyStream:</TokenIdentifier>
+            <Anchor>connection:needNewBodyStream:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didReceiveAuthenticationChallenge:</TokenIdentifier>
+            <Anchor>connection:didReceiveAuthenticationChallenge:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didCancelAuthenticationChallenge:</TokenIdentifier>
+            <Anchor>connection:didCancelAuthenticationChallenge:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connectionShouldUseCredentialStorage:</TokenIdentifier>
+            <Anchor>connectionShouldUseCredentialStorage:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didReceiveResponse:</TokenIdentifier>
+            <Anchor>connection:didReceiveResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didReceiveData:</TokenIdentifier>
+            <Anchor>connection:didReceiveData:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:</TokenIdentifier>
+            <Anchor>connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connectionDidFinishLoading:</TokenIdentifier>
+            <Anchor>connectionDidFinishLoading:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connectionDidFinishLoading:(NSURLConnection *)connection </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:didFailWithError:</TokenIdentifier>
+            <Anchor>connection:didFailWithError:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/UrlConnection(NSURLConnectionDelegate)/connection:willCacheResponse:</TokenIdentifier>
+            <Anchor>connection:willCacheResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse </Declaration>
+            <Abstract></Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlNamespace.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlNamespace</TokenIdentifier>
+            <DeclaredIn>XmlNamespace.h</DeclaredIn>
+            <Abstract>Represents the prefix and url of a namepsace associated with an XmlNode. For example in &amp;nbsp;&amp;lt;abc&amp;nbsp;xmlns:&lt;b>def&lt;/b>="&lt;b>http://ghi&lt;/b>"&amp;nbsp;/&amp;gt; "def" is the prefix, and "http://ghi" is the url of the namespace. Generally speak urls for namespaces always take the form of a http:// url. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNamespace/prefix</TokenIdentifier>
+            <Anchor>prefix</Anchor>
+            <DeclaredIn>XmlNamespace.h</DeclaredIn>
+            <Declaration>@property NSString *prefix</Declaration>
+            <Abstract>The prefix of the namespace. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNamespace/url</TokenIdentifier>
+            <Anchor>url</Anchor>
+            <DeclaredIn>XmlNamespace.h</DeclaredIn>
+            <Declaration>@property NSString *url</Declaration>
+            <Abstract>The url of the namespace. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNamespace/initWithUrl:prefix:</TokenIdentifier>
+            <Anchor>initWithUrl:prefix:</Anchor>
+            <DeclaredIn>XmlNamespace.h</DeclaredIn>
+            <Declaration>- (XmlNamespace *)initWithUrl:(NSString *)aUrl prefix:(NSString *)aPrefix </Declaration>
+            <Abstract>Default constructor. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNamespace/appendToXmlString:</TokenIdentifier>
+            <Anchor>appendToXmlString:</Anchor>
+            <DeclaredIn>XmlNamespace.h</DeclaredIn>
+            <Declaration>- (void)appendToXmlString:(NSMutableString *)xml </Declaration>
+            <Abstract>Used during serialisation to a string. This will append the string with the namespace as expected for a xml node. For example &amp;nbsp;&amp;lt;xyz:abc&amp;nbsp;&lt;b>xmlns:xyz="http://url.com/xyz"&lt;/b>&amp;nbsp;/&amp;gt;&amp;nbsp;</Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlSubtreeParserDelegate.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlSubtreeParserDelegate</TokenIdentifier>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Abstract>Main class for parsing xml streams. This class is capable of receiving and processing the incoming xml events and assembling from them a complete DM data graph. Internally it makes use of an instance of NSXMLParser to do the grunt work. Here is an example of using this class to process a string containing xml into the document model: &amp;nbsp;NSString&amp;nbsp;*xml&amp;nbsp;=&amp;nbsp;@"&amp;lt;xml&amp;nbsp;...&amp;gt;";&amp;nbsp;XmlParser&amp;nbsp;*parser&amp;nbsp;=&amp;nbsp;[XmlParser&amp;nbsp;parserWithXml:&amp;nbsp;xml];&amp;nbsp;XmlDocument&amp;nbsp;*xmlDoc&amp;nbsp;=&amp;nbsp;[parser&amp;nbsp;parse];</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/rootNode</TokenIdentifier>
+            <Anchor>rootNode</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>@property XmlNode *rootNode</Declaration>
+            <Abstract>Returns the root node of the result document mode. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/error</TokenIdentifier>
+            <Anchor>error</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>@property NSError *error</Declaration>
+            <Abstract>If an error is encountered processing the xml, it is stored in this variable until the parser can retreive it. If an error is encountered, it will be stored in this variable and the xml processing will be stopped. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/createNodeWithName:</TokenIdentifier>
+            <Anchor>createNodeWithName:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)createNodeWithName:(NSString *)aName </Declaration>
+            <Abstract>Called during the construction of the DM each time a new node is needed. The XmlDocumentParserDelegate class overrides this method to create a XmlDocument for the root node. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:didStartElement:namespaceURI:qualifiedName:attributes:</TokenIdentifier>
+            <Anchor>parser:didStartElement:namespaceURI:qualifiedName:attributes:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:didEndElement:namespaceURI:qualifiedName:</TokenIdentifier>
+            <Anchor>parser:didEndElement:namespaceURI:qualifiedName:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:didStartMappingPrefix:toURI:</TokenIdentifier>
+            <Anchor>parser:didStartMappingPrefix:toURI:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser didStartMappingPrefix:(NSString *)prefix toURI:(NSString *)namespaceURI </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:foundCharacters:</TokenIdentifier>
+            <Anchor>parser:foundCharacters:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:parseErrorOccurred:</TokenIdentifier>
+            <Anchor>parser:parseErrorOccurred:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError </Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlSubtreeParserDelegate/parser:validationErrorOccurred:</TokenIdentifier>
+            <Anchor>parser:validationErrorOccurred:</Anchor>
+            <DeclaredIn>XmlSubtreeParserDelegate.h</DeclaredIn>
+            <Declaration>- (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError </Declaration>
+            <Abstract></Abstract>
+        </Token>
+    </File>
+    <File path="Classes/UrlConnection.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/UrlConnection</TokenIdentifier>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.m</DeclaredIn>
+            <Abstract>This is the driver class for communicating with a url. It's basic job is to send and receive data from the server and to manage security. Here is a basic example of using this class: &amp;nbsp;NSString&amp;nbsp;*request&amp;nbsp;=&amp;nbsp;@"&amp;lt;?xml&amp;nbsp;version=\"1.0\"&amp;nbsp;encoding=\"UTF-8\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Envelope&amp;nbsp;xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Body&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;dhc:balance&amp;nbsp;xmlns:dhc=\""&amp;nbsp;MODEL_SCHEMA&amp;nbsp;"\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;forAccountNumber&amp;gt;1234&amp;lt;/forAccountNumber&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;/dhc:balance&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n\t&amp;lt;/soap:Body&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n&amp;lt;/soap:Envelope&amp;gt;";&amp;nbsp;UrlConnection&amp;nbsp;*connection&amp;nbsp;=&amp;nbsp;[UrlConnection&amp;nbsp;createWithUrl:&amp;nbsp;BANKING];&amp;nbsp;[connection&amp;nbsp;setHeaderValue:&amp;nbsp;BALANCE_ACTION&amp;nbsp;forKey:&amp;nbsp;@"SOAPAction"];&amp;nbsp;NSError&amp;nbsp;*error&amp;nbsp;=&amp;nbsp;nil;&amp;nbsp;NSData&amp;nbsp;*data&amp;nbsp;=&amp;nbsp;[connection&amp;nbsp;post:&amp;nbsp;request&amp;nbsp;errorVar:&amp;error];&amp;nbsp;if&amp;nbsp;(error&amp;nbsp;!=&amp;nbsp;nil)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;Deal&amp;nbsp;with&amp;nbsp;the&amp;nbsp;error.&amp;nbsp;}&amp;nbsp;&amp;nbsp&amp;nbsp;&amp;nbsp;//&amp;nbsp;Otherwise&amp;nbsp;process&amp;nbsp;the&amp;nbsp;results.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/serverUrl</TokenIdentifier>
+            <Anchor>serverUrl</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>@property NSString *serverUrl</Declaration>
+            <Abstract>This is the url that refers to the server. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/allowSelfSignedCertificates</TokenIdentifier>
+            <Anchor>allowSelfSignedCertificates</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>@property BOOL allowSelfSignedCertificates</Declaration>
+            <Abstract>If set to true, the UrlConnection will accept self signed cerificates from the server. This is most useful when developing code as the server can be on the developer's machine. This setting allows the developer to work without having to obtain formal certifcates. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/storeCredentials</TokenIdentifier>
+            <Anchor>storeCredentials</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>@property BOOL storeCredentials</Declaration>
+            <Abstract>If set to true, credentials are stored and reused. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/initWithUrl:</TokenIdentifier>
+            <Anchor>initWithUrl:</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>- (UrlConnection *)initWithUrl:(NSString *)aUrl</Declaration>
+            <Abstract>Default constructor. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/createWithUrl:</TokenIdentifier>
+            <Anchor>createWithUrl:</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>+ (UrlConnection *)createWithUrl:(NSString *)aUrl</Declaration>
+            <Abstract>Factory method which generates a autorelease instance. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/post:errorVar:</TokenIdentifier>
+            <Anchor>post:errorVar:</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>- (NSData *)post:(NSString *)bodyContent errorVar:(NSError **)aErrorVar</Declaration>
+            <Abstract>Call this to post a message to the destination server. The bodyContent data will be set as the httpBodyContent in the post message. The response is the raw stream returned by the server. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/setHeaderValue:forKey:</TokenIdentifier>
+            <Anchor>setHeaderValue:forKey:</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>- (void)setHeaderValue:(NSString *)value forKey:(NSString *)key</Declaration>
+            <Abstract>Adds a header element to the message. Call before posting a message. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/setUsername:password:</TokenIdentifier>
+            <Anchor>setUsername:password:</Anchor>
+            <DeclaredIn>UrlConnection.h</DeclaredIn>
+            <Declaration>- (void)setUsername:(NSString *)aUsername password:(NSString *)aPassword</Declaration>
+            <Abstract>Sets the username and password to be used for encrypted connections. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:willSendRequest:redirectResponse:</TokenIdentifier>
+            <Anchor>connection:willSendRequest:redirectResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:canAuthenticateAgainstProtectionSpace:</TokenIdentifier>
+            <Anchor>connection:canAuthenticateAgainstProtectionSpace:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:needNewBodyStream:</TokenIdentifier>
+            <Anchor>connection:needNewBodyStream:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didReceiveAuthenticationChallenge:</TokenIdentifier>
+            <Anchor>connection:didReceiveAuthenticationChallenge:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didCancelAuthenticationChallenge:</TokenIdentifier>
+            <Anchor>connection:didCancelAuthenticationChallenge:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connectionShouldUseCredentialStorage:</TokenIdentifier>
+            <Anchor>connectionShouldUseCredentialStorage:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didReceiveResponse:</TokenIdentifier>
+            <Anchor>connection:didReceiveResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didReceiveData:</TokenIdentifier>
+            <Anchor>connection:didReceiveData:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:</TokenIdentifier>
+            <Anchor>connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connectionDidFinishLoading:</TokenIdentifier>
+            <Anchor>connectionDidFinishLoading:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connectionDidFinishLoading:(NSURLConnection *)connection</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:didFailWithError:</TokenIdentifier>
+            <Anchor>connection:didFailWithError:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error</Declaration>
+            <Abstract></Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UrlConnection/connection:willCacheResponse:</TokenIdentifier>
+            <Anchor>connection:willCacheResponse:</Anchor>
+            <DeclaredIn>UrlConnection+NSURLConnectionDelegate.h</DeclaredIn>
+            <Declaration>- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse</Declaration>
+            <Abstract></Abstract>
+        </Token>
+    </File>
+    <File path="Classes/SoapWebServiceConnection.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/SoapWebServiceConnection</TokenIdentifier>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Abstract>Extension of the UrlConnection class which is specially designed to handle soap web service calls to servers. This class is the main class of the dXml API. Here's an example of using it &amp;nbsp;//&amp;nbsp;Simple&amp;nbsp;request&amp;nbsp;for&amp;nbsp;data&amp;nbsp;with&amp;nbsp;no&amp;nbsp;security.&amp;nbsp;NSString&amp;nbsp;*xml&amp;nbsp;=&amp;nbsp;@"&amp;lt;dhc:balance&amp;nbsp;xmlns:dhc=\""&amp;nbsp;MODEL_SCHEMA&amp;nbsp;"\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;forAccountNumber&amp;gt;1234&amp;lt;/forAccountNumber&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;/dhc:balance&amp;gt;";&amp;nbsp;&amp;nbsp;//&amp;nbsp;Create&amp;nbsp;the&amp;nbsp;service.&amp;nbsp;NSString&amp;nbsp;*url&amp;nbsp;=&amp;nbsp;@"http://localhost:8080/services/Banking";&amp;nbsp;NSString&amp;nbsp;*action&amp;nbsp;=&amp;nbsp;@"\"http://www.dhcbank.com/banking/balance\"";&amp;nbsp;SoapWebServiceConnection&amp;nbsp;*service&amp;nbsp;=&amp;nbsp;[SoapWebServiceConnection&amp;nbsp;createWithUrl:&amp;nbsp;url&amp;nbsp;soapAction:&amp;nbsp;action];&amp;nbsp;&amp;nbsp;//&amp;nbsp;And&amp;nbsp;call&amp;nbsp;it.&amp;nbsp;NSError&amp;nbsp;*error&amp;nbsp;=&amp;nbsp;nil;&amp;nbsp;WebServiceResponse&amp;nbsp;*response&amp;nbsp;=&amp;nbsp;[service&amp;nbsp;postXmlStringPayload:&amp;nbsp;xml&amp;nbsp;errorVar:&amp;error];&amp;nbsp;&amp;nbsp;if&amp;nbsp;(error&amp;nbsp;!=&amp;nbsp;nil)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;Handle&amp;nbsp;the&amp;nbsp;error.&amp;nbsp;}&amp;nbsp;&amp;nbsp;//&amp;nbsp;And&amp;nbsp;do&amp;nbsp;something&amp;nbsp;with&amp;nbsp;the&amp;nbsp;response.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/soapAction</TokenIdentifier>
+            <Anchor>soapAction</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>@property NSString *soapAction</Declaration>
+            <Abstract>The specific soap action to call. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/securityType</TokenIdentifier>
+            <Anchor>securityType</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>@property SECURITYTYPE securityType</Declaration>
+            <Abstract>Indicates the security tpe to apply to the connection. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/createWithUrl:</TokenIdentifier>
+            <Anchor>createWithUrl:</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>+ (SoapWebServiceConnection *)createWithUrl:(NSString *)aServerUrl </Declaration>
+            <Abstract>Constructor which accepts just a url. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/createWithUrl:soapAction:</TokenIdentifier>
+            <Anchor>createWithUrl:soapAction:</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>+ (SoapWebServiceConnection *)createWithUrl:(NSString *)aServerUrl soapAction:(NSString *)aSoapAction </Declaration>
+            <Abstract>Constructor which accepts a url and action. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/postXmlNodePayload:errorVar:</TokenIdentifier>
+            <Anchor>postXmlNodePayload:errorVar:</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>- (WebServiceResponse *)postXmlNodePayload:(XmlNode *)aBody errorVar:(NSError **)aErrorVar </Declaration>
+            <Abstract>Uses http POST to send the soap message to the server and returns the response. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/SoapWebServiceConnection/postXmlStringPayload:errorVar:</TokenIdentifier>
+            <Anchor>postXmlStringPayload:errorVar:</Anchor>
+            <DeclaredIn>SoapWebServiceConnection.h</DeclaredIn>
+            <Declaration>- (WebServiceResponse *)postXmlStringPayload:(NSString *)aBody errorVar:(NSError **)aErrorVar </Declaration>
+            <Abstract>Uses http POST to send the soap message to the server and returns the response. </Abstract>
+        </Token>
+    </File>
+    <File path="Categories/NSObject(SoapTemplates).html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cat/NSObject(SoapTemplates)</TokenIdentifier>
+            <DeclaredIn>NSObject+SoapTemplates.h</DeclaredIn>
+            <Abstract>Adds the ability to generate a Soap message template to any class. This is useful for classes wishing to generate soap web service messages. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSObject(SoapTemplates)/createBasicSoapDM</TokenIdentifier>
+            <Anchor>createBasicSoapDM</Anchor>
+            <DeclaredIn>NSObject+SoapTemplates.h</DeclaredIn>
+            <Declaration>- (XmlDocument *)createBasicSoapDM</Declaration>
+            <Abstract>Returns a XmlDocument which contains the basic soap message elements. Essentially this creates the Evelope, Header and Body elements. Here is a copy of the output from this method &amp;nbsp;&amp;lt;?xml&amp;nbsp;version="1.0"&amp;nbsp;encoding="UTF-8"?&amp;gt;&amp;nbsp;&amp;lt;soapenv:Envelope&amp;nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Header&amp;nbsp;/&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Body&amp;nbsp;/&amp;gt;&amp;nbsp;&amp;lt;/soapenv:Envelope&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSObject(SoapTemplates)/createSoapFaultDM</TokenIdentifier>
+            <Anchor>createSoapFaultDM</Anchor>
+            <DeclaredIn>NSObject+SoapTemplates.h</DeclaredIn>
+            <Declaration>- (XmlDocument *)createSoapFaultDM</Declaration>
+            <Abstract>Returns a XmlDocument which contains a standard soap fault structure. Here is a copy of the output from this method &amp;nbsp;&amp;lt;?xml&amp;nbsp;version="1.0"&amp;nbsp;encoding="UTF-8"?&amp;gt;&amp;nbsp;&amp;lt;soapenv:Envelope&amp;nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Header&amp;nbsp;/&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Body&amp;nbsp;/&amp;gt;&amp;nbsp;&amp;lt;/soapenv:Envelope&amp;gt;</Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlAttribute.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlAttribute</TokenIdentifier>
+            <DeclaredIn>XmlAttribute.h</DeclaredIn>
+            <Abstract>Represents the name and value of a xml elements attribute. For example in &amp;nbsp;&amp;lt;abc&amp;nbsp;&lt;b>def&lt;/b>="&lt;b>ghi&lt;/b>"&amp;nbsp;/&amp;gt; "def" is the name, and "ghi" is the value of the attribute. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlAttribute/name</TokenIdentifier>
+            <Anchor>name</Anchor>
+            <DeclaredIn>XmlAttribute.h</DeclaredIn>
+            <Declaration>@property NSString *name</Declaration>
+            <Abstract>The name of the attribute. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlAttribute/value</TokenIdentifier>
+            <Anchor>value</Anchor>
+            <DeclaredIn>XmlAttribute.h</DeclaredIn>
+            <Declaration>@property NSString *value</Declaration>
+            <Abstract>The value of the attribute. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlAttribute/initWithName:value:</TokenIdentifier>
+            <Anchor>initWithName:value:</Anchor>
+            <DeclaredIn>XmlAttribute.h</DeclaredIn>
+            <Declaration>- (XmlAttribute *)initWithName:(NSString *)aName value:(NSString *)aValue </Declaration>
+            <Abstract>Default constructor. Based on the logic that all attributes must ave a name and value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlAttribute/appendToXmlString:</TokenIdentifier>
+            <Anchor>appendToXmlString:</Anchor>
+            <DeclaredIn>XmlAttribute.h</DeclaredIn>
+            <Declaration>- (void)appendToXmlString:(NSMutableString *)xml </Declaration>
+            <Abstract>Used during serialisation to a string. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/WebServiceResponse.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/WebServiceResponse</TokenIdentifier>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Abstract>An instance of this class will be returned from a sucessful call to a soap web service. It contains a complete copy o the soap response and also provide conveniance methods to access various predefined parts of the response. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/WebServiceResponse/document</TokenIdentifier>
+            <Anchor>document</Anchor>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Declaration>@property XmlDocument *document</Declaration>
+            <Abstract>The raw xml document as returned by the service. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/WebServiceResponse/initWithDocument:</TokenIdentifier>
+            <Anchor>initWithDocument:</Anchor>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Declaration>- (WebServiceResponse *)initWithDocument:(XmlDocument *)aDocument </Declaration>
+            <Abstract>Constructor used by the connection to create this instance. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/WebServiceResponse/bodyElement</TokenIdentifier>
+            <Anchor>bodyElement</Anchor>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Declaration>- (XmlNode *)bodyElement</Declaration>
+            <Abstract>Gives direct access to the Body node. ie. \Envelope\Body. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/WebServiceResponse/bodyContent</TokenIdentifier>
+            <Anchor>bodyContent</Anchor>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Declaration>- (XmlNode *)bodyContent</Declaration>
+            <Abstract>Gives direct access to the first node within the Body node. Useful when you know there will be only one node within the Body node. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/WebServiceResponse/bodyContents</TokenIdentifier>
+            <Anchor>bodyContents</Anchor>
+            <DeclaredIn>WebServiceResponse.h</DeclaredIn>
+            <Declaration>- (NSEnumerator *)bodyContents</Declaration>
+            <Abstract>Returns a NSEnumerator of the nodes within the Body node. This is useful when for example you get this reply: &amp;nbsp;...&amp;nbsp;&amp;lt;Body&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;&amp;nbsp;&amp;lt;/Body&amp;gt; This NSEnumator will loop through all the "Data" elements in turn. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlDocumentParserDelegate.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlDocumentParserDelegate</TokenIdentifier>
+            <DeclaredIn>XmlDocumentParserDelegate.h</DeclaredIn>
+            <Abstract>Simple extension of the XmlSubtreeParserDelegate that returns a XmlDocument. Other than that there is no additional functionality. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlDocumentParserDelegate/document</TokenIdentifier>
+            <Anchor>document</Anchor>
+            <DeclaredIn>XmlDocumentParserDelegate.h</DeclaredIn>
+            <Declaration>- (XmlDocument *)document</Declaration>
+            <Abstract>Get the document parsed as a XmlDocument. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/Security.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/Security</TokenIdentifier>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Abstract>Security is the main factory class for applying security. Essentially you set it up with the security information you have then ask it to provide a security handler back. This handler can then be used to implement that style of security on the soap messages. Here is an example of how to use it: &amp;nbsp;Security&amp;nbsp;*security&amp;nbsp;=&amp;nbsp;[Security&amp;nbsp;createSecurityWithUserid:&amp;nbsp;userid&amp;nbsp;password:&amp;nbsp;password];&amp;nbsp;NSObject&amp;nbsp;&amp;lt;SecurityModel&amp;ht;&amp;nbsp;*securer&amp;nbsp;=&amp;nbsp;[security&amp;nbsp;createSecurityModelOfType:&amp;nbsp;securityType];&amp;nbsp;[securer&amp;nbsp;secureSoapMessage:&amp;nbsp;soapMsg];Security seperated into two parts to make it easy to use. The act of constructing an instance if Security also gives it the necessary data it needs to work with. ie.userid and password. The second part of getting the model and applying it to the message provides the flexibility of being able to aply different models as needed. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/Security/initWithUserid:password:</TokenIdentifier>
+            <Anchor>initWithUserid:password:</Anchor>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Declaration>- (Security *)initWithUserid:(NSString *)aUserid password:(NSString *)aPassword </Declaration>
+            <Abstract>Constructors and factory methods. Default constructor. At this stage it simple takes a userid and password. As time goes on there will need to be other constructors which take other types of security information. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/Security/createSecurityModelOfType:</TokenIdentifier>
+            <Anchor>createSecurityModelOfType:</Anchor>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Declaration>- (NSObject&lt;SecurityModel> *)createSecurityModelOfType:(SECURITYTYPE)securityType </Declaration>
+            <Abstract>Called to obtain an instance of SecurityModel which implements the required security. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/Security/createSecurityWithUserid:password:</TokenIdentifier>
+            <Anchor>createSecurityWithUserid:password:</Anchor>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Declaration>+ (Security *)createSecurityWithUserid:(NSString *)aUserid password:(NSString *)aPassword </Declaration>
+            <Abstract>Creates an autorelease instance of Security with the passed userid and password. </Abstract>
+        </Token>
+    </File>
+    <File path="Protocols/SecurityModel.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intf/SecurityModel</TokenIdentifier>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Abstract>Any class that is used to setup security must implement this interface. This alls the connection classes to be agnostic about what security is being applied. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/SecurityModel/secureSoapMessage:</TokenIdentifier>
+            <Anchor>secureSoapMessage:</Anchor>
+            <DeclaredIn>Security.h</DeclaredIn>
+            <Declaration>- (void)secureSoapMessage:(XmlDocument *)soapMessage </Declaration>
+            <Abstract>Secures the passed soap message. Each security class will do this in a different way. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlDocument.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlDocument</TokenIdentifier>
+            <DeclaredIn>XmlDocument.h</DeclaredIn>
+            <Abstract>This class is purely used as the top level node representing a complete xml document. It contains no additional functionality. When serialising the document out to a string, the presence of an instance of this class as the root node will automatically insert the standard xml version header at the top of the document produced. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/TextNode.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/TextNode</TokenIdentifier>
+            <DeclaredIn>TextNode.h</DeclaredIn>
+            <Abstract>Simple node which represents a string of text inside a XmlNode. The only things this class contains is the text string. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/TextNode/value</TokenIdentifier>
+            <Anchor>value</Anchor>
+            <DeclaredIn>TextNode.h</DeclaredIn>
+            <Declaration>@property NSString *value</Declaration>
+            <Abstract>The string value. For example in the xml &amp;nbsp;&amp;lt;abc&amp;gt;&lt;b>def&lt;/b>&amp;lt;/abc&amp;gt; def is the value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/TextNode/initWithText:</TokenIdentifier>
+            <Anchor>initWithText:</Anchor>
+            <DeclaredIn>TextNode.h</DeclaredIn>
+            <Declaration>- (TextNode *)initWithText:(NSString *)text </Declaration>
+            <Abstract>Default constructor. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/UseridPasswordSecurity.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/UseridPasswordSecurity</TokenIdentifier>
+            <DeclaredIn>UseridPasswordSecurity.h</DeclaredIn>
+            <Abstract>This security handler will implement a basic userid/password style security model. When asked to process a soap message, it will add ws-security xml elements to the soap messages header area and put the userid and password into those elements. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/UseridPasswordSecurity/initWithUserid:password:</TokenIdentifier>
+            <Anchor>initWithUserid:password:</Anchor>
+            <DeclaredIn>UseridPasswordSecurity.h</DeclaredIn>
+            <Declaration>- (UseridPasswordSecurity *)initWithUserid:(NSString *)aUserid password:(NSString *)aPassword </Declaration>
+            <Abstract>default constructor. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/NoSecurity.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/NoSecurity</TokenIdentifier>
+            <DeclaredIn>NoSecurity.h</DeclaredIn>
+            <Abstract>For the conveniance of calling code, this is a security handler that does nothing. </Abstract>
+        </Token>
+    </File>
+    <File path="Categories/NSError(SoapFault).html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cat/NSError(SoapFault)</TokenIdentifier>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Abstract>This category adds functionality to the NSError class for dealing with soap faults that have been returned as NSError instances. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSError(SoapFault)/isSoapFault</TokenIdentifier>
+            <Anchor>isSoapFault</Anchor>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Declaration>- (BOOL)isSoapFault</Declaration>
+            <Abstract>Returns YES if the NSError contains soap fault information. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSError(SoapFault)/soapFaultMessage</TokenIdentifier>
+            <Anchor>soapFaultMessage</Anchor>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Declaration>- (NSString *)soapFaultMessage</Declaration>
+            <Abstract>returns the contents of the faultMessage userinfo value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSError(SoapFault)/soapFaultCode</TokenIdentifier>
+            <Anchor>soapFaultCode</Anchor>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Declaration>- (NSString *)soapFaultCode</Declaration>
+            <Abstract>returns the contents of the faultCode userinfo value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSError(SoapFault)/errorWithSoapResponse:</TokenIdentifier>
+            <Anchor>errorWithSoapResponse:</Anchor>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Declaration>+ (NSError *)errorWithSoapResponse:(XmlDocument *)document </Declaration>
+            <Abstract>Factory method which creates a NSError containing a soap fault. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/intfm/NSError(SoapFault)/errorWithSoapFault:</TokenIdentifier>
+            <Anchor>errorWithSoapFault:</Anchor>
+            <DeclaredIn>NSError+SoapFault.h</DeclaredIn>
+            <Declaration>+ (NSError *)errorWithSoapFault:(XmlNode *)fault </Declaration>
+            <Abstract>Factory method which creates a NSError containing a soap fault. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlNode.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlNode</TokenIdentifier>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Abstract>XmlNode is the main class used to represent nodes in the Document Model (DM) tree. The XmlParser and it's two delegates (XmlSubtreeParserDelegate and XmlDocumentParserDelegate) will generate the whole DM using instances of this class and the TextNode class. The bulk of the functionality of the api with regards to the document model is embedded in this class. XmlNodes contain all the data required to represent a xml element in the object graph: name prefix attributes namespace declarations sub elements which can be of any DMNode type. XmlNode is also the main factory class of the DM, being about to create instances of itself as well as other nodes such as the TextNode. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/name</TokenIdentifier>
+            <Anchor>name</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>@property NSString *name</Declaration>
+            <Abstract>The name of the XmlNode as it would be printed in an xml stream. For example a name of "abc" would yeild this xml &amp;nbsp;&amp;lt;&lt;b>abc&lt;/b>&amp;nbsp;/&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/prefix</TokenIdentifier>
+            <Anchor>prefix</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>@property NSString *prefix</Declaration>
+            <Abstract>Schema prefix. For example &amp;nbsp;&amp;lt;&lt;b>soapenv&lt;/b>:Body&amp;nbsp;/&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/defaultSchema</TokenIdentifier>
+            <Anchor>defaultSchema</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>@property NSString *defaultSchema</Declaration>
+            <Abstract>The defaultSchema is a schema specified without a prefix. There can be only one of these for a XmlNode. For example &amp;nbsp;&amp;lt;abc&amp;nbsp;&lt;b>xmlns="http://defaultschema.com"&lt;/b>&amp;nbsp;/&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/initWithName:</TokenIdentifier>
+            <Anchor>initWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)initWithName:(NSString *)aName</Declaration>
+            <Abstract>Creates a XmlNode with just a name. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/initWithName:prefix:</TokenIdentifier>
+            <Anchor>initWithName:prefix:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)initWithName:(NSString *)aName prefix:(NSString *)aPrefix</Declaration>
+            <Abstract>Creates a XmlNode with a name and namespace prefix. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/createWithName:</TokenIdentifier>
+            <Anchor>createWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>+ (XmlNode *)createWithName:(NSString *)aName</Declaration>
+            <Abstract>Factory method which creates a node (autorelease) with just a name and returns it. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/createWithName:prefix:</TokenIdentifier>
+            <Anchor>createWithName:prefix:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>+ (XmlNode *)createWithName:(NSString *)aName prefix:(NSString *)aPrefix</Declaration>
+            <Abstract>Factory method which creates a node (autorelease) with a given name and prefix, then returns it. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/createWithName:value:</TokenIdentifier>
+            <Anchor>createWithName:value:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>+ (XmlNode *)createWithName:(NSString *)aName value:(NSString *)aValue</Declaration>
+            <Abstract>Factory method which creates a node (autorelease) with a given name, and then sets a single TextNode under it containing the passed value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/createWithName:prefix:value:</TokenIdentifier>
+            <Anchor>createWithName:prefix:value:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>+ (XmlNode *)createWithName:(NSString *)aName prefix:(NSString *)aPrefix value:(NSString *)aValue</Declaration>
+            <Abstract>Factory method which creates a node (autorelease) with a given name and prefix, and then sets a single TextNode under it containing the passed value. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/isEqualToName:</TokenIdentifier>
+            <Anchor>isEqualToName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (BOOL)isEqualToName:(NSString *)aName</Declaration>
+            <Abstract>Used during search loops to find child XmlNodes based on their names only. Obviously this only finds instances of XmlNode. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/countNodes</TokenIdentifier>
+            <Anchor>countNodes</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (int)countNodes</Declaration>
+            <Abstract>Returns the number of nodes within this node. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/xmlNodeWithName:</TokenIdentifier>
+            <Anchor>xmlNodeWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)xmlNodeWithName:(NSString *)aName</Declaration>
+            <Abstract>Locates and returns a XmlNode based on it's name only. Again this will only find XmlNodes. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/nodeAtIndex:</TokenIdentifier>
+            <Anchor>nodeAtIndex:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)nodeAtIndex:(int)aIndex</Declaration>
+            <Abstract>Returns the DMObject at the specific index. This can return any type of DMObject. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addNode:</TokenIdentifier>
+            <Anchor>addNode:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (void)addNode:(DMNode *)element</Declaration>
+            <Abstract>Adds a new child DMNode to the end of the list of sub elements. This is the main method for adding child nodes. If the passed node is a TextNode then it is just added to the nodesInOrder variable. if it's from the XmlNode hirachy then it is also added to the nodesByName dictionary, however this will only happen if there is not a node already present with the specified name. In other words, this method will only index the first occurance of a XmlNode with any give name. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addXmlNodeWithName:</TokenIdentifier>
+            <Anchor>addXmlNodeWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)addXmlNodeWithName:(NSString *)aName</Declaration>
+            <Abstract>Adds a new child XmlNode to the end of the list of DMObjects. This first constructs an instance of XmlNode and then passes it to the addXmlNode(XmlNode *) method. The returned XmlNode is autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addXmlNodeWithName:prefix:</TokenIdentifier>
+            <Anchor>addXmlNodeWithName:prefix:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)addXmlNodeWithName:(NSString *)aName prefix:(NSString *)aPrefix</Declaration>
+            <Abstract>Adds a new child XmlNode to the end of the list of DMObjects. This first constructs an instance of XmlNode and then passes it to the addXmlNode(XmlNode *) method. The returned XmlNode is autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addXmlNodeWithName:value:</TokenIdentifier>
+            <Anchor>addXmlNodeWithName:value:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)addXmlNodeWithName:(NSString *)aName value:(NSString *)aValue</Declaration>
+            <Abstract>Adds a new child XmlNode to the end of the list of DMObjects. This first constructs an instance of XmlNode and then passes it to the addXmlNode(XmlNode *) method. The returned XmlNode is autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addXmlNodeWithName:prefix:value:</TokenIdentifier>
+            <Anchor>addXmlNodeWithName:prefix:value:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (XmlNode *)addXmlNodeWithName:(NSString *)aName prefix:(NSString *)aPrefix value:(NSString *)aValue</Declaration>
+            <Abstract>Adds a new child XmlNode to the end of the list of DMObjects. This first constructs an instance of XmlNode and then passes it to the addXmlNode(XmlNode *) method. The returned XmlNode is autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/hasXmlNodeWithName:</TokenIdentifier>
+            <Anchor>hasXmlNodeWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (BOOL)hasXmlNodeWithName:(NSString *)aName</Declaration>
+            <Abstract>returns true if the current XmlNode has a child XmlNode with the specified name. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/nodes</TokenIdentifier>
+            <Anchor>nodes</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSEnumerator *)nodes</Declaration>
+            <Abstract>Returns a NSEnumerator which can be used to iteration through all the DMObjects. For example &amp;nbsp;for&amp;nbsp;(DMObject&amp;nbsp;*&amp;nbsp;node&amp;nbsp;in&amp;nbsp;[aXmlNode&amp;nbsp;- nodes]&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&amp;nbsp;do&amp;nbsp;your&amp;nbsp;stuff&amp;nbsp;here&amp;nbsp;...&amp;nbsp;}</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/xmlNodesWithName:</TokenIdentifier>
+            <Anchor>xmlNodesWithName:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSEnumerator *)xmlNodesWithName:(NSString *)aName</Declaration>
+            <Abstract>Searches the child nodes for XmlNodes with the specific name and returns a new NSArray containing just those nodes. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addNamespace:prefix:</TokenIdentifier>
+            <Anchor>addNamespace:prefix:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (void)addNamespace:(NSString *)aUrl prefix:(NSString *)aPrefix</Declaration>
+            <Abstract>Adds a namespace and prefix to the current XmlNode. This will manifest as a namespace declaration in any produced xml. For example: &amp;nbsp;XmlNode&amp;nbsp;*&amp;nbsp;node&amp;nbsp;=&amp;nbsp;[[XmlNode&amp;nbsp;alloc]&amp;nbsp;initWithName:&amp;nbsp;@"abc"];&amp;nbsp;[node&amp;nbsp;addNamespace:&amp;nbsp;@"http://url.com"&amp;nbsp;prefix:&amp;nbsp;@"xyz"]; Will result in: &amp;nbsp;&amp;lt;xyz:abc&amp;nbsp;xlmns:xyz="http://url.com"&amp;nbsp;/&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/namespaces</TokenIdentifier>
+            <Anchor>namespaces</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSEnumerator *)namespaces</Declaration>
+            <Abstract>Returns an NSEnumerator which can be used to iterator through all the namespaces added to the current XmlNode. For example &amp;nbsp;for&amp;nbsp;(XmlNamespace&amp;nbsp;*&amp;nbsp;namespace&amp;nbsp;in&amp;nbsp;[aNode&amp;nbsp;- namespaces]&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&amp;nbsp;do&amp;nbsp;your&amp;nbsp;stuff&amp;nbsp;here&amp;nbsp;...&amp;nbsp;}</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/setAttribute:value:</TokenIdentifier>
+            <Anchor>setAttribute:value:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (void)setAttribute:(NSString *)aName value:(NSString *)aValue</Declaration>
+            <Abstract>Sets the name and value of an attribute. Here's an example &amp;nbsp;XmlNode&amp;nbsp;*&amp;nbsp;node&amp;nbsp;=&amp;nbsp;[[XmlNode&amp;nbsp;alloc]&amp;nbsp;initWithName:&amp;nbsp;@"element"];&amp;nbsp;[node&amp;nbsp;setAttribute:&amp;nbsp;@"abc"&amp;nbsp;- value:&amp;nbsp;@"def"];&amp;nbsp;NSLog(@"%@",&amp;nbsp;[node&amp;nbsp;- asXmlString]); Results in &amp;nbsp;&amp;lt;element&amp;nbsp;abc="def"&amp;nbsp;/&amp;gt;</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/attributeValue:</TokenIdentifier>
+            <Anchor>attributeValue:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSString *)attributeValue:(NSString *)aName</Declaration>
+            <Abstract>Returns the value for an attribute. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/attributes</TokenIdentifier>
+            <Anchor>attributes</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSEnumerator *)attributes</Declaration>
+            <Abstract>Returns a NSEnumerator which can be used to iterate through all attributes. For example &amp;nbsp;for&amp;nbsp;(XmlNode&amp;nbsp;*&amp;nbsp;node&amp;nbsp;in&amp;nbsp;[aNode&amp;nbsp;childNodes]&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;...&amp;nbsp;do&amp;nbsp;your&amp;nbsp;stuff&amp;nbsp;here&amp;nbsp;...&amp;nbsp;}</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/value</TokenIdentifier>
+            <Anchor>value</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSString *)value</Declaration>
+            <Abstract>Shortcut method which returns the value of the first child TextNode or nil if there are no child TextNodes. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/addTextNodeWithValue:</TokenIdentifier>
+            <Anchor>addTextNodeWithValue:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (TextNode *)addTextNodeWithValue:(NSString *)aValue</Declaration>
+            <Abstract>Adds an additional TextNode to the list of child nodes. THis is the primary method for adding new text noes to the DM. Note: unlike setValue: this method does not clear the list of child Notes. It's primary purpose is for when loading an xml stream which may contain mixed content. The returned TextNode is autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/setValue:</TokenIdentifier>
+            <Anchor>setValue:</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (void)setValue:(NSString *)value</Declaration>
+            <Abstract>Short cut method which clears all current child elements and then adds a single TextNode containing the passed text. This method also returns void so that it fits the standard getter/setter pattern and therefore can be used in the shortcut form &amp;nbsp;aNode&lt;B>.value&lt;/b>&amp;nbsp;=&amp;nbsp;@"value";</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/asXmlString</TokenIdentifier>
+            <Anchor>asXmlString</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSString *)asXmlString</Declaration>
+            <Abstract>Generates the XmlNode as a NSString. This is called when the client program needs to serialise the DM for sending to servers. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlNode/asPrettyXmlString</TokenIdentifier>
+            <Anchor>asPrettyXmlString</Anchor>
+            <DeclaredIn>XmlNode.h</DeclaredIn>
+            <Declaration>- (NSString *)asPrettyXmlString</Declaration>
+            <Abstract>Effectively the same as asXmlString: however this "pretty prints" it which is useful for logging purposes where readibility of the xml is the primary factor. </Abstract>
+        </Token>
+    </File>
+    <File path="Classes/XmlParser.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/XmlParser</TokenIdentifier>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Abstract>XmlParser is the raw parser for detailing with xml streams. In addition to the default NSURL and NSData that the apis support, this class can also deal with xml inside NSStrings which makes testing and other options easy. Once the data has been parsed, it can be returned on one of two ways, either as a XmlDocument or as a XmlNode. The parserSubTree: method is exposed but ideally designed for parsing sections of a xml tree rather than a whole document. Use parse: for that. Here's an example of using this class. &amp;nbsp;NSString&amp;nbsp;*xml&amp;nbsp;=&amp;nbsp;@"lt;?xml&amp;nbsp;version=\"1.0\"&amp;nbsp;encoding=\"UTF-8\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Envelope&amp;nbsp;xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Body&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;dhc:balance&amp;nbsp;xmlns:dhc=\""&amp;nbsp;MODEL_SCHEMA&amp;nbsp;"\"&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;forAccountNumber&amp;gt;1234&amp;lt;/forAccountNumber&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;/dhc:balance&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n\t&amp;lt;/soap:Body&amp;gt;"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n&amp;lt;/soap:Envelope&amp;gt;";&amp;nbsp;&amp;nbsp;&amp;nbsp;XmlParser&amp;nbsp;*&amp;nbsp;parser&amp;nbsp;=&amp;nbsp;[XmlParser&amp;nbsp;parserWithXml:&amp;nbsp;xml];&amp;nbsp;NSError&amp;nbsp;*error&amp;nbsp;=&amp;nbsp;nil;&amp;nbsp;XmlDocument&amp;nbsp;*doc&amp;nbsp;=&amp;nbsp;[parser&amp;nbsp;parse:&amp;error];&amp;nbsp;if&amp;nbsp;(error&amp;nbsp;!=&amp;nbsp;nil)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;Deal&amp;nbsp;with&amp;nbsp;the&amp;nbsp;error.&amp;nbsp;}&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;Otherwise&amp;nbsp;process&amp;nbsp;the&amp;nbsp;results. This class requires you to instantiate it with the data and then call parse: or parseSubtree: as a seperate command so that in the future various settings can be added to the class. Then the sequence would become init - setup - parse. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/parserWithXml:</TokenIdentifier>
+            <Anchor>parserWithXml:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>+ (XmlParser *)parserWithXml:(NSString *)xml </Declaration>
+            <Abstract>Creates an autorelease instance of XmlParser ready to read the supplied data. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/parserWithData:</TokenIdentifier>
+            <Anchor>parserWithData:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>+ (XmlParser *)parserWithData:(NSData *)data </Declaration>
+            <Abstract>Creates an autorelease instance of XmlParser ready to read the supplied data. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/parserWithUrl:</TokenIdentifier>
+            <Anchor>parserWithUrl:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>+ (XmlParser *)parserWithUrl:(NSURL *)url </Declaration>
+            <Abstract>Creates an autorelease instance of XmlParser ready to read the supplied data. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/initWithXml:</TokenIdentifier>
+            <Anchor>initWithXml:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>- (XmlParser *)initWithXml:(NSString *)xml </Declaration>
+            <Abstract>Default constructor which takes xml stored in a string. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/initWithData:</TokenIdentifier>
+            <Anchor>initWithData:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>- (XmlParser *)initWithData:(NSData *)data </Declaration>
+            <Abstract>Default constructor which takes xml stored in a NSData object. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/initWithUrl:</TokenIdentifier>
+            <Anchor>initWithUrl:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>- (XmlParser *)initWithUrl:(NSURL *)url </Declaration>
+            <Abstract>Default constructor which reads an xml stream from a NSURL. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/parse:</TokenIdentifier>
+            <Anchor>parse:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>- (XmlDocument *)parse:(NSError **)aErrorVar </Declaration>
+            <Abstract>Initiates the parsing of the supplied source and returns a XmlDocument containing the data graph of the results. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/XmlParser/parseSubtree:</TokenIdentifier>
+            <Anchor>parseSubtree:</Anchor>
+            <DeclaredIn>XmlParser.h</DeclaredIn>
+            <Declaration>- (XmlNode *)parseSubtree:(NSError **)aErrorVar </Declaration>
+            <Abstract>Initiates the parsing of the supplied source and returns a XmlNode containing the data graph of the results. </Abstract>
+        </Token>
+    </File>
+</Tokens>

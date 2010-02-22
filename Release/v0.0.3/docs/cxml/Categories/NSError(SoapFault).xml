@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<object kind="category" generator="appledoc v1.0.5">
+    <name>NSError(SoapFault)</name>
+    <file>NSError+SoapFault.h</file>
+    <description>
+        <brief>
+            <para>This category adds functionality to the <ref id="#NSError">NSError</ref>
+                 class for dealing with soap faults that have been returned as <ref id="#NSError">NSError</ref>
+                 instances. </para>
+        </brief>
+        <details></details>
+    </description>
+    <sections>
+        <section>
+            <name>Soap message handling</name>
+            <member kind="instance-method">
+                <name>isSoapFault</name>
+                <type>BOOL</type>
+                <prototype>- (BOOL)isSoapFault</prototype>
+                <file>NSError+SoapFault.h</file>
+                <description>
+                    <brief>
+                        <para>Returns YES if the <ref id="#NSError">NSError</ref>
+                             contains soap fault information. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- isSoapFault</selector>
+            </member>
+            <member kind="instance-method">
+                <name>soapFaultMessage</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)soapFaultMessage</prototype>
+                <file>NSError+SoapFault.h</file>
+                <description>
+                    <brief>
+                        <para>returns the contents of the faultMessage userinfo value. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- soapFaultMessage</selector>
+            </member>
+            <member kind="instance-method">
+                <name>soapFaultCode</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)soapFaultCode</prototype>
+                <file>NSError+SoapFault.h</file>
+                <description>
+                    <brief>
+                        <para>returns the contents of the faultCode userinfo value. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- soapFaultCode</selector>
+            </member>
+        </section>
+        <section>
+            <name>Soap fault factory methods</name>
+            <member kind="class-method">
+                <name>errorWithSoapResponse:</name>
+                <type>NSError *</type>
+                <prototype>+ (NSError *)errorWithSoapResponse:(XmlDocument *)<parameter>document</parameter>
+                     </prototype>
+                <file>NSError+SoapFault.h</file>
+                <description>
+                    <brief>
+                        <para>Factory method which creates a <ref id="#NSError">NSError</ref>
+                             containing a soap fault. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>document</name>
+                        <description>
+                            <para>The full response document from a web service. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>+ errorWithSoapResponse:</selector>
+            </member>
+            <member kind="class-method">
+                <name>errorWithSoapFault:</name>
+                <type>NSError *</type>
+                <prototype>+ (NSError *)errorWithSoapFault:(XmlNode *)<parameter>fault</parameter>
+                     </prototype>
+                <file>NSError+SoapFault.h</file>
+                <description>
+                    <brief>
+                        <para>Factory method which creates a <ref id="#NSError">NSError</ref>
+                             containing a soap fault. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>fault</name>
+                        <description>
+                            <para>The bod content from a we service call. This is expected to be the "Fault" node of the response. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>+ errorWithSoapFault:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

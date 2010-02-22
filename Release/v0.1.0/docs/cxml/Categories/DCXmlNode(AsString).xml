@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<object kind="category" generator="appledoc v1.0.5">
+    <name>DCXmlNode(AsString)</name>
+    <file>DCXmlNode+AsString.h</file>
+    <description>
+        <brief>
+            <para>This category adds the ability to output xml strings in various formats. </para>
+        </brief>
+        <details></details>
+    </description>
+    <sections>
+        <section>
+            <name>Xml output</name>
+            <member kind="instance-method">
+                <name>asXmlString</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)asXmlString</prototype>
+                <file>DCXmlNode+AsString.h</file>
+                <description>
+                    <brief>
+                        <para>Generates the <ref id="../Classes/DCXmlNode$EXTENSION">DCXmlNode</ref>
+                             as a NSString. </para>
+                    </brief>
+                    <details>
+                        <para>This is called when the client program needs to serialise the DM for sending to servers. </para>
+                    </details>
+                </description>
+                <selector>- asXmlString</selector>
+            </member>
+            <member kind="instance-method">
+                <name>asPrettyXmlString</name>
+                <type>NSString *</type>
+                <prototype>- (NSString *)asPrettyXmlString</prototype>
+                <file>DCXmlNode+AsString.h</file>
+                <description>
+                    <brief>
+                        <para>Effectively the same as asXmlString: however this "pretty prints" it which is useful for logging purposes where readibility of the xml is the primary factor. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- asPrettyXmlString</selector>
+            </member>
+        </section>
+    </sections>
+</object>

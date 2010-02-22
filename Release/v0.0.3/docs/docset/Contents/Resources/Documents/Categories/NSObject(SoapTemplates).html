@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>NSObject(SoapTemplates) category reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>NSObject(SoapTemplates) category reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>NSObject+SoapTemplates.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>Adds the ability to generate a Soap message template to any class. </p>
+<p>This is useful for classes wishing to generate soap web service messages. </p>
+      <h2>Tasks</h2>
+      <h3>Templates</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#createBasicSoapDM>- createBasicSoapDM</a></code>
+            <span class="tooltip">Returns a XmlDocument which contains the basic soap message elements. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#createSoapFaultDM>- createSoapFaultDM</a></code>
+            <span class="tooltip">Returns a XmlDocument which contains a standard soap fault structure. </span>          </span>
+        </li>
+      </ul>
+      <h2>Instance methods</h2>
+      <h3><a name="createBasicSoapDM"></a>createBasicSoapDM</h3>
+<p>Returns a <a href="../Classes/XmlDocument.html">XmlDocument</a> which contains the basic soap message elements. </p>
+      <code class="methodDeclaration">- (XmlDocument *)createBasicSoapDM</code>
+      <h5>Discussion</h5>
+<p>Essentially this creates the Evelope, Header and Body elements. Here is a copy of the output from this method <div class="example"><pre><code>&nbsp;&lt;?xml&nbsp;version="1.0"&nbsp;encoding="UTF-8"?&gt;</code><code>&nbsp;&lt;soapenv:Envelope&nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"</code><code>&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code><code>&nbsp;&nbsp;&nbsp;&nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;soapenv:Header&nbsp;/&gt;</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;soapenv:Body&nbsp;/&gt;</code><code>&nbsp;&lt;/soapenv:Envelope&gt;</code></pre></div>
+</p>
+      <h5>Declared in</h5>
+      <code>NSObject+SoapTemplates.h</code>
+      <h3><a name="createSoapFaultDM"></a>createSoapFaultDM</h3>
+<p>Returns a <a href="../Classes/XmlDocument.html">XmlDocument</a> which contains a standard soap fault structure. </p>
+      <code class="methodDeclaration">- (XmlDocument *)createSoapFaultDM</code>
+      <h5>Discussion</h5>
+<p>Here is a copy of the output from this method <div class="example"><pre><code>&nbsp;&lt;?xml&nbsp;version="1.0"&nbsp;encoding="UTF-8"?&gt;</code><code>&nbsp;&lt;soapenv:Envelope&nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"</code><code>&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code><code>&nbsp;&nbsp;&nbsp;&nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;soapenv:Header&nbsp;/&gt;</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;soapenv:Body&nbsp;/&gt;</code><code>&nbsp;&lt;/soapenv:Envelope&gt;</code></pre></div>
+</p>
+      <h5>Declared in</h5>
+      <code>NSObject+SoapTemplates.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-01-19)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

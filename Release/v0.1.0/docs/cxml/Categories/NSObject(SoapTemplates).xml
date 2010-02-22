@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<object kind="category" generator="appledoc v1.0.5">
+    <name>NSObject(SoapTemplates)</name>
+    <file>NSObject+SoapTemplates.h</file>
+    <description>
+        <brief>
+            <para>Adds the ability to generate a Soap message template to any class. </para>
+        </brief>
+        <details>
+            <para>This is useful for classes wishing to generate soap web service messages. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Templates</name>
+            <member kind="instance-method">
+                <name>createBasicSoapDM</name>
+                <type>DCXmlDocument *</type>
+                <prototype>- (DCXmlDocument *)createBasicSoapDM</prototype>
+                <file>NSObject+SoapTemplates.h</file>
+                <description>
+                    <brief>
+                        <para>Returns a <ref id="../Classes/DCXmlDocument$EXTENSION">DCXmlDocument</ref>
+                             which contains the basic soap message elements. </para>
+                    </brief>
+                    <details>
+                        <para>Essentially this creates the Evelope, Header and Body elements. Here is a copy of the output from this method <example>
+                                <code>&amp;nbsp;&amp;lt;?xml&amp;nbsp;version="1.0"&amp;nbsp;encoding="UTF-8"?&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;lt;soapenv:Envelope&amp;nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Header&amp;nbsp;/&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Body&amp;nbsp;/&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;lt;/soapenv:Envelope&amp;gt;</code>
+                            </example>
+                        </para>
+                    </details>
+                </description>
+                <selector>- createBasicSoapDM</selector>
+            </member>
+            <member kind="instance-method">
+                <name>createSoapFaultDM</name>
+                <type>DCXmlDocument *</type>
+                <prototype>- (DCXmlDocument *)createSoapFaultDM</prototype>
+                <file>NSObject+SoapTemplates.h</file>
+                <description>
+                    <brief>
+                        <para>Returns a <ref id="../Classes/DCXmlDocument$EXTENSION">DCXmlDocument</ref>
+                             which contains a standard soap fault structure. </para>
+                    </brief>
+                    <details>
+                        <para>Here is a copy of the output from this method <example>
+                                <code>&amp;nbsp;&amp;lt;?xml&amp;nbsp;version="1.0"&amp;nbsp;encoding="UTF-8"?&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;lt;soapenv:Envelope&amp;nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Header&amp;nbsp;/&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;soapenv:Body&amp;nbsp;/&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;lt;/soapenv:Envelope&amp;gt;</code>
+                            </example>
+                        </para>
+                    </details>
+                </description>
+                <selector>- createSoapFaultDM</selector>
+            </member>
+        </section>
+    </sections>
+</object>

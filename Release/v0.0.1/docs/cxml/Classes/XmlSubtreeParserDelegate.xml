@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>XmlSubtreeParserDelegate</name>
+    <file>XmlSubtreeParserDelegate.h</file>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>Main class for parsing xml streams. </para>
+        </brief>
+        <details>
+            <para>This class is capable of receiving and processing the incoming xml events and assembling from them a complete DM data graph. IT responds to the standard NSXMLParser delegate methods to achieve this. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Other</name>
+            <member kind="property">
+                <name>rootNode</name>
+                <type>XmlNode *</type>
+                <prototype>@property XmlNode *rootNode</prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>Returns the root node of the DM as a <ref id="XmlNode$EXTENSION">XmlNode</ref>
+                            . </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>rootNode</selector>
+            </member>
+        </section>
+        <section>
+            <name>Other</name>
+            <member kind="instance-method">
+                <name>createNodeWithName:</name>
+                <type>void</type>
+                <prototype>- (void)createNodeWithName:(NSString *)<parameter>aName</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>Called during the construction of the DM each time a new node is needed. </para>
+                    </brief>
+                    <details>
+                        <para>The <ref id="XmlDocumentParserDelegate$EXTENSION">XmlDocumentParserDelegate</ref>
+                             class overrides this method to create a <ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                             for the root node. </para>
+                    </details>
+                </description>
+                <seeAlso>
+                    <item>
+                        <ref id="XmlDocumentParserDelegate$EXTENSION">XmlDocumentParserDelegate</ref>
+                    </item>
+                </seeAlso>
+                <selector>- createNodeWithName:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:didStartElement:namespaceURI:qualifiedName:attributes:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didStartElement:(NSString *)<parameter>elementName</parameter>
+                     namespaceURI:(NSString *)<parameter>namespaceURI</parameter>
+                     qualifiedName:(NSString *)<parameter>qualifiedName</parameter>
+                     attributes:(NSDictionary *)<parameter>attributeDict</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didStartElement:namespaceURI:qualifiedName:attributes:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:didEndElement:namespaceURI:qualifiedName:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didEndElement:(NSString *)<parameter>elementName</parameter>
+                     namespaceURI:(NSString *)<parameter>namespaceURI</parameter>
+                     qualifiedName:(NSString *)<parameter>qName</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didEndElement:namespaceURI:qualifiedName:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:didStartMappingPrefix:toURI:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     didStartMappingPrefix:(NSString *)<parameter>prefix</parameter>
+                     toURI:(NSString *)<parameter>namespaceURI</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:didStartMappingPrefix:toURI:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:foundCharacters:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     foundCharacters:(NSString *)<parameter>string</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:foundCharacters:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:parseErrorOccurred:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     parseErrorOccurred:(NSError *)<parameter>parseError</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:parseErrorOccurred:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parser:validationErrorOccurred:</name>
+                <type>void</type>
+                <prototype>- (void)parser:(NSXMLParser *)<parameter>parser</parameter>
+                     validationErrorOccurred:(NSError *)<parameter>validationError</parameter>
+                     </prototype>
+                <file>XmlSubtreeParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>NSXMLParser delegate method. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- parser:validationErrorOccurred:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

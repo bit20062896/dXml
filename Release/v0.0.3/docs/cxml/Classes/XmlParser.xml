@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>XmlParser</name>
+    <file>XmlParser.h</file>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>
+                <ref id="">XmlParser</ref>
+                 is the raw parser for detailing with xml streams. </para>
+        </brief>
+        <details>
+            <para>In addition to the default NSURL and NSData that the apis support, this class can also deal with xml inside NSStrings which makes testing and other options easy. Once the data has been parsed, it can be returned on one of two ways, either as a <ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                 or as a <ref id="XmlNode$EXTENSION">XmlNode</ref>
+                . The parserSubTree: method is exposed but ideally designed for parsing sections of a xml tree rather than a whole document. Use parse: for that. <code>Here's</code>
+                 an example of using this class. <example>
+                    <code>&amp;nbsp;NSString&amp;nbsp;*xml&amp;nbsp;=&amp;nbsp;@"lt;?xml&amp;nbsp;version=\"1.0\"&amp;nbsp;encoding=\"UTF-8\"&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Envelope&amp;nbsp;xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;soap:Body&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;dhc:balance&amp;nbsp;xmlns:dhc=\""&amp;nbsp;MODEL_SCHEMA&amp;nbsp;"\"&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;forAccountNumber&amp;gt;1234&amp;lt;/forAccountNumber&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"&amp;lt;/dhc:balance&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n\t&amp;lt;/soap:Body&amp;gt;"</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@"\n&amp;lt;/soap:Envelope&amp;gt;";</code>
+                    <code>&amp;nbsp;&amp;nbsp;</code>
+                    <code>&amp;nbsp;<ref id="">XmlParser</ref>
+                        &amp;nbsp;*&amp;nbsp;parser&amp;nbsp;=&amp;nbsp;[<ref id="">XmlParser</ref>
+                        &amp;nbsp;<ref id="#parserWithXml">parserWithXml</ref>
+                        :&amp;nbsp;xml];</code>
+                    <code>&amp;nbsp;<ref id="#NSError">NSError</ref>
+                        &amp;nbsp;*error&amp;nbsp;=&amp;nbsp;nil;</code>
+                    <code>&amp;nbsp;<ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                        &amp;nbsp;*doc&amp;nbsp;=&amp;nbsp;[parser&amp;nbsp;<ref id="#parse">parse</ref>
+                        :&amp;error];</code>
+                    <code>&amp;nbsp;if&amp;nbsp;(error&amp;nbsp;!=&amp;nbsp;nil)&amp;nbsp;{</code>
+                    <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;Deal&amp;nbsp;with&amp;nbsp;the&amp;nbsp;error.</code>
+                    <code>&amp;nbsp;}</code>
+                    <code>&amp;nbsp;&amp;nbsp;</code>
+                    <code>&amp;nbsp;//&amp;nbsp;Otherwise&amp;nbsp;process&amp;nbsp;the&amp;nbsp;results.</code>
+                </example>
+                 This class requires you to instantiate it with the data and then call parse: or parseSubtree: as a seperate command so that in the future various settings can be added to the class. Then the sequence would become init - setup - parse. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Constructors and factory methods</name>
+            <member kind="class-method">
+                <name>parserWithXml:</name>
+                <type>XmlParser *</type>
+                <prototype>+ (XmlParser *)parserWithXml:(NSString *)<parameter>xml</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Creates an autorelease instance of <ref id="">XmlParser</ref>
+                             ready to read the supplied data. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>xml</name>
+                        <description>
+                            <para>the data to read. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>+ parserWithXml:</selector>
+            </member>
+            <member kind="class-method">
+                <name>parserWithData:</name>
+                <type>XmlParser *</type>
+                <prototype>+ (XmlParser *)parserWithData:(NSData *)<parameter>data</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Creates an autorelease instance of <ref id="">XmlParser</ref>
+                             ready to read the supplied data. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>data</name>
+                        <description>
+                            <para>the data to read. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>+ parserWithData:</selector>
+            </member>
+            <member kind="class-method">
+                <name>parserWithUrl:</name>
+                <type>XmlParser *</type>
+                <prototype>+ (XmlParser *)parserWithUrl:(NSURL *)<parameter>url</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Creates an autorelease instance of <ref id="">XmlParser</ref>
+                             ready to read the supplied data. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>url</name>
+                        <description>
+                            <para>the url that will be called to access the data. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>+ parserWithUrl:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>initWithXml:</name>
+                <type>XmlParser *</type>
+                <prototype>- (XmlParser *)initWithXml:(NSString *)<parameter>xml</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Default constructor which takes xml stored in a string. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- initWithXml:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>initWithData:</name>
+                <type>XmlParser *</type>
+                <prototype>- (XmlParser *)initWithData:(NSData *)<parameter>data</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Default constructor which takes xml stored in a NSData object. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- initWithData:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>initWithUrl:</name>
+                <type>XmlParser *</type>
+                <prototype>- (XmlParser *)initWithUrl:(NSURL *)<parameter>url</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Default constructor which reads an xml stream from a NSURL. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- initWithUrl:</selector>
+            </member>
+        </section>
+        <section>
+            <name>Parsing</name>
+            <member kind="instance-method">
+                <name>parse:</name>
+                <type>XmlDocument *</type>
+                <prototype>- (XmlDocument *)parse:(NSError **)<parameter>aErrorVar</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Initiates the parsing of the supplied source and returns a <ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                             containing the data graph of the results. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>aErrorVar</name>
+                        <description>
+                            <para>Reference to an error variable where the parser can store an error that occurs. Must be passed as `&amp;aErrorVar`. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>- parse:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>parseSubtree:</name>
+                <type>XmlNode *</type>
+                <prototype>- (XmlNode *)parseSubtree:(NSError **)<parameter>aErrorVar</parameter>
+                     </prototype>
+                <file>XmlParser.h</file>
+                <description>
+                    <brief>
+                        <para>Initiates the parsing of the supplied source and returns a <ref id="XmlNode$EXTENSION">XmlNode</ref>
+                             containing the data graph of the results. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>aErrorVar</name>
+                        <description>
+                            <para>Reference to an error variable where the parser can store an error that occurs. Must be passed as `&amp;aErrorVar`. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>- parseSubtree:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

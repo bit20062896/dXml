@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>DCDMNode</name>
+    <file>DCDMNode.h</file>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>The abstract parent of all DM node classes. </para>
+        </brief>
+        <details>
+            <para>This class should never be used directly because it merely provides some common code for the implementation classes. Instead make use of <ref id="DCXmlNode$EXTENSION">DCXmlNode</ref>
+                 and <ref id="DCTextNode$EXTENSION">DCTextNode</ref>
+                . </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Properties</name>
+            <member kind="property">
+                <name>parentNode</name>
+                <type>DCXmlNode *</type>
+                <prototype>@property DCXmlNode *parentNode</prototype>
+                <file>DCDMNode.h</file>
+                <description>
+                    <brief>
+                        <para>Used to locate the parent <ref id="DCXmlNode$EXTENSION">DCXmlNode</ref>
+                             in the DM tree. </para>
+                    </brief>
+                    <details>
+                        <para>Note that this is a weak reference (not retained). This avoids memory leaks caused by circular references between parent and child nodes in the tree. </para>
+                    </details>
+                </description>
+                <selector>parentNode</selector>
+            </member>
+            <member kind="instance-method">
+                <name>newLineAndIndent:prettyPrint:indentDepth:</name>
+                <type>void</type>
+                <prototype>- (void)newLineAndIndent:(NSMutableString *)<parameter>xml</parameter>
+                     prettyPrint:(bool)<parameter>prettyPrint</parameter>
+                     indentDepth:(int)<parameter>indentDepth</parameter>
+                     </prototype>
+                <file>DCDMNode.h</file>
+                <description>
+                    <brief>
+                        <para>Internal method used during pretty printing for adding tabs and new lines. </para>
+                    </brief>
+                    <details>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>xml</name>
+                        <description>
+                            <para>A NSMutableString where the code will be appended. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>prettyPrint</name>
+                        <description>
+                            <para>If TRUE or YES, will cause this method to append a CR/LF combination and identDepth number of tab characters. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>indentDepth</name>
+                        <description>
+                            <para>the number of tabs to add to indent the text that will be printed next. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>- newLineAndIndent:prettyPrint:indentDepth:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>appendToXmlString:prettyPrint:indentDepth:</name>
+                <type>void</type>
+                <prototype>- (void)appendToXmlString:(NSMutableString *)<parameter>xml</parameter>
+                     prettyPrint:(bool)<parameter>prettyPrint</parameter>
+                     indentDepth:(int)<parameter>indentDepth</parameter>
+                     </prototype>
+                <file>DCDMNode.h</file>
+                <description>
+                    <brief>
+                        <para>Internal method used to serialise the DM out to a string. </para>
+                    </brief>
+                    <details>
+                        <para>THis method does nothing by default and should be overridden in derived classes to implement the necessary printing of values. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>xml</name>
+                        <description>
+                            <para>A NSMutableString where the code will be appended. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>prettyPrint</name>
+                        <description>
+                            <para>If TRUE or YES, is used inidicate that the text should be printed in a visually friendly style. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>indentDepth</name>
+                        <description>
+                            <para>the number of tabs to add to indent the text that will be printed next. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <selector>- appendToXmlString:prettyPrint:indentDepth:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

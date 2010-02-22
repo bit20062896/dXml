@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>NSError(SoapFault) category reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>NSError(SoapFault) category reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>NSError+SoapFault.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>This category adds functionality to the <a href="#NSError">NSError</a> class for dealing with soap faults that have been returned as <a href="#NSError">NSError</a> instances. </p>
+      <h2>Tasks</h2>
+      <h3>Soap message handling</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#isSoapFault>- isSoapFault</a></code>
+            <span class="tooltip">Returns YES if the NSError contains soap fault information. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#soapFaultMessage>- soapFaultMessage</a></code>
+            <span class="tooltip">returns the contents of the faultMessage userinfo value. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#soapFaultCode>- soapFaultCode</a></code>
+            <span class="tooltip">returns the contents of the faultCode userinfo value. </span>          </span>
+        </li>
+      </ul>
+      <h3>Soap fault factory methods</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#errorWithSoapResponse:>+ errorWithSoapResponse:</a></code>
+            <span class="tooltip">Factory method which creates a NSError containing a soap fault. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#errorWithSoapFault:>+ errorWithSoapFault:</a></code>
+            <span class="tooltip">Factory method which creates a NSError containing a soap fault. </span>          </span>
+        </li>
+      </ul>
+      <h2>Class methods</h2>
+      <h3><a name="errorWithSoapResponse:"></a>errorWithSoapResponse:</h3>
+<p>Factory method which creates a <a href="#NSError">NSError</a> containing a soap fault. </p>
+      <code class="methodDeclaration">+ (NSError *)errorWithSoapResponse:(DCWebServiceResponse *)        <span class="parameter">response</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>response</dt>
+        <dd><p>The full response document from a web service. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>NSError+SoapFault.h</code>
+      <h3><a name="errorWithSoapFault:"></a>errorWithSoapFault:</h3>
+<p>Factory method which creates a <a href="#NSError">NSError</a> containing a soap fault. </p>
+      <code class="methodDeclaration">+ (NSError *)errorWithSoapFault:(DCXmlNode *)        <span class="parameter">fault</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>fault</dt>
+        <dd><p>The bod content from a we service call. This is expected to be the "Fault" node of the response. </p>
+</dd>
+      </dl>
+      <h5>Declared in</h5>
+      <code>NSError+SoapFault.h</code>
+      <h2>Instance methods</h2>
+      <h3><a name="isSoapFault"></a>isSoapFault</h3>
+<p>Returns YES if the <a href="#NSError">NSError</a> contains soap fault information. </p>
+      <code class="methodDeclaration">- (BOOL)isSoapFault</code>
+      <h5>Declared in</h5>
+      <code>NSError+SoapFault.h</code>
+      <h3><a name="soapFaultMessage"></a>soapFaultMessage</h3>
+<p>returns the contents of the faultMessage userinfo value. </p>
+      <code class="methodDeclaration">- (NSString *)soapFaultMessage</code>
+      <h5>Declared in</h5>
+      <code>NSError+SoapFault.h</code>
+      <h3><a name="soapFaultCode"></a>soapFaultCode</h3>
+<p>returns the contents of the faultCode userinfo value. </p>
+      <code class="methodDeclaration">- (NSString *)soapFaultCode</code>
+      <h5>Declared in</h5>
+      <code>NSError+SoapFault.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-02-18)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

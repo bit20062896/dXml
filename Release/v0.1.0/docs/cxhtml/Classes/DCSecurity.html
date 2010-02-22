@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DCSecurity class reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>DCSecurity class reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Inherits from</label></td>
+        <td>NSObject</td>
+      </tr>
+      <tr>
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>DCSecurity.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>Security is the main factory class for applying security. </p>
+<p>Essentially you set it up with the security information you have then ask it to provide a security handler back. This handler can then be used to implement that style of security on the soap messages. Here is an example of how to use it: <div class="example"><pre><code>&nbsp;<a href="">DCSecurity</a>&nbsp;*security&nbsp;=&nbsp;[<a href="">DCSecurity</a>&nbsp;<a href="#createSecurityWithUserid">createSecurityWithUserid</a>:&nbsp;userid&nbsp;<a href="#password">password</a>:&nbsp;password];</code><code>&nbsp;<a href="#NSObject">NSObject</a>&nbsp;&lt;SecurityModel&ht;&nbsp;*securer&nbsp;=&nbsp;[security&nbsp;<a href="#createSecurityModelOfType">createSecurityModelOfType</a>:&nbsp;securityType];</code><code>&nbsp;[securer&nbsp;secureSoapMessage:&nbsp;soapMsg];</code></pre></div>
+ Security seperated into two parts to make it easy to use. The act of constructing an instance if Security also gives it the necessary data it needs to work with. ie.userid and password. The second part of getting the model and applying it to the message provides the flexibility of being able to aply different models as needed. </p>
+      <h2>Tasks</h2>
+      <h3>Other</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithUserid:password:>- initWithUserid:password:</a></code>
+            <span class="tooltip">Constructors and factory methods. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#createSecurityModelOfType:>- createSecurityModelOfType:</a></code>
+            <span class="tooltip">Called to obtain an instance of DCSecurityModel which implements the required security. </span>          </span>
+        </li>
+      </ul>
+      <h3>Other</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#createSecurityWithUserid:password:>+ createSecurityWithUserid:password:</a></code>
+            <span class="tooltip">Creates an autorelease instance of DCSecurity with the passed userid and password. </span>          </span>
+        </li>
+      </ul>
+      <h2>Class methods</h2>
+      <h3><a name="createSecurityWithUserid:password:"></a>createSecurityWithUserid:password:</h3>
+<p>Creates an autorelease instance of <a href="">DCSecurity</a> with the passed userid and password. </p>
+      <code class="methodDeclaration">+ (DCSecurity *)createSecurityWithUserid:(NSString *)        <span class="parameter">aUserid</span>
+ password:(NSString *)        <span class="parameter">aPassword</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCSecurity.h</code>
+      <h2>Instance methods</h2>
+      <h3><a name="initWithUserid:password:"></a>initWithUserid:password:</h3>
+<p>Constructors and factory methods. </p>
+      <code class="methodDeclaration">- (DCSecurity *)initWithUserid:(NSString *)        <span class="parameter">aUserid</span>
+ password:(NSString *)        <span class="parameter">aPassword</span>
+</code>
+      <h5>Discussion</h5>
+<p>Default constructor. At this stage it simple takes a userid and password. As time goes on there will need to be other constructors which take other types of security information. </p>
+      <h5>Declared in</h5>
+      <code>DCSecurity.h</code>
+      <h3><a name="createSecurityModelOfType:"></a>createSecurityModelOfType:</h3>
+<p>Called to obtain an instance of <a href="../Protocols/DCSecurityModel.html">DCSecurityModel</a> which implements the required security. </p>
+      <code class="methodDeclaration">- (NSObject<DCSecurityModel> *)createSecurityModelOfType:(SECURITYTYPE)        <span class="parameter">securityType</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCSecurity.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-01-21)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

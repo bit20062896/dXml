@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>XmlDocumentParserDelegate</name>
+    <file>XmlDocumentParserDelegate.h</file>
+    <base id="XmlSubtreeParserDelegate$EXTENSION">XmlSubtreeParserDelegate</base>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>Simple extension of the <ref id="XmlSubtreeParserDelegate$EXTENSION">XmlSubtreeParserDelegate</ref>
+                 that returns a <ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                . </para>
+        </brief>
+        <details>
+            <para>Other than that there is no additional functionality. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Accessors</name>
+            <member kind="instance-method">
+                <name>document</name>
+                <type>XmlDocument *</type>
+                <prototype>- (XmlDocument *)document</prototype>
+                <file>XmlDocumentParserDelegate.h</file>
+                <description>
+                    <brief>
+                        <para>Get the document parsed as a <ref id="XmlDocument$EXTENSION">XmlDocument</ref>
+                            . </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- document</selector>
+            </member>
+        </section>
+    </sections>
+</object>

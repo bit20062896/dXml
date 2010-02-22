@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>WebServiceResponse</name>
+    <file>WebServiceResponse.h</file>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>An instance of this class will be returned from a sucessful call to a soap web service. </para>
+        </brief>
+        <details>
+            <para>It contains a complete copy o the soap response and also provide conveniance methods to access various predefined parts of the response. </para>
+        </details>
+    </description>
+    <seeAlso>
+        <item>
+            <ref id="SoapWebServiceConnection$EXTENSION">SoapWebServiceConnection</ref>
+        </item>
+    </seeAlso>
+    <sections>
+        <section>
+            <name>Properties</name>
+            <member kind="property">
+                <name>document</name>
+                <type>XmlDocument *</type>
+                <prototype>@property XmlDocument *document</prototype>
+                <file>WebServiceResponse.h</file>
+                <description>
+                    <brief>
+                        <para>The raw xml document as returned by the service. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>document</selector>
+            </member>
+        </section>
+        <section>
+            <name>Constructors</name>
+            <member kind="instance-method">
+                <name>initWithDocument:</name>
+                <type>WebServiceResponse *</type>
+                <prototype>- (WebServiceResponse *)initWithDocument:(XmlDocument *)<parameter>aDocument</parameter>
+                     </prototype>
+                <file>WebServiceResponse.h</file>
+                <description>
+                    <brief>
+                        <para>Constructor used by the connection to create this instance. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- initWithDocument:</selector>
+            </member>
+        </section>
+        <section>
+            <name>Soap message elements</name>
+            <member kind="instance-method">
+                <name>bodyElement</name>
+                <type>XmlNode *</type>
+                <prototype>- (XmlNode *)bodyElement</prototype>
+                <file>WebServiceResponse.h</file>
+                <description>
+                    <brief>
+                        <para>Gives direct access to the Body node. </para>
+                    </brief>
+                    <details>
+                        <para>ie. \Envelope\Body. </para>
+                    </details>
+                </description>
+                <selector>- bodyElement</selector>
+            </member>
+            <member kind="instance-method">
+                <name>bodyContent</name>
+                <type>XmlNode *</type>
+                <prototype>- (XmlNode *)bodyContent</prototype>
+                <file>WebServiceResponse.h</file>
+                <description>
+                    <brief>
+                        <para>Gives direct access to the first node within the Body node. </para>
+                    </brief>
+                    <details>
+                        <para>Useful when you know there will be only one node within the Body node. </para>
+                    </details>
+                </description>
+                <selector>- bodyContent</selector>
+            </member>
+            <member kind="instance-method">
+                <name>bodyContents</name>
+                <type>NSEnumerator *</type>
+                <prototype>- (NSEnumerator *)bodyContents</prototype>
+                <file>WebServiceResponse.h</file>
+                <description>
+                    <brief>
+                        <para>Returns a NSEnumerator of the nodes within the Body node. </para>
+                    </brief>
+                    <details>
+                        <para>This is useful when for example you get this reply: <example>
+                                <code>&amp;nbsp;...</code>
+                                <code>&amp;nbsp;&amp;lt;Body&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;Data&amp;gt;&amp;nbsp;...&amp;nbsp;&amp;lt;/Data&amp;gt;</code>
+                                <code>&amp;nbsp;&amp;lt;/Body&amp;gt;</code>
+                            </example>
+                             This NSEnumator will loop through all the "Data" elements in turn. </para>
+                    </details>
+                </description>
+                <selector>- bodyContents</selector>
+            </member>
+        </section>
+    </sections>
+</object>

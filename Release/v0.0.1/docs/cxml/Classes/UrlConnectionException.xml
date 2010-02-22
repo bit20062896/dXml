@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>UrlConnectionException</name>
+    <file>UrlConnectionException.h</file>
+    <description>
+        <brief>
+            <para>Thrown if an error is detected during a connection by <ref id="UrlConnection$EXTENSION">UrlConnection</ref>
+                . </para>
+        </brief>
+        <details></details>
+    </description>
+    <sections></sections>
+    <base>NSObject</base>
+</object>

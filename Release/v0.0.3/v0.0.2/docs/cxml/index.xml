@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<project generator="appledoc v1.0.5">
+    <object kind="class" id="Classes/DMNode$EXTENSION">
+        <name>DMNode</name>
+    </object>
+    <object kind="category" id="Categories/NSObject(SoapTemplates)$EXTENSION">
+        <name>NSObject(SoapTemplates)</name>
+    </object>
+    <object kind="class" id="Classes/NoSecurity$EXTENSION">
+        <name>NoSecurity</name>
+    </object>
+    <object kind="class" id="Classes/Security$EXTENSION">
+        <name>Security</name>
+    </object>
+    <object kind="protocol" id="Protocols/SecurityModel$EXTENSION">
+        <name>SecurityModel</name>
+    </object>
+    <object kind="class" id="Classes/SoapWebServiceConnection$EXTENSION">
+        <name>SoapWebServiceConnection</name>
+    </object>
+    <object kind="class" id="Classes/TextNode$EXTENSION">
+        <name>TextNode</name>
+    </object>
+    <object kind="class" id="Classes/UrlConnection$EXTENSION">
+        <name>UrlConnection</name>
+    </object>
+    <object kind="category" id="Categories/UrlConnection(NSURLConnectionDelegate)$EXTENSION">
+        <name>UrlConnection(NSURLConnectionDelegate)</name>
+    </object>
+    <object kind="class" id="Classes/UseridPasswordSecurity$EXTENSION">
+        <name>UseridPasswordSecurity</name>
+    </object>
+    <object kind="class" id="Classes/WebServiceResponse$EXTENSION">
+        <name>WebServiceResponse</name>
+    </object>
+    <object kind="class" id="Classes/XmlAttribute$EXTENSION">
+        <name>XmlAttribute</name>
+    </object>
+    <object kind="class" id="Classes/XmlDocument$EXTENSION">
+        <name>XmlDocument</name>
+    </object>
+    <object kind="class" id="Classes/XmlDocumentParserDelegate$EXTENSION">
+        <name>XmlDocumentParserDelegate</name>
+    </object>
+    <object kind="class" id="Classes/XmlNamespace$EXTENSION">
+        <name>XmlNamespace</name>
+    </object>
+    <object kind="class" id="Classes/XmlNode$EXTENSION">
+        <name>XmlNode</name>
+    </object>
+    <object kind="class" id="Classes/XmlParser$EXTENSION">
+        <name>XmlParser</name>
+    </object>
+    <object kind="class" id="Classes/XmlSubtreeParserDelegate$EXTENSION">
+        <name>XmlSubtreeParserDelegate</name>
+    </object>
+</project>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DCXPathAbstractSelector class reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>DCXPathAbstractSelector class reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Inherits from</label></td>
+        <td>NSObject</td>
+      </tr>
+      <tr>
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>DCXPathAbstractSelector.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>Abstract parent class of all selectors. </p>
+<p>The basic idea of a selector is that it is presented with a node and asked to select further nodes based on that node. For example a parent node select is given a node and returns it's parent. In addition to this, selectors can also have multiple filters added to them. If a selector has filters, before adding a node to the list of ndoes to be returned, each filter is asked if it is ok to add that node. Only if <strong>all</strong> filters agree, will the node be added. </p>
+      <h2>Tasks</h2>
+      <h3>Other</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#addFilter:>- addFilter:</a></code>
+            <span class="tooltip">Adds the passed filter to the list of filters. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#selectFromNode:index:errorVar:>- selectFromNode:index:errorVar:</a></code>
+            <span class="tooltip">Called for each node in the current list of nodes by DCXPathExecutor. </span>          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#selectNodesFromNode:index:>- selectNodesFromNode:index:</a></code>
+            <span class="tooltip">Called internally to obtain the nodes for the selector. </span>          </span>
+        </li>
+      </ul>
+      <h2>Instance methods</h2>
+      <h3><a name="addFilter:"></a>addFilter:</h3>
+<p>Adds the passed filter to the list of filters. </p>
+      <code class="methodDeclaration">- (void)addFilter:(NSObject<DCXPathFilter> *)        <span class="parameter">filter</span>
+</code>
+      <h5>Declared in</h5>
+      <code>DCXPathAbstractSelector.h</code>
+      <h3><a name="selectFromNode:index:errorVar:"></a>selectFromNode:index:errorVar:</h3>
+<p>Called for each node in the current list of nodes by <a href="DCXPathExecutor.html">DCXPathExecutor</a>. </p>
+      <code class="methodDeclaration">- (NSArray *)selectFromNode:(DCXmlNode *)        <span class="parameter">currentNode</span>
+ index:(int)        <span class="parameter">anIndex</span>
+ errorVar:(NSError **)        <span class="parameter">aErrorVar</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>currentNode</dt>
+        <dd><p>The current <a href="DCXmlNode.html">DCXmlNode</a> to be used as the base node for the current xpath token. </p>
+</dd>
+        <dt>anIndex</dt>
+        <dd><p>The index of the parent node in the list of current nodes being processed. </p>
+</dd>
+        <dt>aErrorVar</dt>
+        <dd><p>A reference to a variable that will be populated with a <a href="#NSError">NSError</a> should something go wrong with trying to apply the xpath to the document model. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>An NSArray containing the nodes found by the selector. Unless an error is found, in which case this is nil. </p>
+      <h5>Discussion</h5>
+<p>Empty implementation.</p>
+<p>This should not be overridden because it contains the common processing applicable to all selectors. </p>
+      <h5>Declared in</h5>
+      <code>DCXPathAbstractSelector.h</code>
+      <h3><a name="selectNodesFromNode:index:"></a>selectNodesFromNode:index:</h3>
+<p>Called internally to obtain the nodes for the selector. </p>
+      <code class="methodDeclaration">- (NSArray *)selectNodesFromNode:(DCXmlNode *)        <span class="parameter">node</span>
+ index:(int)        <span class="parameter">anIndex</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>node</dt>
+        <dd><p>The node current being processed. It is the based from which the selector shoul select new nodes. </p>
+</dd>
+        <dt>anIndex</dt>
+        <dd><p>The index of the current node in the list of nodes being processed. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>A NSArray of the nodes being selected. Note, as per the filter details, these nodes may not make it back to the <a href="DCXPathExecutor.html">DCXPathExecutor</a>. </p>
+      <h5>Discussion</h5>
+<p>Empty implementation designed to be overridden.</p>
+<p>Derived classes should implement this method to return the selected nodes. </p>
+      <h5>Declared in</h5>
+      <code>DCXPathAbstractSelector.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-02-18)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

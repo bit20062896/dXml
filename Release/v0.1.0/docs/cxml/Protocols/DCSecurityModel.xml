@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<object kind="protocol" generator="appledoc v1.0.5">
+    <name>DCSecurityModel</name>
+    <file>DCSecurity.h</file>
+    <description>
+        <brief>
+            <para>Any class that is used to setup security must implement this interface. </para>
+        </brief>
+        <details>
+            <para>This alls the connection classes to be agnostic about what security is being applied. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Other</name>
+            <member kind="instance-method">
+                <name>secureSoapMessage:</name>
+                <type>void</type>
+                <prototype>- (void)secureSoapMessage:(DCXmlDocument *)<parameter>soapMessage</parameter>
+                     </prototype>
+                <file>DCSecurity.h</file>
+                <description>
+                    <brief>
+                        <para>Secures the passed soap message. </para>
+                    </brief>
+                    <details>
+                        <para>Each security class will do this in a different way. </para>
+                    </details>
+                </description>
+                <selector>- secureSoapMessage:</selector>
+            </member>
+        </section>
+    </sections>
+</object>

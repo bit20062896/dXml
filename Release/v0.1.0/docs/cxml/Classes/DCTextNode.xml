@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<object kind="class" generator="appledoc v1.0.5">
+    <name>DCTextNode</name>
+    <file>DCTextNode.h</file>
+    <base id="DCDMNode$EXTENSION">DCDMNode</base>
+    <base>NSObject</base>
+    <description>
+        <brief>
+            <para>Simple node which represents a string of text inside a <ref id="DCXmlNode$EXTENSION">DCXmlNode</ref>
+                . </para>
+        </brief>
+        <details>
+            <para>The only things this class contains is the text string. </para>
+        </details>
+    </description>
+    <sections>
+        <section>
+            <name>Properties</name>
+            <member kind="property">
+                <name>value</name>
+                <type>NSString *</type>
+                <prototype>@property NSString *value</prototype>
+                <file>DCTextNode.h</file>
+                <description>
+                    <brief>
+                        <para>The string value. </para>
+                    </brief>
+                    <details>
+                        <para>For example in the xml <example>
+                                <code>&amp;nbsp;&amp;lt;abc&amp;gt;&lt;b>def&lt;/b>&amp;lt;/abc&amp;gt;</code>
+                            </example>
+                             def is the value. </para>
+                    </details>
+                </description>
+                <selector>value</selector>
+            </member>
+        </section>
+        <section>
+            <name>Constructors</name>
+            <member kind="instance-method">
+                <name>initWithText:</name>
+                <type>DCTextNode *</type>
+                <prototype>- (DCTextNode *)initWithText:(NSString *)<parameter>text</parameter>
+                     </prototype>
+                <file>DCTextNode.h</file>
+                <description>
+                    <brief>
+                        <para>Default constructor. </para>
+                    </brief>
+                    <details></details>
+                </description>
+                <selector>- initWithText:</selector>
+            </member>
+        </section>
+    </sections>
+</object>
