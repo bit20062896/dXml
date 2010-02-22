@@ -83,7 +83,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					200,
-					671.20849609375,
+					799.20849609375,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXFindDataSource_MessageID,
@@ -128,8 +128,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 288491796;
-			PBXWorkspaceStateSaveDate = 288491796;
+			PBXPerProjectTemplateStateSaveDate = 288502944;
+			PBXWorkspaceStateSaveDate = 288502944;
 		};
 		perUserProjectItems = {
 			650F6B3110C72B0C00AAABE7 = 650F6B3110C72B0C00AAABE7 /* PBXTextBookmark */;
@@ -139,6 +139,8 @@
 			65248DFA10BF4BDC00CEE11D = 65248DFA10BF4BDC00CEE11D /* PBXTextBookmark */;
 			65248E2710BF4EE900CEE11D = 65248E2710BF4EE900CEE11D /* PBXTextBookmark */;
 			6526E0421110717300DE4E9A = 6526E0421110717300DE4E9A /* PBXTextBookmark */;
+			652705BA11320C2B009615CB = 652705BA11320C2B009615CB /* PBXTargetBookmark */;
+			652705BB11320C2B009615CB = 652705BB11320C2B009615CB /* PBXTargetBookmark */;
 			6532524210BE507100007475 = 6532524210BE507100007475 /* PBXTextBookmark */;
 			654809D8111318310094CD0B = 654809D8111318310094CD0B /* PBXTextBookmark */;
 			654809DA111318310094CD0B = 654809DA111318310094CD0B /* PBXTextBookmark */;
@@ -426,6 +428,17 @@
 		vrLen = 2612;
 		vrLoc = 5886;
 	};
+	652705BA11320C2B009615CB /* PBXTargetBookmark */ = {
+		isa = PBXTargetBookmark;
+		trg = 656847BE10D7000B0031C348 /* Documentation */;
+	};
+	652705BB11320C2B009615CB /* PBXTargetBookmark */ = {
+		isa = PBXTargetBookmark;
+		trg = 656847BE10D7000B0031C348 /* Documentation */;
+	};
+	6527060011323092009615CB /* Generate API */ = {
+		activeExec = 0;
+	};
 	65320BAD10BCF0230056BDDF /* DCXmlDocumentParserDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {861, 785}}";
@@ -531,6 +544,18 @@
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 6609;
+	};
+	654CC684111ECDBB000209D8 /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = 65E646E910955DD70055AA46;
+		remoteInfo = "dXml Unit Tests";
+	};
+	654CC685111ECDBB000209D8 /* PBXTargetDependency */ = {
+		isa = PBXTargetDependency;
+		target = 65E646E910955DD70055AA46 /* dXml Unit Tests */;
+		targetProxy = 654CC684111ECDBB000209D8 /* PBXContainerItemProxy */;
 	};
 	654CC689111ECDDF000209D8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -895,7 +920,52 @@
 		};
 	};
 	656847BE10D7000B0031C348 /* Documentation */ = {
+		isa = PBXLegacyTarget;
 		activeExec = 0;
+		buildArgumentsString = "-p \"$PROJECT_NAME\" --input src/code --output \"$CONFIGURATION/v$CURRENT_PROJECT_VERSION/docs\" -t /Users/$USER/projects/appledoc/Templates -d /Users/$USER/tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist --verbose 5";
+		buildConfigurationList = 656847C110D700290031C348 /* Build configuration list for PBXLegacyTarget "Documentation" */;
+		buildPhases = (
+		);
+		buildToolPath = /Users/derek/projects/appledoc/build/Release/appledoc;
+		buildWorkingDirectory = /Users/derek/projects/dXml;
+		dependencies = (
+			654CC685111ECDBB000209D8 /* PBXTargetDependency */,
+		);
+		name = Documentation;
+		passBuildSettingsInEnvironment = 1;
+		productName = Documentation;
+	};
+	656847BF10D7000B0031C348 /* Debug */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			BUILD_STYLE = Debug;
+			COPY_PHASE_STRIP = NO;
+			GCC_DYNAMIC_NO_PIC = NO;
+			GCC_OPTIMIZATION_LEVEL = 0;
+			PRODUCT_NAME = Documentation;
+		};
+		name = Debug;
+	};
+	656847C010D7000B0031C348 /* Release */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			BUILD_STYLE = Release;
+			COPY_PHASE_STRIP = YES;
+			DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			GCC_ENABLE_FIX_AND_CONTINUE = NO;
+			PRODUCT_NAME = Documentation;
+			ZERO_LINK = NO;
+		};
+		name = Release;
+	};
+	656847C110D700290031C348 /* Build configuration list for PBXLegacyTarget "Documentation" */ = {
+		isa = XCConfigurationList;
+		buildConfigurations = (
+			656847BF10D7000B0031C348 /* Debug */,
+			656847C010D7000B0031C348 /* Release */,
+		);
+		defaultConfigurationIsVisible = 0;
+		defaultConfigurationName = Release;
 	};
 	6568480510D704670031C348 /* PBXTargetBookmark */ = {
 		isa = PBXTargetBookmark;
