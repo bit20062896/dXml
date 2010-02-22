@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>DCXPathFilter protocol reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>DCXPathFilter protocol reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>DCXPathFilter.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>A filter is called once for each node that will be added to the new current list of nodes. </p>
+<p>It provides the ability to do additional processing based on the node or it's index within it's parent node. </p>
+      <h2>Tasks</h2>
+      <h3>Other</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#acceptNode:index:errorVar:>- acceptNode:index:errorVar:</a></code>
+            <span class="tooltip">This method is called for each node added. </span>          </span>
+        </li>
+      </ul>
+      <h2>Instance methods</h2>
+      <h3><a name="acceptNode:index:errorVar:"></a>acceptNode:index:errorVar:</h3>
+<p>This method is called for each node added. </p>
+      <code class="methodDeclaration">- (BOOL)acceptNode:(DCDMNode *)        <span class="parameter">node</span>
+ index:(int)        <span class="parameter">anIndex</span>
+ errorVar:(NSError **)        <span class="parameter">aErrorVar</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>node</dt>
+        <dd><p>A reference to the node being added. Can be any type of node. </p>
+</dd>
+        <dt>anIndex</dt>
+        <dd><p>The index of the node within the list of returned nodes from a selector. This is 0 based. </p>
+</dd>
+        <dt>aErrorVar</dt>
+        <dd><p>A reference to a variable where an error can be placed if it occurs. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>YES if the node should be added to the results, NO if it should not. </p>
+      <h5>Declared in</h5>
+      <code>DCXPathFilter.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-02-22)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>
