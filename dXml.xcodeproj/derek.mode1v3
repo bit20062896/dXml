@@ -261,6 +261,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -284,7 +286,7 @@
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
 								<real>22</real>
-								<real>241</real>
+								<real>240.83740234375</real>
 								<real>20</real>
 								<real>48</real>
 							</array>
@@ -310,9 +312,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>34</integer>
-									<integer>33</integer>
-									<integer>32</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -335,7 +334,7 @@
 							<string>TargetStatusColumn</string>
 							<real>22</real>
 							<string>MainColumn</string>
-							<real>241</real>
+							<real>240.83740234375</real>
 							<string>FileBuiltColumn</string>
 							<real>20</real>
 							<string>ObjectSizeColumn</string>
@@ -353,8 +352,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -372,7 +369,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>658CAED911379EEF004AD1E4</string>
+										<string>658CAFAE11379F51004AD1E4</string>
 										<key>history</key>
 										<array>
 											<string>65AFA7291095482400355353</string>
@@ -501,7 +498,7 @@
 											<string>658CAE6A113770E5004AD1E4</string>
 											<string>658CAE77113779C2004AD1E4</string>
 											<string>658CAEC911379DAF004AD1E4</string>
-											<string>658CAECA11379DAF004AD1E4</string>
+											<string>658CAED911379EEF004AD1E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -559,9 +556,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>658CADFB11375CCF004AD1E4</string>
+				<string>658CAFA311379F4D004AD1E4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>658CADFC11375CCF004AD1E4</string>
+				<string>658CAFA411379F4D004AD1E4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -712,7 +709,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>288857839.22927302</real>
+	<real>288857937.50799501</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -729,11 +726,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>658CAE0F11375E41004AD1E4</string>
-		<string>658CAE0A11375E14004AD1E4</string>
 		<string>65F460D9109410B9008AF68E</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/derek/projects/dXml/dXml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -758,7 +751,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DCUrlConnectionIntegrationTests.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -775,8 +768,6 @@
 							<string>607pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -816,7 +807,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>65F460D9109410B9008AF68E</string>
-				<string>658CADFD11375CCF004AD1E4</string>
+				<string>658CAFA511379F4D004AD1E4</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
