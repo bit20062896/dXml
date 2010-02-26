@@ -75,7 +75,7 @@
 	GHAssertEqualStrings(DHC_DATA_TO_STRING(data), expectedResponse, @"Response not correct");
 }
 
-- (void) testWithSecurity {
+- (void) testWithSecurityAcceptsSSCs {
 	NSString *xml = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 						 @"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
 						 @"<soap:Header>"
@@ -104,5 +104,34 @@
 	int dataLength = [data length];
 	GHAssertGreaterThan(dataLength, 0, @"No data in data");
 }
-
+/*
+- (void) testWithSecurityNotSSCs {
+	NSString *xml = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+	@"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+	@"<soap:Header>"
+	@"<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">"
+	@"<wsse:UsernameToken xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"UsernameToken\">"
+	@"<wsse:Username>fred</wsse:Username>"
+	@"<wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText\">fred</wsse:Password>"
+	@"</wsse:UsernameToken>"
+	@"</wsse:Security>"
+	@"</soap:Header>"
+	@"<soap:Body>"
+	@"<dhc:balance xmlns:dhc=\"" MODEL_SCHEMA "\">"
+	@"<forAccountNumber>1234</forAccountNumber>"
+	@"</dhc:balance>"
+	@"\n\t</soap:Body>"
+	@"\n</soap:Envelope>";
+	DCUrlConnection *connection = [DCUrlConnection createWithUrl: BANKING_SECURE];
+	[connection setHeaderValue: BALANCE_ACTION forKey: @"SOAPAction"];
+	NSError *error = nil;
+	NSData *data = [connection post: xml errorVar:&error];
+	
+	//Validate.
+	GHAssertNotNil(data, @"Nil data returned");
+	GHAssertNil(error, @"Error returned");
+	int dataLength = [data length];
+	GHAssertGreaterThan(dataLength, 0, @"No data in data");
+}
+*/
 @end

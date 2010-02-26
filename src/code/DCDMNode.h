@@ -7,6 +7,8 @@
 //
  
 // Use class to reference instead of import because import will create a circular reference and we want to delay type checking to avoid it.
+#import <Foundation/Foundation.h>
+
 @class DCXmlNode;
 
 /**
