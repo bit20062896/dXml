@@ -64,8 +64,8 @@ You can cut and past this into a file and run it using [GH-Unit](http://github.c
 	DCWebServiceResponse * response = [connection postXmlStringPayload:request errorVar:&error];
 
 	// Error check.
-	if (response != nil){
-		NSLog(@"Other error %@", error);
+	if (response == nil){
+		NSLog(@"Error %@", error);
 		return;
 	}
 
