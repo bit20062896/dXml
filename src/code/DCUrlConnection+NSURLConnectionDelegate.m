@@ -18,6 +18,14 @@
 
 - (BOOL) connection: (NSURLConnection *) connection canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *) protectionSpace {
 	DHC_LOG(@"Event-canAuthenticateAgainstProtectionSpace");
+	DHC_LOG(@"Authentication method        : %@", protectionSpace.authenticationMethod);
+	DHC_LOG(@"Host                         : %@", protectionSpace.host);
+	DHC_LOG(@"Port                         : %i", protectionSpace.port);
+	DHC_LOG(@"Protocol                     : %@", protectionSpace.protocol);
+	DHC_LOG(@"realm                        : %@", protectionSpace.realm);
+	DHC_LOG(@"Receives credentials securely: %@", DHC_PRETTY_BOOL(protectionSpace.receivesCredentialSecurely));
+	DHC_LOG(@"Server trust                 : %@", protectionSpace.serverTrust);
+	DHC_LOG(@"Authentication method: %@", protectionSpace.authenticationMethod);
 	DHC_LOG( @"Allowing self signed certificates: %@", DHC_PRETTY_BOOL(self.allowSelfSignedCertificates) );
 	return self.allowSelfSignedCertificates;
 }
@@ -29,14 +37,18 @@
 
 - (void) connection: (NSURLConnection *) connection didReceiveAuthenticationChallenge: (NSURLAuthenticationChallenge *) challenge {
 	DHC_LOG(@"Event-didReceiveAuthenticationChallenge");
-
+	DHC_LOG(@"Challenger previous failure count: %i", challenge.previousFailureCount);
+	DHC_LOG(@"Challenger proposed credential   : %@", challenge.proposedCredential);
+	
 	//If never been challenged, create a new set of credentials and submit them.
 	if ([challenge previousFailureCount] == 0) {
+		DHC_LOG(@"Telling sender to use new credentials with our userid and password.");
 		NSURLCredential *newCredentials = [NSURLCredential credentialWithUser: userid password: password persistence: NSURLCredentialPersistenceNone];
 		[[challenge sender] useCredential: newCredentials forAuthenticationChallenge: challenge];
 	}
 	else {
 		//Otherwise fail the access attempt.
+		DHC_LOG(@"Telling sender to cancel the challenge.");
 		[[challenge sender] cancelAuthenticationChallenge: challenge];
 	}
 }

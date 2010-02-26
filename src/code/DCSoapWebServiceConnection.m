@@ -82,7 +82,9 @@
 
 	// And check for errors.
 	if (data == nil) {
-		DHC_LOG(@"Error detected from posting to server %@", aErrorVar);
+		if (aErrorVar != NULL) {
+			DHC_LOG(@"Error detected from posting to server %@", *aErrorVar);
+		}
 		return nil;
 	}
 
