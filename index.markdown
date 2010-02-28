@@ -111,16 +111,4 @@ As this is a static library, adding it to your xcode project is quite simple. Th
 
 Thats all that needs to be done.
  
-# Download
 
-You can download the source as either a zip or tar ball using these links
-
-[![zip](http://github.com/images/modules/download/zip.png)](http://github.com/drekka/dXml/zipball/master)
-or
-[![tar](http://github.com/images/modules/download/tar.png)](http://github.com/drekka/dXml/tarball/master)
-
-You can also clone the project with [git](http://git-scm.com) by running:
-
-<pre class="console">$ git clone git://github.com/drekka/dXml</pre>
-      
-    

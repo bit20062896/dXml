@@ -5,11 +5,20 @@ body {
 	color: black;
 }
 
+#document-index {
+	margin:0em 1em 1em 1em;
+	float:right;
+	border:1px solid #cccccc;
+	padding:0em 1em 0em 1em;
+	width:11em;
+	background:white;
+}
+
 #container {
 	background-color:white;
 	border: 1px solid #cccccc;
 	padding:3em;
-	margin:30px 30px 60px 30px;
+	margin:2em 15em 4em 2em;
 }
 
 .title {
@@ -50,15 +59,6 @@ hr {
 	position:absolute;
 	top:0px;
 	right:0px;
-}
-
-#document-index {
-	margin:0em 0px 1em 1em;
-	clear:both;
-	float:right;
-	border:1px solid #cccccc;
-	padding:0em 1em 0em 1em;
-	width:11em;
 }
 
 #document-index a {
