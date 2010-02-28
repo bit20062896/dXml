@@ -20,19 +20,19 @@ This is why methods which deal with input and output generally have a **NSError 
 // other imports.
 #import "NSError+SoapFault.h"
 
-	// class code ...
+   // class code ...
  
-	NSError *error = nil;
-	DCWebServiceResponse *response = [service postXmlNodePayload: xml errorVar:&error];
+   NSError *error = nil;
+   DCWebServiceResponse *response = [service postXmlNodePayload: xml errorVar:&error];
 
-	// Check for errors.
-	if (response == nil) {
-		if (error.isSoapFault) {
-			NSLog(@"Fault code    = &@", error.soapFaultCode);
-			NSLog(@"Fault message = &@", error.soapFaultMessage);
-			return;
-		}
-	}
+   // Check for errors.
+   if (response == nil) {
+      if (error.isSoapFault) {
+         NSLog(@"Fault code    = &@", error.soapFaultCode);
+         NSLog(@"Fault message = &@", error.soapFaultMessage);
+         return;
+      }
+   }
 
 {% endhighlight %}
 

@@ -39,17 +39,17 @@ The factory methods provide autorelease instances, which makes life easier. They
 Here's the factory methods and the xml that the created DCXmlNode produces.
 
 <table class="table examples">
-	<tr class="header">
-		<td class="headerCell">Factory method</td>
-		<td class="headerCell">Xml</td>
-	</tr>
-	<tr class="row">
-		<td class="cell">
+   <tr class="header">
+      <td class="headerCell">Factory method</td>
+      <td class="headerCell">Xml</td>
+   </tr>
+   <tr class="row">
+      <td class="cell">
 {% highlight objc linenos %}
 createWithName:@"abc"
 {% endhighlight %}
-		</td>
-		<td class="cell">
+   </td>
+   <td class="cell">
 {% highlight xml linenos %}
 <abc />
 {% endhighlight %}
@@ -157,7 +157,7 @@ You have two choices when adding sub nodes, you can add either **DCXmlNode**s or
 		<td class="cell">
 {% highlight xml linenos %}
 <abc>
-	<ghi:def>lmn</ghi:def>
+   <ghi:def>lmn</ghi:def>
 </abc>
 {% endhighlight %}
 		</td>
@@ -213,7 +213,7 @@ With dXml though, the emphasis was on working with xml data structures where typ
 
 {% highlight xml linenos %}
 <abc>
-	<def>ghi</def>
+   <def>ghi</def>
 </abc>
 {% endhighlight %}
 
@@ -253,10 +253,10 @@ Here we have two namespace declarations being added. The first on the root eleme
 {% highlight xml linenos %}
 <?xml version="1.0" encoding="UTF-8"?>
 <soap:envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
-         soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-    <soap:body>
-        <m:GetLastTradePrice xmlns:m="http://trading-site.com.au" />
-    </soap:body>
+      soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+   <soap:body>
+      <m:GetLastTradePrice xmlns:m="http://trading-site.com.au" />
+   </soap:body>
 </soap:envelope>
 {% endhighlight %}
 

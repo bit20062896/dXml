@@ -19,25 +19,25 @@ Here's an example of using this class:
 
 // Soap payload as an NSString, notice it not the full message.
 NSString *xml = @"<dhc:balance xmlns:dhc=\"" MODEL_SCHEMA "\">" 
-                @" forAccountNumber>1234</forAccountNumber>"
-                @"</dhc:balance>";
+   @" forAccountNumber>1234</forAccountNumber>"
+   @"</dhc:balance>";
 
 //Get a connection object and call the service.
 DCSoapWebServiceConnection *service = [DCSoapWebServiceConnection 
-	createWithUrl: BANKING soapAction: BALANCE_ACTION];
+   createWithUrl: BANKING soapAction: BALANCE_ACTION];
 NSError *error = nil;
 DCWebServiceResponse *response = [service postXmlStringPayload: xml errorVar:&error];
 
 // Check for errors.
 if (response == nil) {
-	if (error.isSoapFault) {
-		NSLog(@"Fault code    = &@", error.soapFaultCode);
-		NSLog(@"Fault message = &@", error.soapFaultMessage);
-		return;
-	} else {
-		// Non SOAP fault, so do something about the error.
-		return;
-	}
+   if (error.isSoapFault) {
+      NSLog(@"Fault code    = &@", error.soapFaultCode);
+      NSLog(@"Fault message = &@", error.soapFaultMessage);
+      return;
+   } else {
+      // Non SOAP fault, so do something about the error.
+      return;
+   }
 }
 
 NSLog(@"Balance = &@", [[response bodyContent] xmlNodeWithName: @"balance"].value);
@@ -63,7 +63,7 @@ DCSoapWebServiceConnection provides some basic was-security at the moment. In th
 
 //Get a connection object and call the service.
 DCSoapWebServiceConnection *service = [DCSoapWebServiceConnection 
-	createWithUrl: BANKING soapAction: BALANCE_ACTION];
+   createWithUrl: BANKING soapAction: BALANCE_ACTION];
 [service setUsername:@"username" password:@"password"];
 service.securityType = BASIC_USERID_PASSWORD;
 

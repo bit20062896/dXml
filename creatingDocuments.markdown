@@ -22,22 +22,22 @@ Perhaps the simplest way to do this. The source can be a NSString \*, NSData \* 
 
 {% highlight objc linenos %}
 const NSString * WEB_SERVICE_XML = 
-	@"<?xml version="\1.0\" encoding=\"UTF-8\"?>"
-	@"<soap:envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\""
-	@" soap:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
-	@"<soap:body>"
-	@"<m:GetLastTradePrice xmlns:m=\"http://trading-site.com.au\">"
-	@"<symbol>MOT</symbol>"
-	@"</m:GetLastTradePrice>"
-	@"</soap:body>"
-	@"</soap:envelope>";
+   @"<?xml version="\1.0\" encoding=\"UTF-8\"?>"
+   @"<soap:envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\""
+   @" soap:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
+   @"<soap:body>"
+   @"<m:GetLastTradePrice xmlns:m=\"http://trading-site.com.au\">"
+   @"<symbol>MOT</symbol>"
+   @"</m:GetLastTradePrice>"
+   @"</soap:body>"
+   @"</soap:envelope>";
     
 DCXmlParser *parser = [DCXmlParser parserWithXml: xml];
 NSError *error = nil;
 DCXmlDocument *xmlDoc = [parser parse:&error];
     
 if (xmlDoc == nil) {
-	//Deal with the error
+   //Deal with the error
 }
 {% endhighlight %}
 
@@ -65,7 +65,7 @@ NSError *error = nil;
 DCXmlDocument *xmlDoc = [parser parse:&error];
     
 if (xmlDoc == nil) {
-	//Deal with the error
+   //Deal with the error
 }
 {% endhighlight %}
 

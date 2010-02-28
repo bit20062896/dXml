@@ -48,29 +48,29 @@ You can cut and past this into a file and run it using [GH-Unit](http://github.c
 
 - (void) testViiumCom {
 
-	// The request.
-	NSString * request = 
-		@"<Hello xmlns=\"http://viium.com/\">"
-		@"<name xsi:type=\"xsd:string\">Test</name>"
-		@"</Hello>";
+   // The request.
+   NSString * request = 
+      @"<Hello xmlns=\"http://viium.com/\">"
+      @"<name xsi:type=\"xsd:string\">Test</name>"
+      @"</Hello>";
 
-	// Setup the connection.
-	DCSoapWebServiceConnection * connection = [DCSoapWebServiceConnection 
-		createWithUrl:@"http://viium.com/WebService/HelloWorld.asmx" 
-		soapAction:@"http://viium.com/Hello"];
+   // Setup the connection.
+   DCSoapWebServiceConnection * connection = [DCSoapWebServiceConnection 
+      createWithUrl:@"http://viium.com/WebService/HelloWorld.asmx" 
+      soapAction:@"http://viium.com/Hello"];
 
-	// Make the request and get the response.
-	NSError * error = nil;
-	DCWebServiceResponse * response = [connection postXmlStringPayload:request errorVar:&error];
+   // Make the request and get the response.
+   NSError * error = nil;
+   DCWebServiceResponse * response = [connection postXmlStringPayload:request errorVar:&error];
 
-	// Error check.
-	if (response == nil){
-		NSLog(@"Error %@", error);
-		return;
-	}
+   // Error check.
+   if (response == nil){
+      NSLog(@"Error %@", error);
+      return;
+   }
 
-	// Log output.
-	NSLog(@"Results: %@", [[response bodyContent] asPrettyXmlString]);
+   // Log output.
+   NSLog(@"Results: %@", [[response bodyContent] asPrettyXmlString]);
 
 }
 

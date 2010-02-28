@@ -11,21 +11,21 @@ First here's some sample code which uses this class:
 {% highlight objc linenos %}
 // Setup a simple request.
 NSString * request = @"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
-	@"<SOAP-ENV:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
-	@" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
-	@" xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\""
-	@" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\""
-	@" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">"
-	@"<SOAP-ENV:Body>"
-	@"<Hello xmlns=\"http://viium.com/\">"
-	@"<name xsi:type=\"xsd:string\">Test</name>"
-	@"</Hello>"
-	@"</SOAP-ENV:Body>"
-	@"</SOAP-ENV:Envelope>";
+   @"<SOAP-ENV:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
+   @" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+   @" xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\""
+   @" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\""
+   @" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+   @"<SOAP-ENV:Body>"
+   @"<Hello xmlns=\"http://viium.com/\">"
+   @"<name xsi:type=\"xsd:string\">Test</name>"
+   @"</Hello>"
+   @"</SOAP-ENV:Body>"
+   @"</SOAP-ENV:Envelope>";
 
 // Create the connection object.
 DCUrlConnection * connection = [DCUrlConnection 
-	createWithUrl:@"http://viium.com/WebService/HelloWorld.asmx"];
+   createWithUrl:@"http://viium.com/WebService/HelloWorld.asmx"];
 [connection setHeaderValue:@"http://viium.com/Hello" forKey:@"SOAPAction"];
 
 // Call the service.
@@ -34,8 +34,8 @@ NSData * data = [connection post:request errorVar:&error];
 
 // Error 
 if (data == nil){
-	NSLog(@"Error %@", error);
-	return;
+   NSLog(@"Error %@", error);
+   return;
 }
 
 // Parse result into a document model.
@@ -43,8 +43,8 @@ DCXmlDocument * resultDoc = [[DCXmlParser parserWithData:data] parse:&error];
 
 // Error
 if (resultDoc == nil){
-	NSLog(@"Error %@", error);
-	return;
+   NSLog(@"Error %@", error);
+   return;
 }
 
 // Output
