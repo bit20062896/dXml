@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>DocSetPublisherName</key>
-	<string>dSoft</string>
+	<string>Derek Clarkson</string>
 	<key>DocSetPublisherIdentifier</key>
-	<string>au.com.dSoft</string>
+	<string>Derek Clarkson</string>
 	<key>CFBundleIdentifier</key>
-	<string>au.com.dSoft.dXml.docset</string>
+	<string>dXml.docset</string>
 	<key>CFBundleName</key>
 	<string>dXml Documentation</string>
 	<key>DocSetFeedName</key>
-	<string>http://www.dSoft.com.au/dXml</string>
+	<string></string>
 </dict>
 </plist>
