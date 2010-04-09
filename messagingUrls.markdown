@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Messaging URLs
 ---
 	  
 # Messaging URLs

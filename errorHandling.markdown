@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Error handling
 ---
 
 # Error handling

@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Manipulating documents
 ---
 
 # Manipulating documents

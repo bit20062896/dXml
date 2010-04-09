@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Messaging web services
 ---
 	  
 # Messaging web services
