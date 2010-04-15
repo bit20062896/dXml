@@ -13,7 +13,7 @@
 #import "dXml.h"
 #import "DummyImplementations.h"
 #import "DCTextNode.h"
-#import <OCMock/OCMock.h>
+#import "OCMock.h"
 #import "DCXPathFilter.h"
 
 

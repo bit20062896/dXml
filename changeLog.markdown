@@ -1,4 +1,8 @@
-# DXml v0.1.1 (18 Feb 2010)
+# dXml v0.1.2 (15 Apr 2010)
+
+* Rebuid project files to build separate device and simulator libraries. Then to build separate debug and release versions.
+
+# dXml v0.1.1 (18 Feb 2010)
 
 * Added a basic xpath interpreter to the DCXmlNode.
 * Broke XPath and AsString methods out of DCXmlNode and into seperate categories to aid development and testing.
@@ -8,7 +12,7 @@
 * Improved error reporting when in debug mode. Previously was throwing exceptions.
 * Changed returns from DCXmlNode on all methods which returned NSEnumerator to now return the NSArray or NSDictionary as appropriate. Was trying to do the java thing of not exposing internals, but it ended up making things a little too difficult. 
 
-# DXml v0.1.0 (20 Jan 2010)
+# dXml v0.1.0 (20 Jan 2010)
 
 * Added more defines to SoapWebServiceConnection.h to help with extracting data from responses.
 * Added a new category to NSError to manage soap fault details.
