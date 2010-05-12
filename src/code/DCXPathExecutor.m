@@ -300,11 +300,10 @@ BOOL const XPATH_TOKEN_SELECTORS [12][12] = {
 - (id) finalResult:(NSArray *)currentNodes {
 	DHC_LOG(@"Sorting out what to return.");
 	if ([currentNodes count] == 0) {
-		// No nodes left so return nil;
-		return nil;
+		DHC_LOG(@"Nothing left, returning null");
+		return [NSNull null];
 	}
 	if ([currentNodes count] == 1) {
-
 		// One node so just return that directly.
 		return [currentNodes objectAtIndex:0];
 	}

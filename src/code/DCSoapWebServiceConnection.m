@@ -9,6 +9,9 @@
 #import "DCSoapWebServiceConnection.h"
 #import "NSError+SoapFault.h"
 #import "DCXmlNode+AsString.h"
+#import "dXml.h"
+#import "DCXmlParser.h"
+#import "NSObject+SoapTemplates.h"
 
 @interface DCSoapWebServiceConnection ()
 - (DCWebServiceResponse *) parseResponseWithData:(NSData *)data errorVar:(NSError **)aErrorVar;

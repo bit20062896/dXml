@@ -7,6 +7,7 @@
 //
 #import "GHUnit.h"
 #import "DCUrlConnection.h"
+#import "dXml.h"
 
 @interface DCUrlConnectionTests : GHTestCase
 {
@@ -23,6 +24,16 @@
 - (void) testCreateWithUrl {
 	DCUrlConnection *connection = [DCUrlConnection createWithUrl: @"abc"];
 	GHAssertNotNil(connection, @"Create returned nil object");
+}
+
+- (void) testInvalidURI {
+	DCUrlConnection *connection = [DCUrlConnection createWithUrl: @"http://localhost/xxxx"];
+	GHAssertNotNil(connection, @"Create returned nil object");
+	NSError *error = nil;
+	NSData *data = [connection post: @"" errorVar:&error];
+	GHAssertNil(data, @"Data was returned");
+	GHAssertEquals(error.code, -1004, @"Error code not correct");
+	GHAssertEqualStrings(error.domain, @"NSURLErrorDomain", @"Error code not correct");
 }
 
 @end

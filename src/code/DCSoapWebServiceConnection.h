@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "DCXmlNode.h"
 #import "DCWebServiceResponse.h"
-#import "dXml.h"
-#import "DCXmlParser.h"
-#import "NSObject+SoapTemplates.h"
 #import "DCSecurity.h"
 #import "DCUrlConnection.h"
 

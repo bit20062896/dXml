@@ -28,7 +28,7 @@
  * - <b>.</b> - refers to the current node so doesn't really do anything as such, but is here for completeness. Allows xpaths like "./abc"
  * - <b>[nn]</b> - This depends on how it is used. Combined with a element name it selects the nth element by that name. However, if used by itself, it selects the nth DCDMNode under the current nodes.
  * 
- * A note about exceptions and errors. Exceptions are thrown by the executeXpath:errorVar: method if there is a syntactical issues with the xpath. i.e. the developer got it wrong and should have picked it p during developement. Alternatively I got it wrong :-) However if there is an error during the processing of a document model, then the errorVar variable is populated instead. The reasoning is that this is a likely event caused by incomplete (but valid xml) being processed. Or the xml is simply not what was expected by the xpath. A good example might be a xpath that tries to find sub nodes of a text node.
+ * A note about exceptions and errors. Exceptions are thrown by the executeXpath:errorVar: method if there is a syntactical issues with the xpath. i.e. the developer got it wrong and should have picked it up during developement. Alternatively I got it wrong :-) However if there is an error during the processing of a document model, then the errorVar variable is populated instead. The reasoning is that this is a likely event caused by incomplete (but valid xml) being processed. Or the xml is simply not what was expected by the xpath. A good example might be a xpath that tries to find sub nodes of a text node.
  * 
  */
 @interface DCXPathExecutor : NSObject {
@@ -51,9 +51,10 @@
 /**
  * Executes the passed xpath and returns whatever it finds.
  * The results can be any of the following:
- * \li nil indicating that there was no matching xml.
+ * \li [NSNull null] indicating that there was no matching xml.
  * \li A single DCTextNode or DCXmlNode.
  * \li A NSArray containing any combination of DCTextNodes and DCXmlNodes.
+ * \li A nil which indicates that the errorVar contains an error.
  *
  * \param aXPath This is the xpath string to be executed.
  * \param aErrorVar A reference to a variable which will be populated with an NEError should there be an issue with processing the xpath against the current document model.
