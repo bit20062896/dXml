@@ -38,7 +38,7 @@
 </li>
 </ul>
 </p>
-<p>A note about exceptions and errors. Exceptions are thrown by the executeXpath:errorVar: method if there is a syntactical issues with the xpath. i.e. the developer got it wrong and should have picked it p during developement. Alternatively I got it wrong :-) However if there is an error during the processing of a document model, then the errorVar variable is populated instead. The reasoning is that this is a likely event caused by incomplete (but valid xml) being processed. Or the xml is simply not what was expected by the xpath. A good example might be a xpath that tries to find sub nodes of a text node. </p>
+<p>A note about exceptions and errors. Exceptions are thrown by the executeXpath:errorVar: method if there is a syntactical issues with the xpath. i.e. the developer got it wrong and should have picked it up during developement. Alternatively I got it wrong :-) However if there is an error during the processing of a document model, then the errorVar variable is populated instead. The reasoning is that this is a likely event caused by incomplete (but valid xml) being processed. Or the xml is simply not what was expected by the xpath. A good example might be a xpath that tries to find sub nodes of a text node. </p>
       <h2>Tasks</h2>
       <h3>Other</h3>
       <ul class="methods">
@@ -97,11 +97,13 @@
       </dl>
       <h5>Discussion</h5>
 <p>The results can be any of the following: <ul>
-<li><p>nil indicating that there was no matching xml. </p>
+<li><p>[NSNull null] indicating that there was no matching xml. </p>
 </li>
 <li><p>A single <a href="DCTextNode.html">DCTextNode</a> or <a href="DCXmlNode.html">DCXmlNode</a>. </p>
 </li>
-<li><p>A NSArray containing any combination of DCTextNodes and DCXmlNodes.</p>
+<li><p>A NSArray containing any combination of DCTextNodes and DCXmlNodes. </p>
+</li>
+<li><p>A nil which indicates that the errorVar contains an error.</p>
 </li>
 </ul>
 </p>
@@ -114,7 +116,7 @@
       <h5>Declared in</h5>
       <code>DCXPathExecutor.h</code>
     <hr />
-    <p id="lastUpdated">      (Last updated: 2010-04-01)
+    <p id="lastUpdated">      (Last updated: 2010-05-13)
       <br />
       Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
     </p>

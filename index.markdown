@@ -100,16 +100,5 @@ OCMock is a mocking framework very much like the java [EasyMock](http://easymock
 
 Please refer to the [Building dXml](building.html) page for details on building dXml.
     
-#  Installation
-
-As this is a static library, adding it to your xcode project is quite simple. This assumes that you are working with one of the .dmg distribution files. Follow these steps:
-
-1. Drag the contents of the .dmg distribution file into a folder on your system. For example ~/ext/api/dXml
-1. Open your xcode project and navigate to Frameworks.
-1. Add a new folder in Frameworks. This is not necessary but I'd recommend it because it helps keeps things organised. I'd call it dXml.
-1. Open the installation folder in finder and select all the header files and the lib_dXml.a static library file and drag them to the newly created folder in xcode.
-1. XCode will prompt as to whether you want to copy the files into the project. I generally say no.
-
-Thats all that needs to be done.
  
 

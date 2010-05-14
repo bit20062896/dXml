@@ -145,19 +145,19 @@ if (id == nil && error != nil) {
 }
 {% endhighlight %}
 
-This block of code is fairly standard. However we have strayed slightly from the standard Apple error handling. 
-
-_Note: in the future I'll change that so that some sort of no result object is returned instead. Then nil responses can validly mean an error has occurred._
+This block of code is fairly standard. 
 
 Anyway, We set the return value as an id because it can be any one of 4 possible values:
 
-* A `nil` meaning there where no matching nodes. This is valid because the xml may be quite valid but not have the data you think should be there.
+* An pointer to `[NSNull null]` meaning there where no matching nodes. This is valid because the xml may be quite valid but not have the data you think should be there.
 
 * A **DCTextNode** if there was only a single text node in the final result.
 
 * A **DCXmlNode** if there was only a single xml node in the final result.
 
 * A **NSArray** containing any number of DCTextNode and DCXmlNode instances.
+
+* A `nil` which indicates there is an error waiting in the error variable.
 
 Which one you get depends on the xml and your XPath. 
 
