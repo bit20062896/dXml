@@ -1,4 +1,4 @@
-# dXml v0.1.3 (-- --- 2010)
+# dXml v0.1.3 (14 may 2010)
 
 * Modified DCXPathExecutor:executePath:errorVar: so that it returns NSNull rather than nil if there are no results from the query. This is more in line with standard practice. Nil response is now an indicator that the errorVar contains an error.
 * Modified the packaging of the libraries so that build properties can be used to include the correct library, and once set, the developer no longer needs to adjust paths on the fly. Hopefully this will be the last time I have to frag with the artifact layouts :-[
