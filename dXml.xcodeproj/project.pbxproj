@@ -250,21 +250,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 65D66BA51175F616001132D1 /* dXml (Simulator) */;
+			remoteGlobalIDString = 65D66BA51175F616001132D1;
 			remoteInfo = "dXml (Simulator)";
 		};
 		65BD4DD91197DCD600BCFFA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* dXml (Device) */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "dXml (Device)";
 		};
 		65BD4DDB1197DCEA00BCFFA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 65BD4DD41197DCCD00BCFFA3 /* Build libraries */;
+			remoteGlobalIDString = 65BD4DD41197DCCD00BCFFA3;
 			remoteInfo = "Build libraries";
 		};
 		65E9522A117600770038BFED /* PBXContainerItemProxy */ = {
@@ -988,7 +988,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# Run custom apple doc.\nAPPLEDOC_DIR=$PROJECT_DIR/../External/appledoc\n\n$APPLEDOC_DIR/build/Release/appledoc -p \"$PROJECT_NAME\" --input src/code --output \"$BUILD_DIR/appledoc\" -t $APPLEDOC_DIR/Templates -d $PROJECT_DIR/../tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist\n\necho Fixing docset name and moving into place ...\nrm -fr \"$BUILD_DIR\"/docs\nmkdir -p \"$BUILD_DIR\"/docs\nmv -vf \"$BUILD_DIR\"/appledoc/docset \"$BUILD_DIR\"/docs/au.com.dhc.$PROJECT_NAME.docset\n\n# echo Copying HTML documentation to dXml-website ...\n# cp -vfR \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/cxhtml/ $PROJECT_DIR/../d \n# dXml-website/api \n\nexit 0";
+			shellScript = "#!/bin/sh\n\n# Run custom apple doc.\nAPPLEDOC_DIR=$PROJECT_DIR/../External/appledoc\n\n$APPLEDOC_DIR/build/Release/appledoc -p \"$PROJECT_NAME\" --input src/code --output \"$BUILD_DIR/appledoc\" -t $APPLEDOC_DIR/Templates -d $PROJECT_DIR/../tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist\n\necho Fixing docset name and moving into place ...\nrm -fr \"$BUILD_DIR\"/docs\nmkdir -p \"$BUILD_DIR\"/docs\nmv -vf \"$BUILD_DIR\"/appledoc/docset \"$BUILD_DIR\"/docs/au.com.dhc.$PROJECT_NAME.docset\n\n# echo Copying HTML documentation to dXml-website ...\ncp -vfR $BUILD_DIR/appledoc/cxhtml/ $PROJECT_DIR/../dXml-website/api \n\nexit 0";
 		};
 		658DF4491177273B004E97D5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1183,6 +1183,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				BUILD_STYLE = Debug;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dXml_Prefix.pch;
 				PRODUCT_NAME = dXml;
@@ -1275,6 +1276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Debug;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1303,6 +1305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Release;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1331,6 +1334,7 @@
 		658DF43F1177262F004E97D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1341,6 +1345,7 @@
 		658DF4401177262F004E97D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1352,6 +1357,7 @@
 		658DF44B1177273B004E97D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1362,6 +1368,7 @@
 		658DF44C1177273B004E97D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1373,6 +1380,7 @@
 		65BD4DD51197DCCD00BCFFA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1383,6 +1391,7 @@
 		65BD4DD61197DCCD00BCFFA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1396,7 +1405,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				BUILD_STYLE = "";
+				BUILD_STYLE = Debug;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dXml_Prefix.pch;
 				PRODUCT_NAME = dXml;
@@ -1410,6 +1419,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				BUILD_STYLE = Release;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dXml_Prefix.pch;
 				PRODUCT_NAME = dXml;
@@ -1422,6 +1432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Debug;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1450,6 +1461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Release;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
