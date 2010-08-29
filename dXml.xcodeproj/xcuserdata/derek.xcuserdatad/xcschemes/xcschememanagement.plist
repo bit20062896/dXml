@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>dXml Build DMG File.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>dXml unit tests (Simulator).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>Build API Documentation</key>
+		<true/>
+		<key>Build DMG File</key>
+		<true/>
+		<key>Build libraries</key>
+		<true/>
+		<key>dXml Device Unit Tests.app</key>
+		<true/>
+		<key>dXml Simulator Unit Tests.app</key>
+		<true/>
+		<key>libdXml.a</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

@@ -6,45 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		658DF43E1177262F004E97D5 /* Build API Documentation */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 658DF4451177265B004E97D5 /* Build configuration list for PBXAggregateTarget "Build API Documentation" */;
-			buildPhases = (
-				658DF43D1177262F004E97D5 /* ShellScript */,
-			);
-			dependencies = (
-				65BD4DDC1197DCEA00BCFFA3 /* PBXTargetDependency */,
-			);
-			name = "Build API Documentation";
-			productName = "Builds API Documentation";
-		};
-		658DF44A1177273B004E97D5 /* Build DMG File */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 658DF44F11772768004E97D5 /* Build configuration list for PBXAggregateTarget "Build DMG File" */;
-			buildPhases = (
-				658DF4491177273B004E97D5 /* ShellScript */,
-			);
-			dependencies = (
-				658DF44E1177274A004E97D5 /* PBXTargetDependency */,
-			);
-			name = "Build DMG File";
-			productName = "Build DMG File";
-		};
-		65BD4DD41197DCCD00BCFFA3 /* Build libraries */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 65BD4DE81197DD4100BCFFA3 /* Build configuration list for PBXAggregateTarget "Build libraries" */;
-			buildPhases = (
-			);
-			dependencies = (
-				65BD4DDA1197DCD600BCFFA3 /* PBXTargetDependency */,
-				65BD4DD81197DCD600BCFFA3 /* PBXTargetDependency */,
-			);
-			name = "Build libraries";
-			productName = "Build libraries";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		65160801109A9D17002BE0D0 /* DCXmlAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 651607FE109A9D17002BE0D0 /* DCXmlAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65160802109A9D17002BE0D0 /* DCXmlAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 651607FF109A9D17002BE0D0 /* DCXmlAttribute.m */; };
@@ -69,45 +30,12 @@
 		65894D1F10D515F500AF89C0 /* DCTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D1D10D515F500AF89C0 /* DCTextNode.m */; };
 		65894D3210D51A8D00AF89C0 /* DCXmlNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D3010D51A8D00AF89C0 /* DCXmlNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65894D3310D51A8D00AF89C0 /* DCXmlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D3110D51A8D00AF89C0 /* DCXmlNode.m */; };
-		658DF40211771FAF004E97D5 /* DCXmlDocumentParserDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0922D10B92B2E0061CC61 /* DCXmlDocumentParserDelegateTests.m */; };
-		658DF40311771FAF004E97D5 /* DCXPathExecutorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B21107D26500747B38 /* DCXPathExecutorTests.m */; };
-		658DF40411771FAF004E97D5 /* DCTextNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568477910D669080031C348 /* DCTextNodeTests.m */; };
-		658DF40511771FAF004E97D5 /* DCUrlConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E110010CCAFCC00D8E6D1 /* DCUrlConnectionTests.m */; };
-		658DF40611771FAF004E97D5 /* DCSoapWebserviceConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532522710BE4DFE00007475 /* DCSoapWebserviceConnectionTests.m */; };
-		658DF40711771FAF004E97D5 /* DCXPathIndexedSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC66D3110FF779007B3B3E /* DCXPathIndexedSelectorTests.m */; };
-		658DF40811771FAF004E97D5 /* DCUseridPasswordSecurityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F71310C8B856009DB40E /* DCUseridPasswordSecurityTests.m */; };
-		658DF40911771FAF004E97D5 /* DCXmlNode+AsStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48BE1107D51B00747B38 /* DCXmlNode+AsStringTests.m */; };
-		658DF40A11771FAF004E97D5 /* DCXmlNamespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568478B10D66A6D0031C348 /* DCXmlNamespaceTests.m */; };
-		658DF40B11771FAF004E97D5 /* NSError+SoapFaultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5BC01105872D00BAB73A /* NSError+SoapFaultTests.m */; };
-		658DF40C11771FAF004E97D5 /* DCUrlConnection+NSURLConnectionDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E147410CE06C500D8E6D1 /* DCUrlConnection+NSURLConnectionDelegateTests.m */; };
-		658DF40D11771FAF004E97D5 /* DCXmlAttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65160817109AA0FF002BE0D0 /* DCXmlAttributeTests.m */; };
-		658DF40E11771FAF004E97D5 /* DummyImplementations.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC2D081115935200738879 /* DummyImplementations.m */; };
-		658DF40F11771FAF004E97D5 /* DCXmlNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F461501094190D008AF68E /* DCXmlNodeTests.m */; };
-		658DF41011771FAF004E97D5 /* DCXPathElementSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC6589110F0984007B3B3E /* DCXPathElementSelectorTests.m */; };
-		658DF41111771FAF004E97D5 /* DCXmlSubtreeParserDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC46D610BDF68E0094492E /* DCXmlSubtreeParserDelegateTests.m */; };
-		658DF41211771FAF004E97D5 /* DCSecurityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F6B410C8B3DB009DB40E /* DCSecurityTests.m */; };
-		658DF41311771FAF004E97D5 /* DCXPathParentSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC67971110073F007B3B3E /* DCXPathParentSelectorTests.m */; };
-		658DF41411771FAF004E97D5 /* DCXPathAbstractSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65480AA111152A660094CD0B /* DCXPathAbstractSelectorTests.m */; };
-		658DF41511771FAF004E97D5 /* DCXPathRootSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B4E36110DB72500747B38 /* DCXPathRootSelectorTests.m */; };
-		658DF41611771FAF004E97D5 /* DCXPathSubtreeSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 654CC699111ECFC1000209D8 /* DCXPathSubtreeSelectorTests.m */; };
-		658DF41711771FAF004E97D5 /* DCXPathIndexFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B45D3211105F3D00CF9DF6 /* DCXPathIndexFilterTests.m */; };
-		658DF41811771FAF004E97D5 /* DCXPathElementFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC2F8A11183E9F00738879 /* DCXPathElementFilterTests.m */; };
-		658DF41911771FAF004E97D5 /* DCWebServiceResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC482010BE30850094492E /* DCWebServiceResponseTests.m */; };
-		658DF41A11771FAF004E97D5 /* DCXmlParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650E72B510AADB7500CE8A8E /* DCXmlParserTests.m */; };
-		658DF41B11771FAF004E97D5 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA1CE811735C08000DC347 /* GHUnitIPhoneTestMain.m */; };
 		65B45CAF1110522E00CF9DF6 /* DCXPathAbstractSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B45CAD1110522E00CF9DF6 /* DCXPathAbstractSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B45CB01110522E00CF9DF6 /* DCXPathAbstractSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B45CAE1110522E00CF9DF6 /* DCXPathAbstractSelector.m */; };
 		65B45D2111105D7E00CF9DF6 /* DCXPathIndexFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B45D1D11105D7E00CF9DF6 /* DCXPathIndexFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B45D2211105D7E00CF9DF6 /* DCXPathIndexFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B45D1E11105D7E00CF9DF6 /* DCXPathIndexFilter.m */; };
 		65BB81AC10CC82D900959C05 /* DCUrlConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BB81A910CC82D900959C05 /* DCUrlConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65BB81AD10CC82D900959C05 /* DCUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BB81AA10CC82D900959C05 /* DCUrlConnection.m */; };
-		65BD4E2B1198420F00BCFFA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		65BD4E2C1198423A00BCFFA3 /* libdXml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66BF51175F7E5001132D1 /* libdXml.a */; };
-		65BD4E2D1198424000BCFFA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E14F710CE0D7F00D8E6D1 /* UIKit.framework */; };
-		65BD4E2E1198424100BCFFA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E647EC10955FCA0055AA46 /* CoreGraphics.framework */; };
-		65BD4E2F1198424200BCFFA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		65BD4E301198424500BCFFA3 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA1CEA11735C08000DC347 /* libGHUnitIPhone3_0.a */; };
-		65BD4E311198424A00BCFFA3 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA1CFE11735C3A000DC347 /* libOCMock-static.a */; };
 		65BD4E41119842BD00BCFFA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E14F710CE0D7F00D8E6D1 /* UIKit.framework */; };
 		65BD4E42119842BE00BCFFA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		65BD4E43119842BF00BCFFA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E647EC10955FCA0055AA46 /* CoreGraphics.framework */; };
@@ -121,65 +49,6 @@
 		65C4F82E10C8DEC1009DB40E /* DCSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F82D10C8DEC1009DB40E /* DCSecurity.m */; };
 		65D0951610BA435A0061CC61 /* dXml.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D0951510BA435A0061CC61 /* dXml.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65D4ABD210D512C0003E356D /* DCDMNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D4ABD110D512C0003E356D /* DCDMNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BA71175F616001132D1 /* dXml_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* dXml_Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BA81175F616001132D1 /* DCXmlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F4613710941762008AF68E /* DCXmlParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BA91175F616001132D1 /* DCXmlAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 651607FE109A9D17002BE0D0 /* DCXmlAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAA1175F616001132D1 /* DCXmlDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 65160992109B0C8A002BE0D0 /* DCXmlDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAB1175F616001132D1 /* DCXmlSubtreeParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DAB53410B179CE00207E87 /* DCXmlSubtreeParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAC1175F616001132D1 /* dXml.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D0951510BA435A0061CC61 /* dXml.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAD1175F616001132D1 /* DCXmlNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F7480E10BB9B330030ABA4 /* DCXmlNamespace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAE1175F616001132D1 /* DCXmlDocumentParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 65320BAD10BCF0230056BDDF /* DCXmlDocumentParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BAF1175F616001132D1 /* DCSoapWebServiceConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 65FC480910BE2C790094492E /* DCSoapWebServiceConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB01175F616001132D1 /* DCWebServiceResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 65FC480E10BE2EA90094492E /* DCWebServiceResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB11175F616001132D1 /* DCSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C4F65F10C8923D009DB40E /* DCSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB21175F616001132D1 /* DCNoSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C4F68210C8A1DE009DB40E /* DCNoSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB31175F616001132D1 /* NSObject+SoapTemplates.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C4F72010C8BA5F009DB40E /* NSObject+SoapTemplates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB41175F616001132D1 /* DCUrlConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BB81A910CC82D900959C05 /* DCUrlConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB51175F616001132D1 /* DCUseridPasswordSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C4F6E710C8B69E009DB40E /* DCUseridPasswordSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB61175F616001132D1 /* DCDMNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D4ABD110D512C0003E356D /* DCDMNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB71175F616001132D1 /* DCTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D1C10D515F500AF89C0 /* DCTextNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB81175F616001132D1 /* DCXmlNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 65894D3010D51A8D00AF89C0 /* DCXmlNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BB91175F616001132D1 /* DCUrlConnection+NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 655E11D810CCCFEE00D8E6D1 /* DCUrlConnection+NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBA1175F616001132D1 /* NSError+SoapFault.h in Headers */ = {isa = PBXBuildFile; fileRef = 656049F111047D0400BE761F /* NSError+SoapFault.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBB1175F616001132D1 /* DCXmlNode+AsString.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B48B41107D2F600747B38 /* DCXmlNode+AsString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBC1175F616001132D1 /* DCXPathExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B4D53110C7B9900747B38 /* DCXPathExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBD1175F616001132D1 /* DCXPathRootSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B4E05110DAF5500747B38 /* DCXPathRootSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBE1175F616001132D1 /* DCXPathElementSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 657B4EDE110EA8D000747B38 /* DCXPathElementSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BBF1175F616001132D1 /* DCXPathIndexedSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EC66CC110FF3C8007B3B3E /* DCXPathIndexedSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC01175F616001132D1 /* DCXPathParentSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EC679E111007A9007B3B3E /* DCXPathParentSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC11175F616001132D1 /* DCXPathFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EC684011104C71007B3B3E /* DCXPathFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC21175F616001132D1 /* DCXPathAbstractSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B45CAD1110522E00CF9DF6 /* DCXPathAbstractSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC31175F616001132D1 /* DCXPathIndexFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B45D1D11105D7E00CF9DF6 /* DCXPathIndexFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC41175F616001132D1 /* DCXPathElementFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65FC2F8511183B6C00738879 /* DCXPathElementFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC51175F616001132D1 /* DCXPathSubtreeSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 654CC690111ECEA2000209D8 /* DCXPathSubtreeSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65D66BC71175F616001132D1 /* DCXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F4613910941768008AF68E /* DCXmlParser.m */; };
-		65D66BC81175F616001132D1 /* DCXmlAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 651607FF109A9D17002BE0D0 /* DCXmlAttribute.m */; };
-		65D66BC91175F616001132D1 /* DCXmlDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 65160993109B0C8A002BE0D0 /* DCXmlDocument.m */; };
-		65D66BCA1175F616001132D1 /* DCXmlSubtreeParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DAB53510B179CE00207E87 /* DCXmlSubtreeParserDelegate.m */; };
-		65D66BCB1175F616001132D1 /* DCXmlNamespace.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F7480F10BB9B330030ABA4 /* DCXmlNamespace.m */; };
-		65D66BCC1175F616001132D1 /* DCXmlDocumentParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65320BAE10BCF0230056BDDF /* DCXmlDocumentParserDelegate.m */; };
-		65D66BCD1175F616001132D1 /* DCSoapWebServiceConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC480A10BE2C790094492E /* DCSoapWebServiceConnection.m */; };
-		65D66BCE1175F616001132D1 /* DCWebServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC480F10BE2EA90094492E /* DCWebServiceResponse.m */; };
-		65D66BCF1175F616001132D1 /* DCNoSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F68310C8A1DE009DB40E /* DCNoSecurity.m */; };
-		65D66BD01175F616001132D1 /* NSObject+SoapTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F72110C8BA5F009DB40E /* NSObject+SoapTemplates.m */; };
-		65D66BD11175F616001132D1 /* DCSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F82D10C8DEC1009DB40E /* DCSecurity.m */; };
-		65D66BD21175F616001132D1 /* DCUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BB81AA10CC82D900959C05 /* DCUrlConnection.m */; };
-		65D66BD31175F616001132D1 /* DCUseridPasswordSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4F6E810C8B69E009DB40E /* DCUseridPasswordSecurity.m */; };
-		65D66BD41175F616001132D1 /* DCTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D1D10D515F500AF89C0 /* DCTextNode.m */; };
-		65D66BD51175F616001132D1 /* DCXmlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65894D3110D51A8D00AF89C0 /* DCXmlNode.m */; };
-		65D66BD61175F616001132D1 /* DCDMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F07E4F10D5E7AE0057AD6C /* DCDMNode.m */; };
-		65D66BD71175F616001132D1 /* NSError+SoapFault.m in Sources */ = {isa = PBXBuildFile; fileRef = 656049F211047D0400BE761F /* NSError+SoapFault.m */; };
-		65D66BD81175F616001132D1 /* DCXmlNode+AsString.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B48B51107D2F600747B38 /* DCXmlNode+AsString.m */; };
-		65D66BD91175F616001132D1 /* DCXPathExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B4D54110C7B9900747B38 /* DCXPathExecutor.m */; };
-		65D66BDA1175F616001132D1 /* DCXPathRootSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B4E06110DAF5500747B38 /* DCXPathRootSelector.m */; };
-		65D66BDB1175F616001132D1 /* DCXPathElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 657B4EDF110EA8D000747B38 /* DCXPathElementSelector.m */; };
-		65D66BDC1175F616001132D1 /* DCXPathIndexedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC66CD110FF3C8007B3B3E /* DCXPathIndexedSelector.m */; };
-		65D66BDD1175F616001132D1 /* DCXPathParentSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC679F111007A9007B3B3E /* DCXPathParentSelector.m */; };
-		65D66BDE1175F616001132D1 /* DCXPathAbstractSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B45CAE1110522E00CF9DF6 /* DCXPathAbstractSelector.m */; };
-		65D66BDF1175F616001132D1 /* DCXPathIndexFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B45D1E11105D7E00CF9DF6 /* DCXPathIndexFilter.m */; };
-		65D66BE01175F616001132D1 /* DCXPathElementFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FC2F8611183B6C00738879 /* DCXPathElementFilter.m */; };
-		65D66BE11175F616001132D1 /* DCXPathSubtreeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 654CC691111ECEA2000209D8 /* DCXPathSubtreeSelector.m */; };
-		65D66BE21175F616001132D1 /* DCUrlConnection+NSURLConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E11D910CCCFEE00D8E6D1 /* DCUrlConnection+NSURLConnectionDelegate.m */; };
 		65DAB53710B179CE00207E87 /* DCXmlSubtreeParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DAB53410B179CE00207E87 /* DCXmlSubtreeParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65DAB53810B179CE00207E87 /* DCXmlSubtreeParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DAB53510B179CE00207E87 /* DCXmlSubtreeParserDelegate.m */; };
 		65E95276117604E90038BFED /* DCXmlDocumentParserDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0922D10B92B2E0061CC61 /* DCXmlDocumentParserDelegateTests.m */; };
@@ -232,41 +101,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		658DF4291177206C004E97D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65D66BA51175F616001132D1;
-			remoteInfo = "dXml (Simulator)";
-		};
-		658DF44D1177274A004E97D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 658DF43E1177262F004E97D5;
-			remoteInfo = "Builds API Documentation";
-		};
-		65BD4DD71197DCD600BCFFA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65D66BA51175F616001132D1;
-			remoteInfo = "dXml (Simulator)";
-		};
-		65BD4DD91197DCD600BCFFA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = "dXml (Device)";
-		};
-		65BD4DDB1197DCEA00BCFFA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65BD4DD41197DCCD00BCFFA3;
-			remoteInfo = "Build libraries";
-		};
 		65E9522A117600770038BFED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -283,6 +117,8 @@
 		65160817109AA0FF002BE0D0 /* DCXmlAttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlAttributeTests.m; sourceTree = "<group>"; };
 		65160992109B0C8A002BE0D0 /* DCXmlDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlDocument.h; sourceTree = "<group>"; };
 		65160993109B0C8A002BE0D0 /* DCXmlDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlDocument.m; sourceTree = "<group>"; };
+		651835971228014200B4AE43 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		651835A61228D07F00B4AE43 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
 		65320BAD10BCF0230056BDDF /* DCXmlDocumentParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlDocumentParserDelegate.h; sourceTree = "<group>"; };
 		65320BAE10BCF0230056BDDF /* DCXmlDocumentParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlDocumentParserDelegate.m; sourceTree = "<group>"; };
 		6532522710BE4DFE00007475 /* DCSoapWebserviceConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSoapWebserviceConnectionTests.m; sourceTree = "<group>"; };
@@ -320,7 +156,6 @@
 		65894D1D10D515F500AF89C0 /* DCTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTextNode.m; sourceTree = "<group>"; };
 		65894D3010D51A8D00AF89C0 /* DCXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlNode.h; sourceTree = "<group>"; };
 		65894D3110D51A8D00AF89C0 /* DCXmlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlNode.m; sourceTree = "<group>"; };
-		658DF42611771FAF004E97D5 /* dXml Simulator Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dXml Simulator Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		659F700610F7024600822900 /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.markdown; sourceTree = "<group>"; };
 		65B45CAD1110522E00CF9DF6 /* DCXPathAbstractSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXPathAbstractSelector.h; sourceTree = "<group>"; };
 		65B45CAE1110522E00CF9DF6 /* DCXPathAbstractSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXPathAbstractSelector.m; sourceTree = "<group>"; };
@@ -382,7 +217,6 @@
 		65D4AA4510D20FA7003E356D /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
 		65D4ABD110D512C0003E356D /* DCDMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDMNode.h; sourceTree = "<group>"; };
 		65D66BF41175F7E5001132D1 /* libdXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		65D66BF51175F7E5001132D1 /* libdXml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdXml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DAB53410B179CE00207E87 /* DCXmlSubtreeParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCXmlSubtreeParserDelegate.h; sourceTree = "<group>"; };
 		65DAB53510B179CE00207E87 /* DCXmlSubtreeParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCXmlSubtreeParserDelegate.m; sourceTree = "<group>"; };
 		65E647EC10955FCA0055AA46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -420,27 +254,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		658DF41C11771FAF004E97D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65BD4E2C1198423A00BCFFA3 /* libdXml.a in Frameworks */,
-				65BD4E2D1198424000BCFFA3 /* UIKit.framework in Frameworks */,
-				65BD4E2E1198424100BCFFA3 /* CoreGraphics.framework in Frameworks */,
-				65BD4E2F1198424200BCFFA3 /* Foundation.framework in Frameworks */,
-				65BD4E301198424500BCFFA3 /* libGHUnitIPhone3_0.a in Frameworks */,
-				65BD4E311198424A00BCFFA3 /* libOCMock-static.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65D66BE31175F616001132D1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65BD4E2B1198420F00BCFFA3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		65E9521D1175FFFD0038BFED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,9 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				65D66BF41175F7E5001132D1 /* libdXml.a */,
-				65D66BF51175F7E5001132D1 /* libdXml.a */,
 				65E9521F1175FFFD0038BFED /* dXml Device Unit Tests.app */,
-				658DF42611771FAF004E97D5 /* dXml Simulator Unit Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -478,6 +289,7 @@
 		0867D691FE84028FC02AAC07 /* dXml */ = {
 			isa = PBXGroup;
 			children = (
+				651835971228014200B4AE43 /* build.sh */,
 				659F700610F7024600822900 /* ReadMe.markdown */,
 				654EE4AD10FB5CF60023F57D /* ChangeLog.markdown */,
 				08FB77AEFE84172EC02AAC07 /* code */,
@@ -518,6 +330,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				651835A61228D07F00B4AE43 /* framework.plist */,
 				65E952211175FFFD0038BFED /* Unit Tests-Info.plist */,
 				65EDAA3A11587B1900510429 /* installDocSet */,
 				65FC31AA1119A0C500738879 /* doxygen-appledoc.config */,
@@ -786,44 +599,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		65D66BA61175F616001132D1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65D66BA71175F616001132D1 /* dXml_Prefix.pch in Headers */,
-				65D66BA81175F616001132D1 /* DCXmlParser.h in Headers */,
-				65D66BA91175F616001132D1 /* DCXmlAttribute.h in Headers */,
-				65D66BAA1175F616001132D1 /* DCXmlDocument.h in Headers */,
-				65D66BAB1175F616001132D1 /* DCXmlSubtreeParserDelegate.h in Headers */,
-				65D66BAC1175F616001132D1 /* dXml.h in Headers */,
-				65D66BAD1175F616001132D1 /* DCXmlNamespace.h in Headers */,
-				65D66BAE1175F616001132D1 /* DCXmlDocumentParserDelegate.h in Headers */,
-				65D66BAF1175F616001132D1 /* DCSoapWebServiceConnection.h in Headers */,
-				65D66BB01175F616001132D1 /* DCWebServiceResponse.h in Headers */,
-				65D66BB11175F616001132D1 /* DCSecurity.h in Headers */,
-				65D66BB21175F616001132D1 /* DCNoSecurity.h in Headers */,
-				65D66BB31175F616001132D1 /* NSObject+SoapTemplates.h in Headers */,
-				65D66BB41175F616001132D1 /* DCUrlConnection.h in Headers */,
-				65D66BB51175F616001132D1 /* DCUseridPasswordSecurity.h in Headers */,
-				65D66BB61175F616001132D1 /* DCDMNode.h in Headers */,
-				65D66BB71175F616001132D1 /* DCTextNode.h in Headers */,
-				65D66BB81175F616001132D1 /* DCXmlNode.h in Headers */,
-				65D66BB91175F616001132D1 /* DCUrlConnection+NSURLConnectionDelegate.h in Headers */,
-				65D66BBA1175F616001132D1 /* NSError+SoapFault.h in Headers */,
-				65D66BBB1175F616001132D1 /* DCXmlNode+AsString.h in Headers */,
-				65D66BBC1175F616001132D1 /* DCXPathExecutor.h in Headers */,
-				65D66BBD1175F616001132D1 /* DCXPathRootSelector.h in Headers */,
-				65D66BBE1175F616001132D1 /* DCXPathElementSelector.h in Headers */,
-				65D66BBF1175F616001132D1 /* DCXPathIndexedSelector.h in Headers */,
-				65D66BC01175F616001132D1 /* DCXPathParentSelector.h in Headers */,
-				65D66BC11175F616001132D1 /* DCXPathFilter.h in Headers */,
-				65D66BC21175F616001132D1 /* DCXPathAbstractSelector.h in Headers */,
-				65D66BC31175F616001132D1 /* DCXPathIndexFilter.h in Headers */,
-				65D66BC41175F616001132D1 /* DCXPathElementFilter.h in Headers */,
-				65D66BC51175F616001132D1 /* DCXPathSubtreeSelector.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D2AAC07A0554694100DB518D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -865,44 +640,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		658DF3FD11771FAF004E97D5 /* Unit Tests (Simulator) */ = {
+		65E9521E1175FFFD0038BFED /* Unit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 658DF42311771FAF004E97D5 /* Build configuration list for PBXNativeTarget "Unit Tests (Simulator)" */;
-			buildPhases = (
-				658DF40011771FAF004E97D5 /* Resources */,
-				658DF40111771FAF004E97D5 /* Sources */,
-				658DF41C11771FAF004E97D5 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				658DF42A1177206C004E97D5 /* PBXTargetDependency */,
-			);
-			name = "Unit Tests (Simulator)";
-			productName = "Unit Tests (Device)";
-			productReference = 658DF42611771FAF004E97D5 /* dXml Simulator Unit Tests.app */;
-			productType = "com.apple.product-type.application";
-		};
-		65D66BA51175F616001132D1 /* dXml (Simulator) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65D66BE51175F616001132D1 /* Build configuration list for PBXNativeTarget "dXml (Simulator)" */;
-			buildPhases = (
-				65D66BA61175F616001132D1 /* Headers */,
-				65D66BC61175F616001132D1 /* Sources */,
-				65D66BE31175F616001132D1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "dXml (Simulator)";
-			productName = dXml;
-			productReference = 65D66BF51175F7E5001132D1 /* libdXml.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		65E9521E1175FFFD0038BFED /* Unit Tests (Device) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65E952241175FFFE0038BFED /* Build configuration list for PBXNativeTarget "Unit Tests (Device)" */;
+			buildConfigurationList = 65E952241175FFFE0038BFED /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
 				65E9521B1175FFFD0038BFED /* Resources */,
 				65E9521C1175FFFD0038BFED /* Sources */,
@@ -913,14 +653,14 @@
 			dependencies = (
 				65E9522B117600770038BFED /* PBXTargetDependency */,
 			);
-			name = "Unit Tests (Device)";
+			name = "Unit Tests";
 			productName = "Unit Tests (Device)";
 			productReference = 65E9521F1175FFFD0038BFED /* dXml Device Unit Tests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D2AAC07D0554694100DB518D /* dXml (Device) */ = {
+		D2AAC07D0554694100DB518D /* Build Library */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "dXml (Device)" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Build Library" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -930,7 +670,7 @@
 			);
 			dependencies = (
 			);
-			name = "dXml (Device)";
+			name = "Build Library";
 			productName = dXml;
 			productReference = 65D66BF41175F7E5001132D1 /* libdXml.a */;
 			productType = "com.apple.product-type.library.static";
@@ -943,30 +683,21 @@
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "dXml" */;
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* dXml */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				658DF43E1177262F004E97D5 /* Build API Documentation */,
-				658DF44A1177273B004E97D5 /* Build DMG File */,
-				65BD4DD41197DCCD00BCFFA3 /* Build libraries */,
-				D2AAC07D0554694100DB518D /* dXml (Device) */,
-				65D66BA51175F616001132D1 /* dXml (Simulator) */,
-				65E9521E1175FFFD0038BFED /* Unit Tests (Device) */,
-				658DF3FD11771FAF004E97D5 /* Unit Tests (Simulator) */,
+				D2AAC07D0554694100DB518D /* Build Library */,
+				65E9521E1175FFFD0038BFED /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		658DF40011771FAF004E97D5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		65E9521B1175FFFD0038BFED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -976,104 +707,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		658DF43D1177262F004E97D5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# Run custom apple doc.\nAPPLEDOC_DIR=$PROJECT_DIR/../External/appledoc\n\n$APPLEDOC_DIR/build/Release/appledoc -p \"$PROJECT_NAME\" --input src/code --output \"$BUILD_DIR/appledoc\" -t $APPLEDOC_DIR/Templates -d $PROJECT_DIR/../tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist\n\necho Fixing docset name and moving into place ...\nrm -fr \"$BUILD_DIR\"/docs\nmkdir -p \"$BUILD_DIR\"/docs\nmv -vf \"$BUILD_DIR\"/appledoc/docset \"$BUILD_DIR\"/docs/au.com.dhc.$PROJECT_NAME.docset\n\n# echo Copying HTML documentation to dXml-website ...\ncp -vfR $BUILD_DIR/appledoc/cxhtml/ $PROJECT_DIR/../dXml-website/api \n\nexit 0";
-		};
-		658DF4491177273B004E97D5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\nTARGET_DIR=Releases/v$CURRENT_PROJECT_VERSION\nRELEASE_SIM=/Release/iphonesimulator\nDEBUG_SIM=/Debug/iphonesimulator\nRELEASE_OS=/Release/iphoneos\nDEBUG_OS=/Debug/iphoneos\n\nEcho building image directories ...\n\nrm -fr $TARGET_DIR\nmkdir -p $TARGET_DIR\nmkdir -p $TARGET_DIR/Release/iphoneos\nmkdir -p $TARGET_DIR/Debug/iphoneos\nmkdir -p $TARGET_DIR/Release/iphonesimulator\nmkdir -p $TARGET_DIR/Debug/iphonesimulator\n\necho Assembling image files ...\n\ncp $BUILD_DIR/$RELEASE_OS/lib${PROJECT_NAME}.a $TARGET_DIR/$RELEASE_OS\ncp $BUILD_DIR/$RELEASE_SIM/lib${PROJECT_NAME}.a $TARGET_DIR/$RELEASE_SIM\ncp $BUILD_DIR/$DEBUG_OS/lib${PROJECT_NAME}.a $TARGET_DIR/$DEBUG_OS\ncp $BUILD_DIR/$DEBUG_SIM/lib${PROJECT_NAME}.a $TARGET_DIR/$DEBUG_SIM\n\ncp $BUILD_DIR/$RELEASE_OS/*.h $TARGET_DIR\ncp -R $BUILD_DIR/docs $TARGET_DIR \ncp installDocSet $TARGET_DIR\ncp ReadMe.markdown $TARGET_DIR\ncp ChangeLog.markdown $TARGET_DIR\ncp License.markdown $TARGET_DIR\n\necho Building dmg of project ...\n\nFINAL_DMG=\"Releases/$PROJECT-$CURRENT_PROJECT_VERSION.dmg\"\nrm -f $FINAL_DMG\n\nhdiutil create \"$FINAL_DMG\" -ov -srcdir $TARGET_DIR -volname \"$PROJECT_NAME v$CURRENT_PROJECT_VERSION\" -attach\n\nexit 0";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		658DF40111771FAF004E97D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				658DF40211771FAF004E97D5 /* DCXmlDocumentParserDelegateTests.m in Sources */,
-				658DF40311771FAF004E97D5 /* DCXPathExecutorTests.m in Sources */,
-				658DF40411771FAF004E97D5 /* DCTextNodeTests.m in Sources */,
-				658DF40511771FAF004E97D5 /* DCUrlConnectionTests.m in Sources */,
-				658DF40611771FAF004E97D5 /* DCSoapWebserviceConnectionTests.m in Sources */,
-				658DF40711771FAF004E97D5 /* DCXPathIndexedSelectorTests.m in Sources */,
-				658DF40811771FAF004E97D5 /* DCUseridPasswordSecurityTests.m in Sources */,
-				658DF40911771FAF004E97D5 /* DCXmlNode+AsStringTests.m in Sources */,
-				658DF40A11771FAF004E97D5 /* DCXmlNamespaceTests.m in Sources */,
-				658DF40B11771FAF004E97D5 /* NSError+SoapFaultTests.m in Sources */,
-				658DF40C11771FAF004E97D5 /* DCUrlConnection+NSURLConnectionDelegateTests.m in Sources */,
-				658DF40D11771FAF004E97D5 /* DCXmlAttributeTests.m in Sources */,
-				658DF40E11771FAF004E97D5 /* DummyImplementations.m in Sources */,
-				658DF40F11771FAF004E97D5 /* DCXmlNodeTests.m in Sources */,
-				658DF41011771FAF004E97D5 /* DCXPathElementSelectorTests.m in Sources */,
-				658DF41111771FAF004E97D5 /* DCXmlSubtreeParserDelegateTests.m in Sources */,
-				658DF41211771FAF004E97D5 /* DCSecurityTests.m in Sources */,
-				658DF41311771FAF004E97D5 /* DCXPathParentSelectorTests.m in Sources */,
-				658DF41411771FAF004E97D5 /* DCXPathAbstractSelectorTests.m in Sources */,
-				658DF41511771FAF004E97D5 /* DCXPathRootSelectorTests.m in Sources */,
-				658DF41611771FAF004E97D5 /* DCXPathSubtreeSelectorTests.m in Sources */,
-				658DF41711771FAF004E97D5 /* DCXPathIndexFilterTests.m in Sources */,
-				658DF41811771FAF004E97D5 /* DCXPathElementFilterTests.m in Sources */,
-				658DF41911771FAF004E97D5 /* DCWebServiceResponseTests.m in Sources */,
-				658DF41A11771FAF004E97D5 /* DCXmlParserTests.m in Sources */,
-				658DF41B11771FAF004E97D5 /* GHUnitIPhoneTestMain.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65D66BC61175F616001132D1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65D66BC71175F616001132D1 /* DCXmlParser.m in Sources */,
-				65D66BC81175F616001132D1 /* DCXmlAttribute.m in Sources */,
-				65D66BC91175F616001132D1 /* DCXmlDocument.m in Sources */,
-				65D66BCA1175F616001132D1 /* DCXmlSubtreeParserDelegate.m in Sources */,
-				65D66BCB1175F616001132D1 /* DCXmlNamespace.m in Sources */,
-				65D66BCC1175F616001132D1 /* DCXmlDocumentParserDelegate.m in Sources */,
-				65D66BCD1175F616001132D1 /* DCSoapWebServiceConnection.m in Sources */,
-				65D66BCE1175F616001132D1 /* DCWebServiceResponse.m in Sources */,
-				65D66BCF1175F616001132D1 /* DCNoSecurity.m in Sources */,
-				65D66BD01175F616001132D1 /* NSObject+SoapTemplates.m in Sources */,
-				65D66BD11175F616001132D1 /* DCSecurity.m in Sources */,
-				65D66BD21175F616001132D1 /* DCUrlConnection.m in Sources */,
-				65D66BD31175F616001132D1 /* DCUseridPasswordSecurity.m in Sources */,
-				65D66BD41175F616001132D1 /* DCTextNode.m in Sources */,
-				65D66BD51175F616001132D1 /* DCXmlNode.m in Sources */,
-				65D66BD61175F616001132D1 /* DCDMNode.m in Sources */,
-				65D66BD71175F616001132D1 /* NSError+SoapFault.m in Sources */,
-				65D66BD81175F616001132D1 /* DCXmlNode+AsString.m in Sources */,
-				65D66BD91175F616001132D1 /* DCXPathExecutor.m in Sources */,
-				65D66BDA1175F616001132D1 /* DCXPathRootSelector.m in Sources */,
-				65D66BDB1175F616001132D1 /* DCXPathElementSelector.m in Sources */,
-				65D66BDC1175F616001132D1 /* DCXPathIndexedSelector.m in Sources */,
-				65D66BDD1175F616001132D1 /* DCXPathParentSelector.m in Sources */,
-				65D66BDE1175F616001132D1 /* DCXPathAbstractSelector.m in Sources */,
-				65D66BDF1175F616001132D1 /* DCXPathIndexFilter.m in Sources */,
-				65D66BE01175F616001132D1 /* DCXPathElementFilter.m in Sources */,
-				65D66BE11175F616001132D1 /* DCXPathSubtreeSelector.m in Sources */,
-				65D66BE21175F616001132D1 /* DCUrlConnection+NSURLConnectionDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		65E9521C1175FFFD0038BFED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1145,34 +779,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		658DF42A1177206C004E97D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65D66BA51175F616001132D1 /* dXml (Simulator) */;
-			targetProxy = 658DF4291177206C004E97D5 /* PBXContainerItemProxy */;
-		};
-		658DF44E1177274A004E97D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 658DF43E1177262F004E97D5 /* Build API Documentation */;
-			targetProxy = 658DF44D1177274A004E97D5 /* PBXContainerItemProxy */;
-		};
-		65BD4DD81197DCD600BCFFA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65D66BA51175F616001132D1 /* dXml (Simulator) */;
-			targetProxy = 65BD4DD71197DCD600BCFFA3 /* PBXContainerItemProxy */;
-		};
-		65BD4DDA1197DCD600BCFFA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* dXml (Device) */;
-			targetProxy = 65BD4DD91197DCD600BCFFA3 /* PBXContainerItemProxy */;
-		};
-		65BD4DDC1197DCEA00BCFFA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65BD4DD41197DCCD00BCFFA3 /* Build libraries */;
-			targetProxy = 65BD4DDB1197DCEA00BCFFA3 /* PBXContainerItemProxy */;
-		};
 		65E9522B117600770038BFED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* dXml (Device) */;
+			target = D2AAC07D0554694100DB518D /* Build Library */;
 			targetProxy = 65E9522A117600770038BFED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1182,13 +791,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Debug;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dXml_Prefix.pch;
 				PRODUCT_NAME = dXml;
-				PUBLIC_HEADERS_FOLDER_PATH = .;
-				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
 		};
@@ -1196,13 +802,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Release;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dXml_Prefix.pch;
 				PRODUCT_NAME = dXml;
-				PUBLIC_HEADERS_FOLDER_PATH = .;
-				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};
@@ -1211,9 +814,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Debug;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)/$(PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.1.3;
+				CURRENT_PROJECT_VERSION = 0.1.4;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1232,7 +834,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphonesimulator3.2;
@@ -1246,8 +848,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Release;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)/$(PLATFORM_NAME)";
-				CURRENT_PROJECT_VERSION = 0.1.3;
+				CURRENT_PROJECT_VERSION = 0.1.4;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -1262,169 +863,13 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphonesimulator3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		658DF42411771FAF004E97D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = dXml_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				INFOPLIST_FILE = "Unit Tests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(inherited)",
-					"\"$(SRCROOT)/../tools/OCMock-static\"",
-					"\"$(SRCROOT)/../tools/GHUnit-static\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
-				PRODUCT_NAME = "dXml Simulator Unit Tests";
-				PROVISIONING_PROFILE = "A5B2B263-1C43-42FD-BA32-DC13E9DB0AEB";
-				SDKROOT = iphonesimulator3.1.3;
-			};
-			name = Debug;
-		};
-		658DF42511771FAF004E97D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = dXml_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				INFOPLIST_FILE = "Unit Tests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(inherited)",
-					"\"$(SRCROOT)/../tools/OCMock-static\"",
-					"\"$(SRCROOT)/../tools/GHUnit-static\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
-				PRODUCT_NAME = "dXml Simulator Unit Tests";
-				PROVISIONING_PROFILE = "A5B2B263-1C43-42FD-BA32-DC13E9DB0AEB";
-				SDKROOT = iphonesimulator3.1.3;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		658DF43F1177262F004E97D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Debug;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Builds API Documentation";
-			};
-			name = Debug;
-		};
-		658DF4401177262F004E97D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Release;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "Builds API Documentation";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		658DF44B1177273B004E97D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Debug;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Build DMG File";
-			};
-			name = Debug;
-		};
-		658DF44C1177273B004E97D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Release;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "Build DMG File";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		65BD4DD51197DCCD00BCFFA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Debug;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Build libraries";
-			};
-			name = Debug;
-		};
-		65BD4DD61197DCCD00BCFFA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_STYLE = Release;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "Build libraries";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		65D66BE61175F616001132D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				BUILD_STYLE = Debug;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = dXml_Prefix.pch;
-				PRODUCT_NAME = dXml;
-				PUBLIC_HEADERS_FOLDER_PATH = .;
-				SDKROOT = iphonesimulator3.2;
-			};
-			name = Debug;
-		};
-		65D66BE71175F616001132D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				BUILD_STYLE = Release;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = dXml_Prefix.pch;
-				PRODUCT_NAME = dXml;
-				PUBLIC_HEADERS_FOLDER_PATH = .;
-				SDKROOT = iphonesimulator3.2;
 			};
 			name = Release;
 		};
@@ -1490,7 +935,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "dXml (Device)" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Build Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
@@ -1508,52 +953,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		658DF42311771FAF004E97D5 /* Build configuration list for PBXNativeTarget "Unit Tests (Simulator)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				658DF42411771FAF004E97D5 /* Debug */,
-				658DF42511771FAF004E97D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		658DF4451177265B004E97D5 /* Build configuration list for PBXAggregateTarget "Build API Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				658DF43F1177262F004E97D5 /* Debug */,
-				658DF4401177262F004E97D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		658DF44F11772768004E97D5 /* Build configuration list for PBXAggregateTarget "Build DMG File" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				658DF44B1177273B004E97D5 /* Debug */,
-				658DF44C1177273B004E97D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65BD4DE81197DD4100BCFFA3 /* Build configuration list for PBXAggregateTarget "Build libraries" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65BD4DD51197DCCD00BCFFA3 /* Debug */,
-				65BD4DD61197DCCD00BCFFA3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65D66BE51175F616001132D1 /* Build configuration list for PBXNativeTarget "dXml (Simulator)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65D66BE61175F616001132D1 /* Debug */,
-				65D66BE71175F616001132D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65E952241175FFFE0038BFED /* Build configuration list for PBXNativeTarget "Unit Tests (Device)" */ = {
+		65E952241175FFFE0038BFED /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65E952221175FFFE0038BFED /* Debug */,

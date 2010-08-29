@@ -1,3 +1,8 @@
+# dXml v0.1.4 (August 2010)
+
+* Converted build to use scripts from dUseful stuff.
+* Converted to create a framework rather than seperate libraries.
+
 # dXml v0.1.3 (14 may 2010)
 
 * Modified DCXPathExecutor:executePath:errorVar: so that it returns NSNull rather than nil if there are no results from the query. This is more in line with standard practice. Nil response is now an indicator that the errorVar contains an error.
