@@ -86,6 +86,10 @@ If you just want to use the static library then there are no dependencies.
 
 If you wish to compile the code then you will need the following APIs:
 
+[dUsefulStuff](http://github.com/drekka/dUsefulStuff)
+
+dUsefulStuff is a project that I have created to centralise stuff I want to use across many projects. Some of that are a set of bash scripts which I use to build projects such as this. You will need to either download the project dmg file or check out the project to get the scripts.
+
 [appledoc](http://github.com/tomaz/appledoc)
 
 Appledoc runs and reads the output from doxygen, then reprocesses it to give it a more "Apple like" apperance before installing your api documentation as a docset in xcode.
