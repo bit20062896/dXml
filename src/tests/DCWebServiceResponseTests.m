@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DCWebServiceResponse.h"
 #import "DCXmlDocument.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "NSObject+SoapTemplates.h"
 #import "DCXmlNode+AsString.h"
 #import "dXml.h"

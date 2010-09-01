@@ -5,7 +5,12 @@
 //  Created by Derek Clarkson on 7/12/09.
 //  Copyright 2009 Derek Clarkson. All rights reserved.
 //
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCUrlConnection.h"
 #import "IntegrationTestDefaults.h"
 #import "dXml.h"

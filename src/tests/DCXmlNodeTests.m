@@ -6,7 +6,12 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCXmlNode.h"
 #import "DCXmlAttribute.h"
 #import "DCXmlNamespace.h"

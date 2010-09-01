@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 14/12/09.
 //  Copyright 2009 Derek Clarkson. All rights reserved.
 //
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCTextNode.h"
 
 @interface DCTextNodeTests : GHTestCase

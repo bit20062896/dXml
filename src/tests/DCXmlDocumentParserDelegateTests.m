@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "DCXmlDocumentParserDelegate.h"
 #import "DCXmlNamespace.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "dXml.h"
 
 @interface DCXmlDocumentParserDelegateTests : GHTestCase {

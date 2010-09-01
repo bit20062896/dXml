@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "DCXmlParser.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCXmlDocument.h"
 #import "dXml.h"
 #import "DCXmlNode+AsString.h"

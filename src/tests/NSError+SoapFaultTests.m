@@ -8,7 +8,12 @@
 #import "NSError+SoapFault.h"
 #import "DCXmlNode.h"
 #import "DCXmlDocument.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "dXml.h"
 
 @interface NSError_SoapFaultTests : GHTestCase {

@@ -7,7 +7,12 @@
 //
 #import <Foundation/Foundation.h>
 #import "dXml.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCSoapWebServiceConnection.h"
 #import "DCXmlDocument.h"
 #import "IntegrationTestDefaults.h"

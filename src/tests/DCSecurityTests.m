@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCXmlDocument.h"
 #import "DCSecurity.h"
 #import "DCNoSecurity.h"

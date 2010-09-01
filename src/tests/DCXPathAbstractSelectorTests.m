@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DCXPathAbstractSelector.h"
 #import "DCXmlNode.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "dXml.h"
 #import "DummyImplementations.h"
 #import "DCTextNode.h"

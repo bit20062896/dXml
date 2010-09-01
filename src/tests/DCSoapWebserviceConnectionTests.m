@@ -7,7 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "dXml.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCSoapWebServiceConnection.h"
 
 @interface DCSoapWebserviceConnectionTests : GHTestCase

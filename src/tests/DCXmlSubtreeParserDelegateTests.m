@@ -8,7 +8,12 @@
 #import <Foundation/Foundation.h>
 #import "DCXmlSubtreeParserDelegate.h"
 #import "DCXmlNamespace.h"
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "dXml.h"
 #import "DCTextNode.h"
 

@@ -6,7 +6,12 @@
 //  Copyright 2009 Derek Clarkson. All rights reserved.
 //
 
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCXmlNamespace.h"
 
 @interface DCXmlNamespaceTests : GHTestCase

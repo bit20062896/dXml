@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 25/01/10.
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h>
 #import "DCXmlNode.h"
 #import "DCXPathIndexedSelector.h"
 
